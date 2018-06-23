@@ -13,9 +13,8 @@ class RemovedUnnecessaryColumns extends Migration
      */
     public function up()
     {
-        Schema::table('cafes', function( Blueprint $table ){
+        Schema::table('restaurants', function( Blueprint $table ){
           $table->dropColumn('name');
-          $table->dropColumn('roaster');
           $table->dropColumn('website');
           $table->dropColumn('description');
         });
@@ -28,10 +27,9 @@ class RemovedUnnecessaryColumns extends Migration
      */
     public function down()
     {
-      Schema::table('cafes', function( Blueprint $table ){
+      Schema::table('restaurants', function( Blueprint $table ){
         $table->string('name')->after('id');
-        $table->integer('roaster')->after('longitude');
-        $table->text('website')->after('roaster');
+        $table->text('website')->after('longitude');
         $table->text('description')->after('website');
       });
     }

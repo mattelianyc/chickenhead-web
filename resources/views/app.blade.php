@@ -9,6 +9,7 @@
 
 		<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_XssTiwPB6P2VPkSmz5WSy_L7ms8bFiI&libraries=places"></script>
 
 		<link href="/css/app.css" rel="stylesheet" type="text/css"/>

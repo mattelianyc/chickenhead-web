@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddedBrewMethodImage extends Migration
+class AddedDeleteFlagToRestaurant extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddedBrewMethodImage extends Migration
      */
     public function up()
     {
-        Schema::table('brew_methods', function( Blueprint $table ){
-          $table->string('icon')->after('method');
+        Schema::table('restaurants', function( Blueprint $table ){
+          $table->integer('deleted')->default(0)->after('added_by');
         });
     }
 
@@ -25,8 +25,8 @@ class AddedBrewMethodImage extends Migration
      */
     public function down()
     {
-        Schema::table('brew_methods', function( Blueprint $table ){
-          $table->drop('icon');
-        });
+      Schema::table('restaurants', function( Blueprint $table ){
+        $table->dropColumn('deleted');
+      });
     }
 }

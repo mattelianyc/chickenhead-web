@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddedCafesFiles extends Migration
+class AddedRestaurantsFiles extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class AddedCafesFiles extends Migration
      */
     public function up()
     {
-        Schema::create('cafes_photos', function (Blueprint $table) {
+        Schema::create('restaurants_photos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('cafe_id')->unsigned();
-            $table->foreign('cafe_id')->references('id')->on('cafes');
+            $table->integer('restaurant_id')->unsigned();
+            $table->foreign('restaurant_id')->references('id')->on('restaurants');
             $table->integer('uploaded_by')->unsigned();
             $table->foreign('uploaded_by')->references('id')->on('users');
             $table->text('file_url');
@@ -31,6 +31,6 @@ class AddedCafesFiles extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cafes_photos');
+        Schema::dropIfExists('restaurants_photos');
     }
 }

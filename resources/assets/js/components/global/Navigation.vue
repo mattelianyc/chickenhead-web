@@ -73,9 +73,16 @@
 
     img.logo{
       margin: auto;
-      margin-top: 22.5px;
-      margin-bottom: 22.5px;
+      margin-top: 7.5px;
+      margin-bottom: 12.5px;
       display: block;
+      max-height: 60px;
+    }
+
+    .logo-brand-text {
+      font-family: 'Gloria Hallelujah', cursive;
+      color: rgb(255,125,0);
+      padding-top: 2px;
     }
 
     img.hamburger{
@@ -173,9 +180,12 @@
         </span>
 
       </div>
-      <div class="large-4 medium-4 small-4 cell">
+      <div class="large-4 medium-4 small-4 cell text-center">
         <router-link :to="{ name: 'cafes'}">
-          <img src="/img/logo.svg" class="logo"/>
+          <span style="display:inline-flex;">
+          <img src="/img/logo.png" class="logo" />
+          <h1 class="logo-brand-text">&nbsp;chickenhead</h1>
+          </span>
         </router-link>
       </div>
       <div class="large-4 medium-4 small-4 cell">

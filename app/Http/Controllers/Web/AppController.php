@@ -1,8 +1,8 @@
 <?php
 
-namespace chickenhead\Http\Controllers\Web;
+namespace App\Http\Controllers\Web;
 
-use chickenhead\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Auth;
 
 class AppController extends Controller

@@ -1,10 +1,10 @@
 <?php
 
-namespace chickenhead\Http\Controllers\API;
+namespace App\Http\Controllers\API;
 
-use chickenhead\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
-use chickenhead\Models\Company;
+use App\Models\Company;
 
 use Request;
 use Auth;

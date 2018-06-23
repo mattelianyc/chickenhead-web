@@ -1,13 +1,13 @@
 <?php
 
-namespace chickenhead\Http\Controllers\Web;
+namespace App\Http\Controllers\Web;
 
 use Illuminate\Http\Request;
-use chickenhead\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Socialite;
 use Auth;
 
-use chickenhead\Models\User;
+use App\Models\User;
 
 class AuthenticationController extends Controller
 {

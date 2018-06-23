@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => chickenhead\User::class,
+        'model' => App\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
@@ -48,9 +48,9 @@ return [
     ],
 
     'google' => [
-      'client_id' => env('GOOGLE_APP_ID'),
-      'client_secret' => env('GOOGLE_APP_SECRET'),
-      'redirect' => env('GOOGLE_REDIRECT')
+      'client_id' => env('GOOGLE_APP_ID', '908431214196-829skecvnvl8b6b924258rpb33fkkqe5.apps.googleusercontent.com'),
+      'client_secret' => env('GOOGLE_APP_SECRET', 'XXgoNsmI-nXsnqA-6GRouxpg'),
+      'redirect' => env('GOOGLE_REDIRECT', 'http://localhost:8000/login/google/callback')
     ]
 
 ];

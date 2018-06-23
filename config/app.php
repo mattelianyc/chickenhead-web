@@ -173,11 +173,11 @@ return [
         /*
          * Application Service Providers...
          */
-        chickenhead\Providers\AppServiceProvider::class,
-        chickenhead\Providers\AuthServiceProvider::class,
-        // chickenhead\Providers\BroadcastServiceProvider::class,
-        chickenhead\Providers\EventServiceProvider::class,
-        chickenhead\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 
     ],
 

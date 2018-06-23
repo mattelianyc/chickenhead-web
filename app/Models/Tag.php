@@ -1,6 +1,6 @@
 <?php
 
-namespace chickenhead\Models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,7 +11,7 @@ class Tag extends Model
   ];
 
   public function cafes(){
-    return $this->belongsToMany( 'chickenhead\Models\Cafe', 'cafes_users_tags', 'tag_id', 'user_id');
+    return $this->belongsToMany( 'App\Models\Cafe', 'cafes_users_tags', 'tag_id', 'user_id');
   }
 }
 ?>

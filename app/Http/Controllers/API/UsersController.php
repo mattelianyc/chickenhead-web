@@ -1,12 +1,12 @@
 <?php
 
-namespace chickenhead\Http\Controllers\API;
+namespace App\Http\Controllers\API;
 
-use chickenhead\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
-use chickenhead\Http\Requests\EditUserRequest;
+use App\Http\Requests\EditUserRequest;
 
-use chickenhead\Models\User;
+use App\Models\User;
 use Auth;
 
 class UsersController extends Controller

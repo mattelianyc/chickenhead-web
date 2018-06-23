@@ -1,6 +1,6 @@
 <?php
 
-namespace chickenhead\Models;
+namespace App\Models;
 
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
@@ -29,10 +29,10 @@ class User extends Authenticatable
     ];
 
     public function likes(){
-      return $this->belongsToMany( 'chickenhead\Models\Cafe', 'users_cafes_likes', 'user_id', 'cafe_id');
+      return $this->belongsToMany( 'App\Models\Cafe', 'users_cafes_likes', 'user_id', 'cafe_id');
     }
 
     public function cafePhotos(){
-      return $this->hasMany( 'chickenhead\Models\CafePhoto', 'id', 'cafe_id' );
+      return $this->hasMany( 'App\Models\CafePhoto', 'id', 'cafe_id' );
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace chickenhead\Utilities;
+namespace App\Utilities;
 
-use chickenhead\Models\Tag;
+use App\Models\Tag;
 
 use Auth;
 
@@ -22,7 +22,7 @@ class Tagger{
       /*
         Get the tag by name or create a new tag.
       */
-      $newCafeTag     = \chickenhead\Models\Tag::firstOrNew( array('tag' => $name ) );
+      $newCafeTag     = \App\Models\Tag::firstOrNew( array('tag' => $name ) );
 
       /*
         Confirm the cafe tag has the name we provided. If it's set already

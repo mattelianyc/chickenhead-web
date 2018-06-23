@@ -1,6 +1,6 @@
 <?php
 
-namespace chickenhead\Utilities;
+namespace App\Utilities;
 
 class GoogleMaps{
 

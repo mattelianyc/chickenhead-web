@@ -1,15 +1,15 @@
 <?php
 
-namespace chickenhead\Http\Controllers\API;
+namespace App\Http\Controllers\API;
 
-use chickenhead\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
-use chickenhead\Models\Company;
-use chickenhead\Models\Cafe;
-use chickenhead\Models\CafePhoto;
+use App\Models\Company;
+use App\Models\Cafe;
+use App\Models\CafePhoto;
 
-use chickenhead\Utilities\GoogleMaps;
-use chickenhead\Utilities\Tagger;
+use App\Utilities\GoogleMaps;
+use App\Utilities\Tagger;
 
 use Request;
 use Auth;
@@ -19,8 +19,8 @@ use File;
 /*
 	Defines the requests used by the controller.
 */
-use chickenhead\Http\Requests\StoreCafeRequest;
-use chickenhead\Http\Requests\EditCafeRequest;
+use App\Http\Requests\StoreCafeRequest;
+use App\Http\Requests\EditCafeRequest;
 
 class CafesController extends Controller
 {

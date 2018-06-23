@@ -83,19 +83,19 @@
       'latitude': {
         type: Number,
         default: function(){
-          return 39.50
+          return 40.730610
         }
       },
       'longitude': {
         type: Number,
         default: function(){
-          return -98.35
+          return -73.935242
         }
       },
       'zoom': {
         type: Number,
         default: function(){
-          return 5
+          return 12
         }
       }
     },

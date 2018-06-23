@@ -61835,19 +61835,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     'latitude': {
       type: Number,
       default: function _default() {
-        return 39.50;
+        return 40.730610;
       }
     },
     'longitude': {
       type: Number,
       default: function _default() {
-        return -98.35;
+        return -73.935242;
       }
     },
     'zoom': {
       type: Number,
       default: function _default() {
-        return 5;
+        return 12;
       }
     }
   },

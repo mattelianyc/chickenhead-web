@@ -1,0 +1,8 @@
+/vendor
+/node_modules
+/app/Photos
+Homestead.yaml
+.env
+composer.lock
+
+*.DS_Store

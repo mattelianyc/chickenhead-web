@@ -1,16 +1,16 @@
-export const CafeTypeFilter = {
+export const RestaurantTypeFilter = {
   methods: {
-    processCafeTypeFilter( cafe, type ){
+    processRestaurantTypeFilter( restaurant, type ){
       switch( type ){
         case 'roasters':
-          if( cafe.company.roaster == 1 ){
+          if( restaurant.company.roaster == 1 ){
             return true;
           }else{
             return false;
           }
         break;
-        case 'cafes':
-          if( cafe.company.roaster == 0 ){
+        case 'restaurants':
+          if( restaurant.company.roaster == 0 ){
             return true;
           }else{
             return false;

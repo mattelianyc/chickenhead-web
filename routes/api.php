@@ -30,25 +30,25 @@ Route::group(['prefix' => 'v1'], function(){
 
   /*
   |-------------------------------------------------------------------------------
-  | Get All Cafes
+  | Get All restaurants
   |-------------------------------------------------------------------------------
-  | URL:            /api/v1/cafes
-  | Controller:     API\CafesController@getCafes
+  | URL:            /api/v1/restaurants
+  | Controller:     API\RestaurantsController@getRestaurants
   | Method:         GET
-  | Description:    Gets all of the cafes in the application
+  | Description:    Gets all of the restaurants in the application
   */
-  Route::get('/cafes', 'API\CafesController@getCafes');
+  Route::get('/restaurants', 'API\RestaurantsController@getRestaurants');
 
   /*
   |-------------------------------------------------------------------------------
-  | Get An Individual Cafe
+  | Get An Individual Restaurant
   |-------------------------------------------------------------------------------
-  | URL:            /api/v1/cafes/{id}
-  | Controller:     API\CafesController@getCafe
+  | URL:            /api/v1/restaurants/{id}
+  | Controller:     API\RestaurantsController@getRestaurant
   | Method:         GET
-  | Description:    Gets an individual cafe
+  | Description:    Gets an individual Restaurant
   */
-  Route::get('/cafes/{id}', 'API\CafesController@getCafe');
+  Route::get('/restaurants/{id}', 'API\RestaurantsController@getRestaurant');
 
   /*
   |-------------------------------------------------------------------------------
@@ -59,7 +59,7 @@ Route::group(['prefix' => 'v1'], function(){
   | Method:         GET
   | Description:    Gets all of the brew methods in the application
   */
-  Route::get('/brew-methods', 'API\BrewMethodsController@getBrewMethods');
+  // Route::get('/brew-methods', 'API\BrewMethodsController@getBrewMethods');
 
   /*
   |-------------------------------------------------------------------------------
@@ -77,7 +77,7 @@ Route::group(['prefix' => 'v1'], function(){
   Authenticated API Routes.
 */
 Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
-  Route::get('/companies/search', 'API\CompaniesController@getCompanySearch');
+  // Route::get('/companies/search', 'API\CompaniesController@getCompanySearch');
 
   /*
   |-------------------------------------------------------------------------------
@@ -92,80 +92,80 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
 
   /*
   |-------------------------------------------------------------------------------
-  | Gets Editing Data for an Individual Cafe
+  | Gets Editing Data for an Individual Restaurant
   |-------------------------------------------------------------------------------
-  | URL:            /api/v1/cafes/{id}/edit
-  | Controller:     API\CafesController@getCafeEditData
+  | URL:            /api/v1/restaurants/{id}/edit
+  | Controller:     API\RestaurantsController@getRestaurantEditData
   | Method:         GET
-  | Description:    Gets an individual cafe's edit data
+  | Description:    Gets an individual Restaurant's edit data
   */
-  Route::get('/cafes/{id}/edit', 'API\CafesController@getCafeEditData');
+  Route::get('/restaurants/{id}/edit', 'API\RestaurantsController@getRestaurantEditData');
 
   /*
   |-------------------------------------------------------------------------------
-  | Adds a New Cafe
+  | Adds a New Restaurant
   |-------------------------------------------------------------------------------
-  | URL:            /api/v1/cafes
-  | Controller:     API\CafesController@postNewCafe
+  | URL:            /api/v1/restaurants
+  | Controller:     API\RestaurantsController@postNewRestaurant
   | Method:         POST
-  | Description:    Adds a new cafe to the application
+  | Description:    Adds a new Restaurant to the application
   */
-  Route::post('/cafes', 'API\CafesController@postNewCafe');
+  Route::post('/restaurants', 'API\RestaurantsController@postNewRestaurant');
 
   /*
   |-------------------------------------------------------------------------------
-  | Edits a Cafe
+  | Edits a Restaurant
   |-------------------------------------------------------------------------------
-  | URL:            /api/v1/cafes/{cafeID}
-  | Controller:     API\CafesController@putEditCafe
+  | URL:            /api/v1/restaurants/{RestaurantID}
+  | Controller:     API\RestaurantsController@putEditRestaurant
   | Method:         PUT
-  | Description:    Edits a cafe
+  | Description:    Edits a Restaurant
   */
-  Route::put('/cafes/{cafeID}', 'API\CafesController@putEditCafe');
+  Route::put('/restaurants/{restaurantID}', 'API\RestaurantsController@putEditRestaurant');
 
   /*
   |-------------------------------------------------------------------------------
-  | Likes a Cafe
+  | Likes a Restaurant
   |-------------------------------------------------------------------------------
-  | URL:            /api/v1/cafes/{id}/like
-  | Controller:     API\CafesController@postLikeCafe
+  | URL:            /api/v1/restaurants/{id}/like
+  | Controller:     API\RestaurantsController@postLikeRestaurant
   | Method:         POST
-  | Description:    Likes a cafe for the authenticated user.
+  | Description:    Likes a Restaurant for the authenticated user.
   */
-  Route::post('/cafes/{id}/like', 'API\CafesController@postLikeCafe');
+  Route::post('/restaurants/{id}/like', 'API\RestaurantsController@postLikeRestaurant');
 
   /*
   |-------------------------------------------------------------------------------
-  | Un-Likes a Cafe
+  | Un-Likes a Restaurant
   |-------------------------------------------------------------------------------
-  | URL:            /api/v1/cafes/{id}/like
-  | Controller:     API\CafesController@deleteLikeCafe
+  | URL:            /api/v1/restaurants/{id}/like
+  | Controller:     API\RestaurantsController@deleteLikeRestaurant
   | Method:         DELETE
-  | Description:    Un-Likes a cafe for the authenticated user.
+  | Description:    Un-Likes a Restaurant for the authenticated user.
   */
-  Route::delete('/cafes/{id}/like', 'API\CafesController@deleteLikeCafe');
+  Route::delete('/restaurants/{id}/like', 'API\RestaurantsController@deleteLikeRestaurant');
 
   /*
   |-------------------------------------------------------------------------------
-  | Adds Tags To A Cafe
+  | Adds Tags To A Restaurant
   |-------------------------------------------------------------------------------
-  | URL:            /api/v1/cafes/{id}/tags
-  | Controller:     API\CafesController@postAddTags
+  | URL:            /api/v1/restaurants/{id}/tags
+  | Controller:     API\RestaurantsController@postAddTags
   | Method:         POST
-  | Description:    Adds tags to a cafe for a user
+  | Description:    Adds tags to a Restaurant for a user
   */
-  Route::post('/cafes/{id}/tags', 'API\CafesController@postAddTags');
+  Route::post('/restaurants/{id}/tags', 'API\RestaurantsController@postAddTags');
 
   /*
   |-------------------------------------------------------------------------------
-  | Deletes A Cafe Tag
+  | Deletes A Restaurant Tag
   |-------------------------------------------------------------------------------
-  | URL:            /api/v1/cafes/{id}/tags/{tagID}
-  | Controller:     API\CafesController@deleteCafeTag
+  | URL:            /api/v1/restaurants/{id}/tags/{tagID}
+  | Controller:     API\RestaurantsController@deleteRestaurantTag
   | Method:         DELETE
-  | Description:    Deletes a tag from a cafe for a user
+  | Description:    Deletes a tag from a Restaurant for a user
   */
-  Route::delete('/cafes/{id}/tags/{tagID}', 'API\CafesController@deleteCafeTag');
+  Route::delete('/restaurants/{id}/tags/{tagID}', 'API\RestaurantsController@deleteRestaurantTag');
 
-  Route::delete('/cafes/{id}', 'API\CafesController@deleteCafe');
+  Route::delete('/restaurants/{id}', 'API\RestaurantsController@deleteRestaurant');
 });

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreCafeRequest extends FormRequest
+class EditRestaurantRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,12 @@ class StoreCafeRequest extends FormRequest
     public function rules()
     {
         return [
-            'company_name'            => 'required',
-            'address'                 => 'required',
-            'city'                    => 'required',
-            'state'                   => 'required',
-            'zip'                     => 'required',
-            'website'                 => 'sometimes|url'
+          'location_name'           => 'required',
+          'address'                 => 'required',
+          'city'                    => 'required',
+          'state'                   => 'required',
+          'zip'                     => 'required',
+          'website'                 => 'sometimes|url'
         ];
     }
 
@@ -41,7 +41,7 @@ class StoreCafeRequest extends FormRequest
     public function messages()
     {
         return [
-          'company_name.required'     => 'A name for the cafe is required.',
+          'location_name.required'    => 'A name for the restaurant is required.',
           'address'                   => [ 'required' => 'The location needs to have an address.' ],
           'city'                      => [ 'required' => 'The location needs to have a city.' ],
           'state'                     => [ 'required' => 'The location needs to have a state.' ],

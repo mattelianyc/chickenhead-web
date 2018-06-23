@@ -8,10 +8,10 @@ use Auth;
 
 class Tagger{
 
-  public static function tagCafe( $cafe, $tags ){
+  public static function tagRestaurant( $restaurant, $tags ){
     /*
       Iterate over all of the tags attaching each one
-      to the cafe.
+      to the restaurant.
     */
     foreach( $tags as $tag ){
       /*
@@ -22,23 +22,23 @@ class Tagger{
       /*
         Get the tag by name or create a new tag.
       */
-      $newCafeTag     = \App\Models\Tag::firstOrNew( array('tag' => $name ) );
+      $newRestaurantTag     = \App\Models\Tag::firstOrNew( array('tag' => $name ) );
 
       /*
-        Confirm the cafe tag has the name we provided. If it's set already
+        Confirm the restaurant tag has the name we provided. If it's set already
         because the tag exists, this won't make a difference.
       */
-      $newCafeTag->tag = $name;
+      $newRestaurantTag->tag = $name;
 
       /*
         Save the tag
       */
-      $newCafeTag->save();
+      $newRestaurantTag->save();
 
       /*
-        Apply the tag to the cafe
+        Apply the tag to the restaurant
       */
-      $cafe->tags()->syncWithoutDetaching( [ $newCafeTag->id => ['user_id' => Auth::user()->id ] ] );
+      $restaurant->tags()->syncWithoutDetaching( [ $newRestaurantTag->id => ['user_id' => Auth::user()->id ] ] );
     }
   }
 

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class EditCafeRequest extends FormRequest
+class StoreRestaurantRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,17 @@ class EditCafeRequest extends FormRequest
     public function rules()
     {
         return [
-          'company_name'            => 'required',
-          'address'                 => 'required',
-          'city'                    => 'required',
-          'state'                   => 'required',
-          'zip'                     => 'required',
-          'website'                 => 'sometimes|url'
+            'name'                    => 'required',
+            'address'                 => 'required',
+            'city'                    => 'required',
+            'state'                   => 'required',
+            'zip'                     => 'required',
+            'latitude'                => 'required',
+            'longitude'               => 'required',
+            'added_by'               => 'required',
+            // 'website'               => 'required',
+            // 'description'               => 'required',
+            // 'website'                 => 'sometimes|url'
         ];
     }
 
@@ -41,14 +46,12 @@ class EditCafeRequest extends FormRequest
     public function messages()
     {
         return [
-          'company_name.required'     => 'A name for the cafe is required.',
+          'name.required'    => 'A name for the restaurant is required.',
           'address'                   => [ 'required' => 'The location needs to have an address.' ],
           'city'                      => [ 'required' => 'The location needs to have a city.' ],
           'state'                     => [ 'required' => 'The location needs to have a state.' ],
-          'zip'                       => [
-                                            'required' => 'The location needs to have a zip.'
-                                         ],
-          'website.url'               => 'The website must be a proper URL.'
+          'zip'                       => [ 'required' => 'The location needs to have a zip.' ],
+          'website.url'               => 'The site URL must be prefixed "http://"',
         ];
     }
 }

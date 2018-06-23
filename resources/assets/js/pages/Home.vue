@@ -3,23 +3,23 @@
 </style>
 
 <template>
-  <div id="cafes" class="page">
-    <cafe-map></cafe-map>
+  <div id="restaurants" class="page">
+    <restaurant-map></restaurant-map>
 
-    <add-cafe-button></add-cafe-button>
+    <add-restaurant-button></add-restaurant-button>
 
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-  import CafeMap from '../components/cafes/CafeMap.vue';
-  import AddCafeButton from '../components/cafes/AddCafeButton.vue';
+  import RestaurantMap from '../components/restaurants/RestaurantMap.vue';
+  import AddRestaurantButton from '../components/restaurants/AddRestaurantButton.vue';
 
   export default {
     components: {
-      CafeMap,
-      AddCafeButton
+      RestaurantMap,
+      AddRestaurantButton
     }
   }
 </script>

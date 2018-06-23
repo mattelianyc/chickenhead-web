@@ -52,8 +52,8 @@ class UsersController extends Controller
   public function putUpdateUser( EditUserRequest $request ){
     $user = Auth::user();
 
-    $favoriteCoffee       = $request->get('favorite_coffee');
-    $flavorNotes          = $request->get('flavor_notes');
+    $favoriteRestaurant       = $request->get('favorite_restaurant');
+    $favoriteDish          = $request->get('favorite_dish');
     $profileVisibility    = $request->get('profile_visibility');
     $city                 = $request->get('city');
     $state                = $request->get('state');
@@ -61,15 +61,15 @@ class UsersController extends Controller
     /*
       Ensure the user has entered a favorite coffee
     */
-    if( $favoriteCoffee != '' ){
-      $user->favorite_coffee    = $favoriteCoffee;
+    if( $favoriteRestaurant != '' ){
+      $user->favorite_restaurant    = $favoriteRestaurant;
     }
 
     /*
       Ensure the user has entered some flavor notes
     */
-    if( $flavorNotes != '' ){
-      $user->flavor_notes       = $flavorNotes;
+    if( $favoriteDish != '' ){
+      $user->favorite_dish       = $favoriteDish;
     }
 
     /*

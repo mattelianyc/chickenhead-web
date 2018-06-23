@@ -66,8 +66,8 @@
       <div class="pop-out-side-bar" v-show="showRightNav" v-on:click.stop>
         <img src="/img/close-menu.svg" class="close-menu-icon" v-on:click="hideNav()"/>
         <div class="side-bar-link" v-if="user != '' && userLoadStatus == 2">
-          <router-link :to="{ name: 'newcafe' }" v-on:click.native="hideNav()">
-            Add Cafe
+          <router-link :to="{ name: 'newrestaurant' }" v-on:click.native="hideNav()">
+            Add Restaurant
           </router-link>
         </div>
         <div class="side-bar-link" v-if="user != '' && userLoadStatus == 2">

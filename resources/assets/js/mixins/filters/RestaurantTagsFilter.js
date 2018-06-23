@@ -1,21 +1,21 @@
-export const CafeTagsFilter = {
+export const RestaurantTagsFilter = {
   methods: {
-    processCafeTagsFilter( cafe, tags ){
+    processRestaurantTagsFilter( restaurant, tags ){
       /*
         If there are tags to be filtered, run the filter.
       */
       if( tags.length > 0 ){
         /*
-          Makes array of the tags for the cafe
+          Makes array of the tags for the restaurant
         */
-        var cafeTags = [];
+        var restaurantTags = [];
 
         /*
-          Make array of cafe tags this is what we will check to
+          Make array of restaurant tags this is what we will check to
           see contains a filter.
         */
-        for( var i = 0; i < cafe.tags.length; i++ ){
-          cafeTags.push( cafe.tags[i].tag );
+        for( var i = 0; i < restaurant.tags.length; i++ ){
+          restaurantTags.push( restaurant.tags[i].tag );
         }
 
         /*
@@ -23,17 +23,17 @@ export const CafeTagsFilter = {
         */
         for( var i = 0; i < tags.length; i++ ){
           /*
-            If the tag is in the array of cafe tags then
+            If the tag is in the array of restaurant tags then
             we return true.
           */
-          if( cafeTags.indexOf( tags[i] ) > -1 ){
+          if( restaurantTags.indexOf( tags[i] ) > -1 ){
             return true;
           }
         }
 
         /*
           If we made it this far, then we return false because
-          the cafe doesn't contain the tags
+          the restaurant doesn't contain the tags
         */
         return false;
       }else{

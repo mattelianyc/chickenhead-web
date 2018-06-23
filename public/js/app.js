@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 41);
+/******/ 	return __webpack_require__(__webpack_require__.s = 40);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10569,7 +10569,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(97)
+var listToStyles = __webpack_require__(94)
 
 /*
 type StyleObject = {
@@ -10905,7 +10905,7 @@ var EventBus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
 
 
 var bind = __webpack_require__(31);
-var isBuffer = __webpack_require__(63);
+var isBuffer = __webpack_require__(62);
 
 /*global toString:true*/
 
@@ -12029,32 +12029,6 @@ function animate(isIn, element, animation, cb) {
 
 /***/ }),
 /* 12 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ROAST_CONFIG; });
-/*
-	Defines the API route we are using.
-*/
-var api_url = '';
-var google_maps_js_api = 'AIzaSyBB-yLlqyCE6s_MA30UotaCHttwUw5nKNY';
-
-switch ("development") {
-  case 'development':
-    api_url = 'http://localhost:8000/api/v1';
-    break;
-  case 'production':
-    api_url = 'https://roastandbrew.coffee/api/v1';
-    break;
-}
-
-var ROAST_CONFIG = {
-  API_URL: api_url,
-  GOOGLE_MAPS_JS_API: google_maps_js_api
-};
-
-/***/ }),
-/* 13 */
 /***/ (function(module, exports) {
 
 var g;
@@ -12079,6 +12053,32 @@ try {
 
 module.exports = g;
 
+
+/***/ }),
+/* 13 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ROAST_CONFIG; });
+/*
+	Defines the API route we are using.
+*/
+var api_url = '';
+var google_maps_js_api = 'AIzaSyBB-yLlqyCE6s_MA30UotaCHttwUw5nKNY';
+
+switch ("development") {
+  case 'development':
+    api_url = 'http://localhost:8000/api/v1';
+    break;
+  case 'production':
+    api_url = 'https://roastandbrew.coffee/api/v1';
+    break;
+}
+
+var ROAST_CONFIG = {
+  API_URL: api_url,
+  GOOGLE_MAPS_JS_API: google_maps_js_api
+};
 
 /***/ }),
 /* 14 */
@@ -29170,7 +29170,7 @@ module.exports = g;
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13), __webpack_require__(43)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(12), __webpack_require__(42)(module)))
 
 /***/ }),
 /* 15 */
@@ -40493,7 +40493,7 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13), __webpack_require__(80).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(12), __webpack_require__(79).setImmediate))
 
 /***/ }),
 /* 19 */
@@ -40673,7 +40673,7 @@ Touch.init = function ($) {
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(7);
-var normalizeHeaderName = __webpack_require__(65);
+var normalizeHeaderName = __webpack_require__(64);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -40962,13 +40962,13 @@ process.umask = function() { return 0; };
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(160)
+  __webpack_require__(157)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(162)
+var __vue_script__ = __webpack_require__(159)
 /* template */
-var __vue_template__ = __webpack_require__(163)
+var __vue_template__ = __webpack_require__(160)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -43970,12 +43970,12 @@ module.exports = function bind(fn, thisArg) {
 
 
 var utils = __webpack_require__(7);
-var settle = __webpack_require__(66);
-var buildURL = __webpack_require__(68);
-var parseHeaders = __webpack_require__(69);
-var isURLSameOrigin = __webpack_require__(70);
+var settle = __webpack_require__(65);
+var buildURL = __webpack_require__(67);
+var parseHeaders = __webpack_require__(68);
+var isURLSameOrigin = __webpack_require__(69);
 var createError = __webpack_require__(33);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(71);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(70);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -44072,7 +44072,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(72);
+      var cookies = __webpack_require__(71);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -44156,7 +44156,7 @@ module.exports = function xhrAdapter(config) {
 "use strict";
 
 
-var enhanceError = __webpack_require__(67);
+var enhanceError = __webpack_require__(66);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -44219,11 +44219,10 @@ module.exports = Cancel;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(86);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_cafes_js__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_users_js__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_brewMethods_js__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modules_display_js__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_restaurants_js__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_users_js__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_display_js__ = __webpack_require__(90);
 /*
 |-------------------------------------------------------------------------------
 | VUEX store.js
@@ -44233,7 +44232,7 @@ module.exports = Cancel;
 /*
   Adds the promise polyfill for IE 11
 */
-__webpack_require__(84).polyfill();
+__webpack_require__(83).polyfill();
 
 /*
 	Imports Vue and Vuex
@@ -44251,7 +44250,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 */
 
 
-
+// import { brewMethods } from './modules/brewMethods.js'
 
 
 /*
@@ -44259,10 +44258,10 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 */
 /* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
 	modules: {
-		cafes: __WEBPACK_IMPORTED_MODULE_2__modules_cafes_js__["a" /* cafes */],
+		restaurants: __WEBPACK_IMPORTED_MODULE_2__modules_restaurants_js__["a" /* restaurants */],
 		users: __WEBPACK_IMPORTED_MODULE_3__modules_users_js__["a" /* users */],
-		brewMethods: __WEBPACK_IMPORTED_MODULE_4__modules_brewMethods_js__["a" /* brewMethods */],
-		display: __WEBPACK_IMPORTED_MODULE_5__modules_display_js__["a" /* display */]
+		// brewMethods,
+		display: __WEBPACK_IMPORTED_MODULE_4__modules_display_js__["a" /* display */]
 	}
 }));
 
@@ -44271,20 +44270,20 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CafeTypeFilter; });
-var CafeTypeFilter = {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestaurantTypeFilter; });
+var RestaurantTypeFilter = {
   methods: {
-    processCafeTypeFilter: function processCafeTypeFilter(cafe, type) {
+    processRestaurantTypeFilter: function processRestaurantTypeFilter(restaurant, type) {
       switch (type) {
         case 'roasters':
-          if (cafe.company.roaster == 1) {
+          if (restaurant.company.roaster == 1) {
             return true;
           } else {
             return false;
           }
           break;
-        case 'cafes':
-          if (cafe.company.roaster == 0) {
+        case 'restaurants':
+          if (restaurant.company.roaster == 0) {
             return true;
           } else {
             return false;
@@ -44303,61 +44302,10 @@ var CafeTypeFilter = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CafeBrewMethodsFilter; });
-var CafeBrewMethodsFilter = {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestaurantTextFilter; });
+var RestaurantTextFilter = {
   methods: {
-    processCafeBrewMethodsFilter: function processCafeBrewMethodsFilter(cafe, brewMethods) {
-      /*
-        If there are brew methods to be filtered, run the filter.
-      */
-      if (brewMethods.length > 0) {
-        /*
-          Makes array of the brew methods for the cafe
-        */
-        var cafeBrewMethods = [];
-
-        /*
-          Makes array of brew methods tags so we can see if they
-          are in the filter.
-        */
-        for (var i = 0; i < cafe.brew_methods.length; i++) {
-          cafeBrewMethods.push(cafe.brew_methods[i].id);
-        }
-
-        /*
-          Iterate over all of the brew methods being filtered.
-        */
-        for (var i = 0; i < brewMethods.length; i++) {
-          /*
-            If the tag is in the array of cafe tags then we return
-            true.
-          */
-          if (cafeBrewMethods.indexOf(brewMethods[i]) > -1) {
-            return true;
-          }
-        }
-
-        /*
-          If we made it this far, then we return false because the
-          cafe doesn't contain the tags.
-        */
-        return false;
-      } else {
-        return true;
-      }
-    }
-  }
-};
-
-/***/ }),
-/* 39 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CafeTextFilter; });
-var CafeTextFilter = {
-  methods: {
-    processCafeTextFilter: function processCafeTextFilter(cafe, text) {
+    processRestaurantTextFilter: function processRestaurantTextFilter(restaurant, text) {
       /*
         Only process if the text is greater than 0
       */
@@ -44366,7 +44314,7 @@ var CafeTextFilter = {
           If the name, location name, address, or city match the text that
           has been added, return true otherwise return false.
         */
-        if (cafe.company.name.toLowerCase().match('[^,]*' + text.toLowerCase() + '[,$]*') || cafe.location_name.toLowerCase().match('[^,]*' + text.toLowerCase() + '[,$]*') || cafe.address.toLowerCase().match('[^,]*' + text.toLowerCase() + '[,$]*') || cafe.city.toLowerCase().match('[^,]*' + text.toLowerCase() + '[,$]*')) {
+        if (restaurant.company.name.toLowerCase().match('[^,]*' + text.toLowerCase() + '[,$]*') || restaurant.location_name.toLowerCase().match('[^,]*' + text.toLowerCase() + '[,$]*') || restaurant.address.toLowerCase().match('[^,]*' + text.toLowerCase() + '[,$]*') || restaurant.city.toLowerCase().match('[^,]*' + text.toLowerCase() + '[,$]*')) {
           return true;
         } else {
           return false;
@@ -44379,18 +44327,18 @@ var CafeTextFilter = {
 };
 
 /***/ }),
-/* 40 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CafeUserLikeFilter; });
-var CafeUserLikeFilter = {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestaurantUserLikeFilter; });
+var RestaurantUserLikeFilter = {
   methods: {
-    processCafeUserLikeFilter: function processCafeUserLikeFilter(cafe) {
+    processRestaurantUserLikeFilter: function processRestaurantUserLikeFilter(restaurant) {
       /*
-        Checks to see if the cafe is liked by the user
+        Checks to see if the restaurant is liked by the user
       */
-      if (cafe.user_like_count == 1) {
+      if (restaurant.user_like_count == 1) {
         return true;
       } else {
         return false;
@@ -44400,29 +44348,29 @@ var CafeUserLikeFilter = {
 };
 
 /***/ }),
-/* 41 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(42);
-module.exports = __webpack_require__(190);
+__webpack_require__(41);
+module.exports = __webpack_require__(187);
 
 
 /***/ }),
-/* 42 */
+/* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__routes_js__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__routes_js__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store_js__ = __webpack_require__(36);
 window._ = __webpack_require__(14);
 
 try {
   window.$ = window.jQuery = __webpack_require__(0);
 
-  __webpack_require__(44);
+  __webpack_require__(43);
 } catch (e) {}
 
 /**
@@ -44431,7 +44379,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(61);
+window.axios = __webpack_require__(60);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -44467,7 +44415,7 @@ __WEBPACK_IMPORTED_MODULE_1__routes_js__["a" /* default */].afterEach(function (
 });
 
 /***/ }),
-/* 43 */
+/* 42 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -44495,14 +44443,14 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 44 */
+/* 43 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__js_foundation_core__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__js_foundation_core__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__js_foundation_util_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__js_foundation_util_box__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__js_foundation_util_imageLoader__ = __webpack_require__(16);
@@ -44513,27 +44461,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__js_foundation_util_timer__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__js_foundation_util_touch__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__js_foundation_util_triggers__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__js_foundation_abide__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__js_foundation_abide__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__js_foundation_accordion__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__js_foundation_accordionMenu__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__js_foundation_drilldown__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__js_foundation_dropdown__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__js_foundation_dropdown__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__js_foundation_dropdownMenu__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__js_foundation_equalizer__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__js_foundation_interchange__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__js_foundation_magellan__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__js_foundation_offcanvas__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__js_foundation_orbit__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__js_foundation_responsiveMenu__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__js_foundation_responsiveToggle__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__js_foundation_reveal__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__js_foundation_slider__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__js_foundation_equalizer__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__js_foundation_interchange__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__js_foundation_magellan__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__js_foundation_offcanvas__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__js_foundation_orbit__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__js_foundation_responsiveMenu__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__js_foundation_responsiveToggle__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__js_foundation_reveal__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__js_foundation_slider__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__js_foundation_smoothScroll__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__js_foundation_sticky__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__js_foundation_sticky__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__js_foundation_tabs__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__js_foundation_toggler__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__js_foundation_tooltip__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__js_foundation_responsiveAccordionTabs__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__js_foundation_toggler__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__js_foundation_tooltip__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__js_foundation_responsiveAccordionTabs__ = __webpack_require__(59);
 
 
 
@@ -44639,7 +44587,7 @@ __WEBPACK_IMPORTED_MODULE_1__js_foundation_core__["a" /* Foundation */].plugin(_
 /* harmony default export */ __webpack_exports__["default"] = (__WEBPACK_IMPORTED_MODULE_1__js_foundation_core__["a" /* Foundation */]);
 
 /***/ }),
-/* 45 */
+/* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44998,7 +44946,7 @@ function hyphenate(str) {
 
 
 /***/ }),
-/* 46 */
+/* 45 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -45662,7 +45610,7 @@ Abide.defaults = {
 
 
 /***/ }),
-/* 47 */
+/* 46 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -46132,7 +46080,7 @@ Dropdown.defaults = {
 
 
 /***/ }),
-/* 48 */
+/* 47 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -46533,7 +46481,7 @@ Equalizer.defaults = {
 
 
 /***/ }),
-/* 49 */
+/* 48 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -46799,7 +46747,7 @@ Interchange.SPECIAL_QUERIES = {
 
 
 /***/ }),
-/* 50 */
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -47115,7 +47063,7 @@ Magellan.defaults = {
 
 
 /***/ }),
-/* 51 */
+/* 50 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -47741,7 +47689,7 @@ OffCanvas.defaults = {
 
 
 /***/ }),
-/* 52 */
+/* 51 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -48343,7 +48291,7 @@ Orbit.defaults = {
 
 
 /***/ }),
-/* 53 */
+/* 52 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -48548,7 +48496,7 @@ ResponsiveMenu.defaults = {};
 
 
 /***/ }),
-/* 54 */
+/* 53 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -48751,7 +48699,7 @@ ResponsiveToggle.defaults = {
 
 
 /***/ }),
-/* 55 */
+/* 54 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -49395,7 +49343,7 @@ function mobileSniff() {
 
 
 /***/ }),
-/* 56 */
+/* 55 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -50201,7 +50149,7 @@ function baseLog(base, value) {
 
 
 /***/ }),
-/* 57 */
+/* 56 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -50781,7 +50729,7 @@ function emCalc(em) {
 
 
 /***/ }),
-/* 58 */
+/* 57 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -50977,7 +50925,7 @@ Toggler.defaults = {
 
 
 /***/ }),
-/* 59 */
+/* 58 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51490,7 +51438,7 @@ Tooltip.defaults = {
 
 
 /***/ }),
-/* 60 */
+/* 59 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51781,13 +51729,13 @@ ResponsiveAccordionTabs.defaults = {};
 
 
 /***/ }),
-/* 61 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(62);
+module.exports = __webpack_require__(61);
 
 /***/ }),
-/* 62 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51795,7 +51743,7 @@ module.exports = __webpack_require__(62);
 
 var utils = __webpack_require__(7);
 var bind = __webpack_require__(31);
-var Axios = __webpack_require__(64);
+var Axios = __webpack_require__(63);
 var defaults = __webpack_require__(20);
 
 /**
@@ -51830,14 +51778,14 @@ axios.create = function create(instanceConfig) {
 
 // Expose Cancel & CancelToken
 axios.Cancel = __webpack_require__(35);
-axios.CancelToken = __webpack_require__(78);
+axios.CancelToken = __webpack_require__(77);
 axios.isCancel = __webpack_require__(34);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(79);
+axios.spread = __webpack_require__(78);
 
 module.exports = axios;
 
@@ -51846,7 +51794,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 63 */
+/* 62 */
 /***/ (function(module, exports) {
 
 /*!
@@ -51873,7 +51821,7 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 64 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51881,10 +51829,10 @@ function isSlowBuffer (obj) {
 
 var defaults = __webpack_require__(20);
 var utils = __webpack_require__(7);
-var InterceptorManager = __webpack_require__(73);
-var dispatchRequest = __webpack_require__(74);
-var isAbsoluteURL = __webpack_require__(76);
-var combineURLs = __webpack_require__(77);
+var InterceptorManager = __webpack_require__(72);
+var dispatchRequest = __webpack_require__(73);
+var isAbsoluteURL = __webpack_require__(75);
+var combineURLs = __webpack_require__(76);
 
 /**
  * Create a new instance of Axios
@@ -51966,7 +51914,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 65 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51985,7 +51933,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 66 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52018,7 +51966,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 67 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52046,7 +51994,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 68 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52121,7 +52069,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 69 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52165,7 +52113,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 70 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52240,7 +52188,7 @@ module.exports = (
 
 
 /***/ }),
-/* 71 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52283,7 +52231,7 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 72 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52343,7 +52291,7 @@ module.exports = (
 
 
 /***/ }),
-/* 73 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52402,14 +52350,14 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 74 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(7);
-var transformData = __webpack_require__(75);
+var transformData = __webpack_require__(74);
 var isCancel = __webpack_require__(34);
 var defaults = __webpack_require__(20);
 
@@ -52488,7 +52436,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 75 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52515,7 +52463,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 76 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52536,7 +52484,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 77 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52557,7 +52505,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 78 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52621,7 +52569,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 79 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52655,7 +52603,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 80 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -52711,7 +52659,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(81);
+__webpack_require__(80);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -52722,10 +52670,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(12)))
 
 /***/ }),
-/* 81 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -52915,16 +52863,16 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13), __webpack_require__(21)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(12), __webpack_require__(21)))
 
 /***/ }),
-/* 82 */
+/* 81 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store_js__ = __webpack_require__(36);
 /*
 |-------------------------------------------------------------------------------
@@ -52967,7 +52915,7 @@ function requireAuth(to, from, next) {
 			if (__WEBPACK_IMPORTED_MODULE_2__store_js__["a" /* default */].getters.getUser != '') {
 				next();
 			} else {
-				next('/cafes');
+				next('/restaurants');
 			}
 		}
 	}
@@ -53005,44 +52953,44 @@ function requireAuth(to, from, next) {
 /* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 	routes: [{
 		path: '/',
-		redirect: { name: 'cafes' },
+		redirect: { name: 'restaurants' },
 		name: 'layout',
-		component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('Layout', __webpack_require__(94)),
+		component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('Layout', __webpack_require__(91)),
 		children: [{
-			path: 'cafes',
-			name: 'cafes',
-			component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('Home', __webpack_require__(135)),
+			path: 'restaurants',
+			name: 'restaurants',
+			component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('Home', __webpack_require__(132)),
 			children: [{
 				path: 'new',
-				name: 'newcafe',
-				component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('NewCafe', __webpack_require__(151)),
+				name: 'newrestaurant',
+				component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('NewRestaurant', __webpack_require__(148)),
 				beforeEnter: requireAuth
 			}, {
 				path: ':id',
-				name: 'cafe',
-				component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('Cafe', __webpack_require__(156))
+				name: 'restaurant',
+				component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('Restaurant', __webpack_require__(153))
 			}]
 		}, {
-			path: 'cafes/:id/edit',
-			name: 'editcafe',
-			component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('EditCafe', __webpack_require__(175)),
+			path: 'restaurants/:id/edit',
+			name: 'editrestaurant',
+			component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('EditRestaurant', __webpack_require__(172)),
 			beforeEnter: requireAuth
 		}, {
 			path: 'profile',
 			name: 'profile',
-			component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('Profile', __webpack_require__(180)),
+			component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('Profile', __webpack_require__(177)),
 			beforeEnter: requireAuth
 		}, {
 			path: 'users',
 			name: 'users',
-			component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('Users', __webpack_require__(185)),
+			component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('Users', __webpack_require__(182)),
 			beforeEnter: requireAuth
 		}]
 	}]
 }));
 
 /***/ }),
-/* 83 */
+/* 82 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -55554,7 +55502,7 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 84 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, global) {var require;/*!
@@ -55694,7 +55642,7 @@ function flush() {
 function attemptVertx() {
   try {
     var r = require;
-    var vertx = __webpack_require__(85);
+    var vertx = __webpack_require__(84);
     vertxNext = vertx.runOnLoop || vertx.runOnContext;
     return useVertxTimer();
   } catch (e) {
@@ -56715,16 +56663,16 @@ return Promise$2;
 
 //# sourceMappingURL=es6-promise.map
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(21), __webpack_require__(13)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(21), __webpack_require__(12)))
 
 /***/ }),
-/* 85 */
+/* 84 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 86 */
+/* 85 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -57618,44 +57566,44 @@ var index_esm = {
 
 
 /***/ }),
-/* 87 */
+/* 86 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return cafes; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_cafe_js__ = __webpack_require__(88);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return restaurants; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_restaurant_js__ = __webpack_require__(87);
 /*
 |-------------------------------------------------------------------------------
-| VUEX modules/cafes.js
+| VUEX modules/restaurants.js
 |-------------------------------------------------------------------------------
-| The Vuex data store for the cafes
+| The Vuex data store for the restaurants
 */
 
 
 
-var cafes = {
+var restaurants = {
 	/*
    Defines the state being monitored for the module.
  */
 	state: {
-		cafes: [],
-		cafesLoadStatus: 0,
+		restaurants: [],
+		restaurantsLoadStatus: 0,
 
-		cafe: {},
-		cafeLoadStatus: 0,
+		restaurant: {},
+		restaurantLoadStatus: 0,
 
-		cafeEdit: {},
-		cafeEditLoadStatus: 0,
-		cafeEditStatus: 0,
+		restaurantEdit: {},
+		restaurantEditLoadStatus: 0,
+		restaurantEditStatus: 0,
 
-		cafeLiked: false,
+		restaurantLiked: false,
 
-		cafeAdded: {},
-		cafeAddStatus: 0,
-		cafeLikeActionStatus: 0,
-		cafeUnlikeActionStatus: 0,
+		restaurantAdded: {},
+		restaurantAddStatus: 0,
+		restaurantLikeActionStatus: 0,
+		restaurantUnlikeActionStatus: 0,
 
-		cafeDeletedStatus: 0
+		restaurantDeletedStatus: 0
 	},
 
 	/*
@@ -57663,156 +57611,156 @@ var cafes = {
  */
 	actions: {
 		/*
-    Loads the cafes from the API
+    Loads the restaurants from the API
   */
-		loadCafes: function loadCafes(_ref) {
+		loadRestaurants: function loadRestaurants(_ref) {
 			var commit = _ref.commit;
 
-			commit('setCafesLoadStatus', 1);
+			commit('setRestaurantsLoadStatus', 1);
 
-			__WEBPACK_IMPORTED_MODULE_0__api_cafe_js__["a" /* default */].getCafes().then(function (response) {
-				commit('setCafes', response.data);
-				commit('setCafesLoadStatus', 2);
+			__WEBPACK_IMPORTED_MODULE_0__api_restaurant_js__["a" /* default */].getRestaurants().then(function (response) {
+				commit('setRestaurants', response.data);
+				commit('setRestaurantsLoadStatus', 2);
 			}).catch(function () {
-				commit('setCafes', []);
-				commit('setCafesLoadStatus', 3);
+				commit('setRestaurants', []);
+				commit('setRestaurantsLoadStatus', 3);
 			});
 		},
 
 		/*
-    Loads an individual cafe from the API
+    Loads an individual restaurant from the API
   */
-		loadCafe: function loadCafe(_ref2, data) {
+		loadRestaurant: function loadRestaurant(_ref2, data) {
 			var commit = _ref2.commit;
 
-			commit('setCafeLikedStatus', false);
-			commit('setCafeLoadStatus', 1);
+			commit('setRestaurantLikedStatus', false);
+			commit('setRestaurantLoadStatus', 1);
 
-			__WEBPACK_IMPORTED_MODULE_0__api_cafe_js__["a" /* default */].getCafe(data.id).then(function (response) {
-				commit('setCafe', response.data);
+			__WEBPACK_IMPORTED_MODULE_0__api_restaurant_js__["a" /* default */].getRestaurant(data.id).then(function (response) {
+				commit('setRestaurant', response.data);
 				if (response.data.user_like_count > 0) {
-					commit('setCafeLikedStatus', true);
+					commit('setRestaurantLikedStatus', true);
 				}
-				commit('setCafeLoadStatus', 2);
+				commit('setRestaurantLoadStatus', 2);
 			}).catch(function () {
-				commit('setCafe', {});
-				commit('setCafeLoadStatus', 3);
+				commit('setRestaurant', {});
+				commit('setRestaurantLoadStatus', 3);
 			});
 		},
 
 		/*
-  	Loads a cafe to edit from the API
+  	Loads a Restaurant to edit from the API
   */
-		loadCafeEdit: function loadCafeEdit(_ref3, data) {
+		loadRestaurantEdit: function loadRestaurantEdit(_ref3, data) {
 			var commit = _ref3.commit;
 
-			commit('setCafeEditLoadStatus', 1);
+			commit('setRestaurantEditLoadStatus', 1);
 
-			__WEBPACK_IMPORTED_MODULE_0__api_cafe_js__["a" /* default */].getCafeEdit(data.id).then(function (response) {
-				commit('setCafeEdit', response.data);
-				commit('setCafeEditLoadStatus', 2);
+			__WEBPACK_IMPORTED_MODULE_0__api_restaurant_js__["a" /* default */].getRestaurantEdit(data.id).then(function (response) {
+				commit('setRestaurantEdit', response.data);
+				commit('setRestaurantEditLoadStatus', 2);
 			}).catch(function () {
-				commit('setCafeEdit', {});
-				commit('setCafeEditLoadStatus', 3);
+				commit('setRestaurantEdit', {});
+				commit('setRestaurantEditLoadStatus', 3);
 			});
 		},
 
 		/*
-  	Edits a cafe
+  	Edits a Restaurant
   */
-		editCafe: function editCafe(_ref4, data) {
+		editRestaurant: function editRestaurant(_ref4, data) {
 			var commit = _ref4.commit,
 			    state = _ref4.state,
 			    dispatch = _ref4.dispatch;
 
-			commit('setCafeEditStatus', 1);
+			commit('setRestaurantEditStatus', 1);
 
-			__WEBPACK_IMPORTED_MODULE_0__api_cafe_js__["a" /* default */].putEditCafe(data.id, data.company_name, data.company_id, data.company_type, data.website, data.location_name, data.address, data.city, data.state, data.zip, data.lat, data.lng, data.brew_methods).then(function (response) {
-				commit('setCafeEditStatus', 2);
-				dispatch('loadCafes');
+			__WEBPACK_IMPORTED_MODULE_0__api_restaurant_js__["a" /* default */].putEditRestaurant(data.id, data.company_name, data.company_id, data.company_type, data.website, data.location_name, data.address, data.city, data.state, data.zip, data.lat, data.lng, data.brew_methods).then(function (response) {
+				commit('setRestaurantEditStatus', 2);
+				dispatch('loadRestaurants');
 			}).catch(function () {
-				commit('setCafeEditStatus', 3);
+				commit('setRestaurantEditStatus', 3);
 			});
 		},
 
 		/*
-  	Adds a cafe
+  	Adds a Restaurant
   */
-		addCafe: function addCafe(_ref5, data) {
+		addRestaurant: function addRestaurant(_ref5, data) {
 			var commit = _ref5.commit,
 			    state = _ref5.state,
 			    dispatch = _ref5.dispatch;
 
-			commit('setCafeAddedStatus', 1);
-			__WEBPACK_IMPORTED_MODULE_0__api_cafe_js__["a" /* default */].postAddNewCafe(data.company_name, data.company_id, data.company_type, data.website, data.location_name, data.address, data.city, data.state, data.zip, data.lat, data.lng, data.brew_methods).then(function (response) {
-				commit('setCafeAddedStatus', 2);
-				commit('setCafeAdded', response.data);
-				dispatch('loadCafes');
+			commit('setRestaurantAddedStatus', 1);
+			__WEBPACK_IMPORTED_MODULE_0__api_restaurant_js__["a" /* default */].postAddNewRestaurant(data.company_name, data.company_id, data.company_type, data.website, data.location_name, data.address, data.city, data.state, data.zip, data.lat, data.lng, data.brew_methods).then(function (response) {
+				commit('setRestaurantAddedStatus', 2);
+				commit('setRestaurantAdded', response.data);
+				dispatch('loadRestaurants');
 			}).catch(function () {
-				commit('setCafeAddedStatus', 3);
+				commit('setRestaurantAddedStatus', 3);
 			});
 		},
 
 		/*
-  	Likes a cafe
+  	Likes a Restaurant
   */
-		likeCafe: function likeCafe(_ref6, data) {
+		likeRestaurant: function likeRestaurant(_ref6, data) {
 			var commit = _ref6.commit,
 			    state = _ref6.state,
 			    dispatch = _ref6.dispatch;
 
-			commit('setCafeLikeActionStatus', 1);
+			commit('setRestaurantLikeActionStatus', 1);
 
-			__WEBPACK_IMPORTED_MODULE_0__api_cafe_js__["a" /* default */].postLikeCafe(data.id).then(function (response) {
-				commit('setCafeLikedStatus', true);
-				commit('setCafeLikeActionStatus', 2);
-				dispatch('loadCafe', { id: data.id });
+			__WEBPACK_IMPORTED_MODULE_0__api_restaurant_js__["a" /* default */].postLikeRestaurant(data.id).then(function (response) {
+				commit('setRestaurantLikedStatus', true);
+				commit('setRestaurantLikeActionStatus', 2);
+				dispatch('loadRestaurant', { id: data.id });
 
-				commit('updateCafeLikedStatus', { id: data.id, count: 1 });
+				commit('updateRestaurantLikedStatus', { id: data.id, count: 1 });
 			}).catch(function () {
-				commit('setCafeLikeActionStatus', 3);
+				commit('setRestaurantLikeActionStatus', 3);
 			});
 		},
 
 		/*
-  	Unlikes a cafe
+  	Unlikes a Restaurant
   */
-		unlikeCafe: function unlikeCafe(_ref7, data) {
+		unlikeRestaurant: function unlikeRestaurant(_ref7, data) {
 			var commit = _ref7.commit,
 			    state = _ref7.state,
 			    dispatch = _ref7.dispatch;
 
-			commit('setCafeUnlikeActionStatus', 1);
+			commit('setRestaurantUnlikeActionStatus', 1);
 
-			__WEBPACK_IMPORTED_MODULE_0__api_cafe_js__["a" /* default */].deleteLikeCafe(data.id).then(function (response) {
-				commit('setCafeLikedStatus', false);
-				commit('setCafeUnlikeActionStatus', 2);
-				dispatch('loadCafe', { id: data.id });
+			__WEBPACK_IMPORTED_MODULE_0__api_restaurant_js__["a" /* default */].deleteLikeRestaurant(data.id).then(function (response) {
+				commit('setRestaurantLikedStatus', false);
+				commit('setRestaurantUnlikeActionStatus', 2);
+				dispatch('loadRestaurant', { id: data.id });
 
-				commit('updateCafeLikedStatus', { id: data.id, count: 0 });
+				commit('updateRestaurantLikedStatus', { id: data.id, count: 0 });
 			}).catch(function () {
-				commit('setCafeUnlikeActionStatus', 3);
+				commit('setRestaurantUnlikeActionStatus', 3);
 			});
 		},
 		clearLikeAndUnlikeStatus: function clearLikeAndUnlikeStatus(_ref8, data) {
 			var commit = _ref8.commit;
 
-			commit('setCafeLikeActionStatus', 0);
-			commit('setCafeUnlikeActionStatus', 0);
+			commit('setRestaurantLikeActionStatus', 0);
+			commit('setRestaurantUnlikeActionStatus', 0);
 		},
-		deleteCafe: function deleteCafe(_ref9, data) {
+		deleteRestaurant: function deleteRestaurant(_ref9, data) {
 			var commit = _ref9.commit,
 			    state = _ref9.state,
 			    dispatch = _ref9.dispatch;
 
-			commit('setCafeDeleteStatus', 1);
+			commit('setRestaurantDeleteStatus', 1);
 
-			__WEBPACK_IMPORTED_MODULE_0__api_cafe_js__["a" /* default */].deleteCafe(data.cafe_id).then(function (response) {
-				commit('setCafeDeleteStatus', 2);
+			__WEBPACK_IMPORTED_MODULE_0__api_restaurant_js__["a" /* default */].deleteRestaurant(data.restaurant_id).then(function (response) {
+				commit('setRestaurantDeleteStatus', 2);
 
-				dispatch('loadCafes');
+				dispatch('loadRestaurants');
 			}).catch(function () {
-				commit('setCafeDeleteStatus', 3);
+				commit('setRestaurantDeleteStatus', 3);
 			});
 		}
 	},
@@ -57822,101 +57770,101 @@ var cafes = {
  */
 	mutations: {
 		/*
-    Sets the cafes load status
+    Sets the Restaurants load status
   */
-		setCafesLoadStatus: function setCafesLoadStatus(state, status) {
-			state.cafesLoadStatus = status;
+		setRestaurantsLoadStatus: function setRestaurantsLoadStatus(state, status) {
+			state.restaurantsLoadStatus = status;
 		},
 
 		/*
-    Sets the cafes
+    Sets the restaurants
   */
-		setCafes: function setCafes(state, cafes) {
-			state.cafes = cafes;
+		setRestaurants: function setRestaurants(state, restaurants) {
+			state.restaurants = restaurants;
 		},
 
 		/*
-    Set the cafe load status
+    Set the restaurant load status
   */
-		setCafeLoadStatus: function setCafeLoadStatus(state, status) {
-			state.cafeLoadStatus = status;
+		setRestaurantLoadStatus: function setRestaurantLoadStatus(state, status) {
+			state.restaurantLoadStatus = status;
 		},
 
 		/*
-    Set the cafe
+    Set the restaurant
   */
-		setCafe: function setCafe(state, cafe) {
-			state.cafe = cafe;
+		setRestaurant: function setRestaurant(state, restaurant) {
+			state.restaurant = restaurant;
 		},
 
 		/*
-  	Sets the cafe to be edited
+  	Sets the restaurant to be edited
   */
-		setCafeEdit: function setCafeEdit(state, cafe) {
-			state.cafeEdit = cafe;
+		setRestaurantEdit: function setRestaurantEdit(state, restaurant) {
+			state.restaurantEdit = restaurant;
 		},
 
 		/*
-  	Sets the cafe edit status
+  	Sets the restaurant edit status
   */
-		setCafeEditStatus: function setCafeEditStatus(state, status) {
-			state.cafeEditStatus = status;
+		setRestaurantEditStatus: function setRestaurantEditStatus(state, status) {
+			state.restaurantEditStatus = status;
 		},
 
 		/*
-  	Sets the cafe edit load status
+  	Sets the restaurant edit load status
   */
-		setCafeEditLoadStatus: function setCafeEditLoadStatus(state, status) {
-			state.cafeEditLoadStatus = status;
+		setRestaurantEditLoadStatus: function setRestaurantEditLoadStatus(state, status) {
+			state.restaurantEditLoadStatus = status;
 		},
 
 		/*
-  	Set the added cafe.
+  	Set the added restaurant.
   */
-		setCafeAdded: function setCafeAdded(state, cafe) {
-			state.cafeAdded = cafe;
+		setRestaurantAdded: function setRestaurantAdded(state, restaurant) {
+			state.restaurantAdded = restaurant;
 		},
 
 		/*
-  	Set the cafe add status
+  	Set the restaurant add status
   */
-		setCafeAddedStatus: function setCafeAddedStatus(state, status) {
-			state.cafeAddStatus = status;
+		setRestaurantAddedStatus: function setRestaurantAddedStatus(state, status) {
+			state.restaurantAddStatus = status;
 		},
 
 		/*
-  	Set the cafe liked status
+  	Set the restaurant liked status
   */
-		setCafeLikedStatus: function setCafeLikedStatus(state, status) {
-			state.cafeLiked = status;
+		setRestaurantLikedStatus: function setRestaurantLikedStatus(state, status) {
+			state.restaurantLiked = status;
 		},
 
 		/*
-  	Set the cafe like action status
+  	Set the restaurant like action status
   */
-		setCafeLikeActionStatus: function setCafeLikeActionStatus(state, status) {
-			state.cafeLikeActionStatus = status;
+		setRestaurantLikeActionStatus: function setRestaurantLikeActionStatus(state, status) {
+			state.restaurantLikeActionStatus = status;
 		},
 
 		/*
-  	Set the cafe unlike action status
+  	Set the restaurant unlike action status
   */
-		setCafeUnlikeActionStatus: function setCafeUnlikeActionStatus(state, status) {
-			state.cafeUnlikeActionStatus = status;
+		setRestaurantUnlikeActionStatus: function setRestaurantUnlikeActionStatus(state, status) {
+			state.restaurantUnlikeActionStatus = status;
 		},
 
 		/*
-  	Update a loaded cafe's like status.
+  	Update a loaded restaurant's like status.
   */
-		updateCafeLikedStatus: function updateCafeLikedStatus(state, data) {
-			for (var i = 0; i < state.cafes.length; i++) {
-				if (state.cafes[i].id == data.id) {
-					state.cafes[i].user_like_count = data.count;
+		updateRestaurantLikedStatus: function updateRestaurantLikedStatus(state, data) {
+			for (var i = 0; i < state.restaurants.length; i++) {
+				if (state.restaurants[i].id == data.id) {
+					state.restaurants[i].user_like_count = data.count;
 				}
 			}
 		},
-		setCafeDeleteStatus: function setCafeDeleteStatus(state, status) {
-			state.cafeDeletedStatus = status;
+		setRestaurantDeleteStatus: function setRestaurantDeleteStatus(state, status) {
+			state.restaurantDeletedStatus = status;
 		}
 	},
 
@@ -57925,100 +57873,100 @@ var cafes = {
  */
 	getters: {
 		/*
-    Returns the cafes load status.
+    Returns the restaurants load status.
   */
-		getCafesLoadStatus: function getCafesLoadStatus(state) {
-			return state.cafesLoadStatus;
+		getRestaurantsLoadStatus: function getRestaurantsLoadStatus(state) {
+			return state.restaurantsLoadStatus;
 		},
 
 		/*
-    Returns the cafes.
+    Returns the restaurants.
   */
-		getCafes: function getCafes(state) {
-			return state.cafes;
+		getRestaurants: function getRestaurants(state) {
+			return state.restaurants;
 		},
 
 		/*
-    Returns the cafes load status
+    Returns the restaurants load status
   */
-		getCafeLoadStatus: function getCafeLoadStatus(state) {
-			return state.cafeLoadStatus;
+		getRestaurantLoadStatus: function getRestaurantLoadStatus(state) {
+			return state.restaurantLoadStatus;
 		},
 
 		/*
-    Returns the cafe
+    Returns the restaurant
   */
-		getCafe: function getCafe(state) {
-			return state.cafe;
+		getRestaurant: function getRestaurant(state) {
+			return state.restaurant;
 		},
 
 		/*
-  	Gets the cafe we are editing
+  	Gets the restaurant we are editing
   */
-		getCafeEdit: function getCafeEdit(state) {
-			return state.cafeEdit;
+		getRestaurantEdit: function getRestaurantEdit(state) {
+			return state.restaurantEdit;
 		},
 
 		/*
-  	Gets the cafe edit status
+  	Gets the restaurant edit status
   */
-		getCafeEditStatus: function getCafeEditStatus(state) {
-			return state.cafeEditStatus;
+		getRestaurantEditStatus: function getRestaurantEditStatus(state) {
+			return state.restaurantEditStatus;
 		},
 
 		/*
-  	Gets the cafe edit load status
+  	Gets the restaurant edit load status
   */
-		getCafeEditLoadStatus: function getCafeEditLoadStatus(state) {
-			return state.cafeEditLoadStatus;
+		getRestaurantEditLoadStatus: function getRestaurantEditLoadStatus(state) {
+			return state.restaurantEditLoadStatus;
 		},
 
 		/*
-  	Gets the added cafe.
+  	Gets the added restaurant.
   */
-		getAddedCafe: function getAddedCafe(state) {
-			return state.cafeAdded;
+		getAddedRestaurant: function getAddedRestaurant(state) {
+			return state.restaurantAdded;
 		},
 
 		/*
-  	Gets the cafe add status
+  	Gets the restaurant add status
   */
-		getCafeAddStatus: function getCafeAddStatus(state) {
-			return state.cafeAddStatus;
+		getRestaurantAddStatus: function getRestaurantAddStatus(state) {
+			return state.restaurantAddStatus;
 		},
 
 		/*
-  	Gets the cafe liked status
+  	Gets the restaurant liked status
   */
-		getCafeLikedStatus: function getCafeLikedStatus(state) {
-			return state.cafeLiked;
+		getRestaurantLikedStatus: function getRestaurantLikedStatus(state) {
+			return state.restaurantLiked;
 		},
 
 		/*
-  	Gets the cafe liked action status
+  	Gets the restaurant liked action status
   */
-		getCafeLikeActionStatus: function getCafeLikeActionStatus(state) {
-			return state.cafeLikeActionStatus;
+		getRestaurantLikeActionStatus: function getRestaurantLikeActionStatus(state) {
+			return state.restaurantLikeActionStatus;
 		},
 
 		/*
-  	Gets the cafe un-like action status
+  	Gets the restaurant un-like action status
   */
-		getCafeUnlikeActionStatus: function getCafeUnlikeActionStatus(state) {
-			return state.cafeUnlikeActionStatus;
+		getRestaurantUnlikeActionStatus: function getRestaurantUnlikeActionStatus(state) {
+			return state.restaurantUnlikeActionStatus;
 		},
-		getCafeDeletedStatus: function getCafeDeletedStatus(state) {
-			return state.cafeDeletedStatus;
+		getRestaurantDeletedStatus: function getRestaurantDeletedStatus(state) {
+			return state.restaurantDeletedStatus;
 		}
 	}
 };
 
 /***/ }),
-/* 88 */
+/* 87 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_js__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_js__ = __webpack_require__(13);
 /*
 	Imports the Roast API URL from the config.
 */
@@ -58026,30 +57974,30 @@ var cafes = {
 
 /* harmony default export */ __webpack_exports__["a"] = ({
 	/*
- 	GET 	/api/v1/cafes
+ 	GET 	/api/v1/restaurants
  */
-	getCafes: function getCafes() {
-		return axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* ROAST_CONFIG */].API_URL + '/cafes');
+	getRestaurants: function getRestaurants() {
+		return axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* ROAST_CONFIG */].API_URL + '/restaurants');
 	},
 
 	/*
- 	GET 	/api/v1/cafes/{cafeID}
+ 	GET 	/api/v1/restaurants/{restaurantID}
  */
-	getCafe: function getCafe(cafeID) {
-		return axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* ROAST_CONFIG */].API_URL + '/cafes/' + cafeID);
+	getRestaurant: function getRestaurant(restaurantID) {
+		return axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* ROAST_CONFIG */].API_URL + '/restaurants/' + restaurantID);
 	},
 
 	/*
- 	GET 	/api/v1/cafes/{cafeID}/edit
+ 	GET 	/api/v1/restaurants/{restaurantID}/edit
  */
-	getCafeEdit: function getCafeEdit(cafeID) {
-		return axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* ROAST_CONFIG */].API_URL + '/cafes/' + cafeID + '/edit');
+	getRestaurantEdit: function getRestaurantEdit(restaurantID) {
+		return axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* ROAST_CONFIG */].API_URL + '/restaurants/' + restaurantID + '/edit');
 	},
 
 	/*
- 	POST 	/api/v1/cafes
+ 	POST 	/api/v1/restaurants
  */
-	postAddNewCafe: function postAddNewCafe(companyName, companyID, companyType, website, locationName, address, city, state, zip, lat, lng, brewMethods) {
+	postAddNewRestaurant: function postAddNewRestaurant(name, address, city, state, zip, latitude, longitude, added_by) {
 		/*
   	Initialize the form data
   */
@@ -58058,20 +58006,17 @@ var cafes = {
 		/*
   	Add the form data we need to submit
   */
-		formData.append('company_name', companyName);
-		formData.append('company_id', companyID);
-		formData.append('company_type', companyType);
-		formData.append('website', website);
-		formData.append('location_name', locationName);
+		// formData.append('website', website);
+		formData.append('name', name);
 		formData.append('address', address);
 		formData.append('city', city);
 		formData.append('state', state);
 		formData.append('zip', zip);
-		formData.append('lat', lat);
-		formData.append('lng', lng);
-		formData.append('brew_methods', JSON.stringify(brewMethods));
+		formData.append('latitude', latitude);
+		formData.append('longitude', longitude);
+		formData.append('added_by', added_by);
 
-		return axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* ROAST_CONFIG */].API_URL + '/cafes', formData, {
+		return axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* ROAST_CONFIG */].API_URL + '/restaurants', formData, {
 			headers: {
 				'Content-Type': 'multipart/form-data'
 			}
@@ -58079,9 +58024,9 @@ var cafes = {
 	},
 
 	/*
-   PUT 	/api/v1/cafes/{id}
+   PUT 	/api/v1/restaurants/{id}
  */
-	putEditCafe: function putEditCafe(id, companyName, companyID, companyType, website, locationName, address, city, state, zip, lat, lng, brewMethods) {
+	putEditRestaurant: function putEditRestaurant(id, website, locationName, address, city, state, zip, lat, lng) {
 		/*
   	Initialize the form data
   */
@@ -58090,9 +58035,6 @@ var cafes = {
 		/*
   	Add the form data we need to submit
   */
-		formData.append('company_name', companyName);
-		formData.append('company_id', companyID);
-		formData.append('company_type', companyType);
 		formData.append('website', website);
 		formData.append('location_name', locationName);
 		formData.append('address', address);
@@ -58101,38 +58043,37 @@ var cafes = {
 		formData.append('zip', zip);
 		formData.append('lat', lat);
 		formData.append('lng', lng);
-		formData.append('brew_methods', JSON.stringify(brewMethods));
 		formData.append('_method', 'PUT');
 
-		return axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* ROAST_CONFIG */].API_URL + '/cafes/' + id, formData);
+		return axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* ROAST_CONFIG */].API_URL + '/restaurants/' + id, formData);
 	},
 
 	/*
- 	POST 	/api/v1/cafes/{cafeID}/like
+ 	POST 	/api/v1/restaurants/{restaurantID}/like
  */
-	postLikeCafe: function postLikeCafe(cafeID) {
-		return axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* ROAST_CONFIG */].API_URL + '/cafes/' + cafeID + '/like');
+	postLikeRestaurant: function postLikeRestaurant(restaurantID) {
+		return axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* ROAST_CONFIG */].API_URL + '/restaurants/' + restaurantID + '/like');
 	},
 
 	/*
- 	DELETE /api/v1/cafes/{cafeID}/like
+ 	DELETE /api/v1/restaurants/{restaurantID}/like
  */
-	deleteLikeCafe: function deleteLikeCafe(cafeID) {
-		return axios.delete(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* ROAST_CONFIG */].API_URL + '/cafes/' + cafeID + '/like');
+	deleteLikeRestaurant: function deleteLikeRestaurant(restaurantID) {
+		return axios.delete(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* ROAST_CONFIG */].API_URL + '/restaurants/' + restaurantID + '/like');
 	},
 
-	deleteCafe: function deleteCafe(cafeID) {
-		return axios.delete(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* ROAST_CONFIG */].API_URL + '/cafes/' + cafeID);
+	deleteRestaurant: function deleteRestaurant(restaurantID) {
+		return axios.delete(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* ROAST_CONFIG */].API_URL + '/restaurants/' + restaurantID);
 	}
 });
 
 /***/ }),
-/* 89 */
+/* 88 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return users; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_user_js__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_user_js__ = __webpack_require__(89);
 /*
 |-------------------------------------------------------------------------------
 | VUEX modules/users.js
@@ -58256,11 +58197,11 @@ var users = {
 };
 
 /***/ }),
-/* 90 */
+/* 89 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_js__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_js__ = __webpack_require__(13);
 /*
 	Imports the Roast API URL from the config.
 */
@@ -58289,86 +58230,7 @@ var users = {
 });
 
 /***/ }),
-/* 91 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return brewMethods; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_brewMethod_js__ = __webpack_require__(92);
-/*
-|-------------------------------------------------------------------------------
-| VUEX modules/brewmethods.js
-|-------------------------------------------------------------------------------
-| The Vuex data store for the brew methods
-*/
-
-
-var brewMethods = {
-  /*
-    Defines the state being monitored for the module
-  */
-  state: {
-    brewMethods: [],
-    brewMethodsLoadStatus: 0
-  },
-
-  actions: {
-    loadBrewMethods: function loadBrewMethods(_ref) {
-      var commit = _ref.commit;
-
-      commit('setBrewMethodsLoadStatus', 1);
-
-      __WEBPACK_IMPORTED_MODULE_0__api_brewMethod_js__["a" /* default */].getBrewMethods().then(function (response) {
-        commit('setBrewMethods', response.data);
-        commit('setBrewMethodsLoadStatus', 2);
-      }).catch(function () {
-        commit('setBrewMethods', []);
-        commit('setBrewMethodsLoadStatus', 3);
-      });
-    }
-  },
-
-  mutations: {
-    setBrewMethodsLoadStatus: function setBrewMethodsLoadStatus(state, status) {
-      state.brewMethodsLoadStatus = status;
-    },
-    setBrewMethods: function setBrewMethods(state, brewMethods) {
-      state.brewMethods = brewMethods;
-    }
-  },
-
-  getters: {
-    getBrewMethods: function getBrewMethods(state) {
-      return state.brewMethods;
-    },
-    getBrewMethodsLoadStatus: function getBrewMethodsLoadStatus(state) {
-      return state.brewMethodsLoadStatus;
-    }
-  }
-};
-
-/***/ }),
-/* 92 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_js__ = __webpack_require__(12);
-/*
-	Imports the Roast API URL from the config.
-*/
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  /*
-    GET   /api/v1/brew-methods
-  */
-  getBrewMethods: function getBrewMethods() {
-    return axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* ROAST_CONFIG */].API_URL + '/brew-methods');
-  }
-});
-
-/***/ }),
-/* 93 */
+/* 90 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -58421,19 +58283,19 @@ var display = {
 };
 
 /***/ }),
-/* 94 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(95)
+  __webpack_require__(92)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(98)
+var __vue_script__ = __webpack_require__(95)
 /* template */
-var __vue_template__ = __webpack_require__(134)
+var __vue_template__ = __webpack_require__(131)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -58472,13 +58334,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 95 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(96);
+var content = __webpack_require__(93);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -58498,7 +58360,7 @@ if(false) {
 }
 
 /***/ }),
-/* 96 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -58512,7 +58374,7 @@ exports.push([module.i, "\ndiv#app-layout div.show-filters {\n  height: 90px;\n 
 
 
 /***/ }),
-/* 97 */
+/* 94 */
 /***/ (function(module, exports) {
 
 /**
@@ -58545,23 +58407,23 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 98 */
+/* 95 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__event_bus_js__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_Navigation_vue__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_Navigation_vue__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_Navigation_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_global_Navigation_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_global_LoginModal_vue__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_global_LoginModal_vue__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_global_LoginModal_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_global_LoginModal_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_global_Filters_vue__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_global_Filters_vue__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_global_Filters_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_global_Filters_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_global_PopOut_vue__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_global_PopOut_vue__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_global_PopOut_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_global_PopOut_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_global_SuccessNotification_vue__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_global_SuccessNotification_vue__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_global_SuccessNotification_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_global_SuccessNotification_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_global_ErrorNotification_vue__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_global_ErrorNotification_vue__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_global_ErrorNotification_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_global_ErrorNotification_vue__);
 //
 //
@@ -58629,9 +58491,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   created: function created() {
-    this.$store.dispatch('loadCafes');
+    this.$store.dispatch('loadRestaurants');
     this.$store.dispatch('loadUser');
-    this.$store.dispatch('loadBrewMethods');
+    // this.$store.dispatch( 'loadBrewMethods' );
   },
 
 
@@ -58639,19 +58501,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     showFilters: function showFilters() {
       return this.$store.getters.getShowFilters;
     },
-    addedCafe: function addedCafe() {
-      return this.$store.getters.getAddedCafe;
+    addedRestaurant: function addedRestaurant() {
+      return this.$store.getters.getAddedRestaurant;
     },
-    addCafeStatus: function addCafeStatus() {
-      return this.$store.getters.getCafeAddStatus;
+    addRestaurantStatus: function addRestaurantStatus() {
+      return this.$store.getters.getRestaurantAddStatus;
     }
   },
 
   watch: {
-    'addCafeStatus': function addCafeStatus() {
-      if (this.addCafeStatus == 2) {
+    'addRestaurantStatus': function addRestaurantStatus() {
+      if (this.addRestaurantStatus == 2) {
         __WEBPACK_IMPORTED_MODULE_0__event_bus_js__["a" /* EventBus */].$emit('show-success', {
-          notification: this.addedCafe.name + ' has been added!'
+          notification: this.addedRestaurant.name + ' has been added!'
         });
       }
     }
@@ -58665,19 +58527,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 99 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(100)
+  __webpack_require__(97)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(102)
+var __vue_script__ = __webpack_require__(99)
 /* template */
-var __vue_template__ = __webpack_require__(103)
+var __vue_template__ = __webpack_require__(100)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -58716,13 +58578,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 100 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(101);
+var content = __webpack_require__(98);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -58742,7 +58604,7 @@ if(false) {
 }
 
 /***/ }),
-/* 101 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -58756,7 +58618,7 @@ exports.push([module.i, "\nnav.top-navigation {\n  background-color: #FFFFFF;\n 
 
 
 /***/ }),
-/* 102 */
+/* 99 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -59010,7 +58872,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 103 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -59074,16 +58936,9 @@ var render = function() {
         "div",
         { staticClass: "large-4 medium-4 small-4 cell text-center" },
         [
-          _c("router-link", { attrs: { to: { name: "cafes" } } }, [
-            _c("span", { staticStyle: { display: "inline-flex" } }, [
-              _c("img", {
-                staticClass: "logo",
-                attrs: { src: "/img/logo.png" }
-              }),
-              _vm._v(" "),
-              _c("h1", { staticClass: "logo-brand-text" }, [
-                _vm._v(" chickenhead")
-              ])
+          _c("router-link", { attrs: { to: { name: "restaurants" } } }, [
+            _c("h1", { staticClass: "logo-brand-text" }, [
+              _vm._v("chickenhead")
             ])
           ])
         ],
@@ -59145,19 +59000,19 @@ if (false) {
 }
 
 /***/ }),
-/* 104 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(105)
+  __webpack_require__(102)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(107)
+var __vue_script__ = __webpack_require__(104)
 /* template */
-var __vue_template__ = __webpack_require__(108)
+var __vue_template__ = __webpack_require__(105)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -59196,13 +59051,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 105 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(106);
+var content = __webpack_require__(103);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -59222,7 +59077,7 @@ if(false) {
 }
 
 /***/ }),
-/* 106 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -59236,7 +59091,7 @@ exports.push([module.i, "\ndiv#login-modal {\n  position: fixed;\n  top: 0;\n  b
 
 
 /***/ }),
-/* 107 */
+/* 104 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -59383,7 +59238,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 108 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -59506,19 +59361,19 @@ if (false) {
 }
 
 /***/ }),
-/* 109 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(110)
+  __webpack_require__(107)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(112)
+var __vue_script__ = __webpack_require__(109)
 /* template */
-var __vue_template__ = __webpack_require__(118)
+var __vue_template__ = __webpack_require__(115)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -59557,13 +59412,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 110 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(111);
+var content = __webpack_require__(108);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -59583,7 +59438,7 @@ if(false) {
 }
 
 /***/ }),
-/* 111 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -59591,29 +59446,20 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\ndiv.filters-container {\n  background-color: white;\n  position: fixed;\n  left: 0;\n  bottom: 0;\n  top: 75px;\n  max-width: 550px;\n  width: 100%;\n  padding-top: 50px;\n  -webkit-box-shadow: 0 2px 4px 0 rgba(3, 27, 78, 0.1);\n          box-shadow: 0 2px 4px 0 rgba(3, 27, 78, 0.1);\n  z-index: 99;\n}\ndiv.filters-container span.clear-filters {\n    font-size: 16px;\n    color: #054E7A;\n    font-family: \"Lato\", sans-serif;\n    cursor: pointer;\n    display: block;\n    float: left;\n    margin-bottom: 20px;\n    display: none;\n}\ndiv.filters-container span.clear-filters img {\n      margin-right: 10px;\n      float: left;\n      margin-top: 6px;\n}\ndiv.filters-container input[type=\"text\"].search {\n    -webkit-box-shadow: none;\n            box-shadow: none;\n    border-radius: 3px;\n    color: #BABABA;\n    font-size: 16px;\n    font-family: \"Lato\", sans-serif;\n    background-image: url(\"/img/search-icon.svg\");\n    background-repeat: no-repeat;\n    background-position: 6px;\n    padding-left: 35px;\n    padding-top: 5px;\n    padding-bottom: 5px;\n}\ndiv.filters-container label.filter-label {\n    font-family: \"Lato\", sans-serif;\n    text-transform: uppercase;\n    font-weight: bold;\n    color: black;\n    margin-top: 20px;\n    margin-bottom: 10px;\n}\ndiv.filters-container div.location-filter {\n    text-align: center;\n    font-family: \"Lato\", sans-serif;\n    font-size: 16px;\n    color: #E8635F;\n    border-bottom: 1px solid #E8635F;\n    border-top: 1px solid #E8635F;\n    border-left: 1px solid #E8635F;\n    border-right: 1px solid #E8635F;\n    width: 33%;\n    display: inline-block;\n    height: 55px;\n    line-height: 55px;\n    cursor: pointer;\n    margin-bottom: 5px;\n}\ndiv.filters-container div.location-filter.active {\n      color: white;\n      background-color: #E8635F;\n}\ndiv.filters-container div.location-filter.all-locations {\n      border-top-left-radius: 3px;\n      border-bottom-left-radius: 3px;\n}\ndiv.filters-container div.location-filter.roasters {\n      border-left: none;\n      border-right: none;\n}\ndiv.filters-container div.location-filter.cafes {\n      border-top-right-radius: 3px;\n      border-bottom-right-radius: 3px;\n}\ndiv.filters-container div.brew-method {\n    font-size: 16px;\n    color: #666666;\n    font-family: \"Lato\", sans-serif;\n    border-radius: 4px;\n    background-color: #F9F9FA;\n    width: 150px;\n    height: 57px;\n    float: left;\n    margin-right: 10px;\n    margin-bottom: 10px;\n    padding: 5px;\n    cursor: pointer;\n    position: relative;\n}\ndiv.filters-container div.brew-method.active {\n      color: white;\n      background-color: #E8635F;\n}\ndiv.filters-container div.brew-method div.brew-method-container {\n      position: absolute;\n      top: 50%;\n      -webkit-transform: translateY(-50%);\n              transform: translateY(-50%);\n}\ndiv.filters-container div.brew-method div.brew-method-container img.brew-method-icon {\n        display: inline-block;\n        margin-right: 10px;\n        margin-left: 5px;\n        width: 20px;\n        max-height: 30px;\n}\ndiv.filters-container div.brew-method div.brew-method-container span.brew-method-name {\n        display: inline-block;\n        width: calc( 100% - 40px);\n        vertical-align: middle;\n}\ndiv.filters-container span.liked-location-label {\n    color: #666666;\n    font-size: 16px;\n    font-family: \"Lato\", sans-serif;\n    margin-left: 10px;\n}\ndiv.filters-container div.cafe-grid-container {\n    overflow: auto;\n    padding-bottom: 10px;\n}\ndiv.filters-container div.close-filters {\n    height: 90px;\n    width: 23px;\n    position: absolute;\n    right: -20px;\n    background-color: white;\n    border-top-right-radius: 3px;\n    border-bottom-right-radius: 3px;\n    line-height: 90px;\n    top: 50%;\n    cursor: pointer;\n    margin-top: -82px;\n    text-align: center;\n}\ndiv.filters-container span.no-results {\n    display: block;\n    text-align: center;\n    margin-top: 50px;\n    color: #666666;\n    text-transform: uppercase;\n    font-weight: 600;\n}\n\n/* Small only */\n@media screen and (max-width: 39.9375em) {\ndiv.filters-container {\n    padding-top: 25px;\n    overflow-y: auto;\n}\ndiv.filters-container span.clear-filters {\n      display: block;\n}\ndiv.filters-container div.cafe-grid-container {\n      height: inherit;\n}\ndiv.filters-container div.close-filters {\n      display: none;\n}\n}\n\n/* Medium only */\n/* Large only */\n", ""]);
+exports.push([module.i, "\ndiv.filters-container {\n  background-color: white;\n  position: fixed;\n  left: 0;\n  bottom: 0;\n  top: 75px;\n  max-width: 550px;\n  width: 100%;\n  padding-top: 50px;\n  -webkit-box-shadow: 0 2px 4px 0 rgba(3, 27, 78, 0.1);\n          box-shadow: 0 2px 4px 0 rgba(3, 27, 78, 0.1);\n  z-index: 99;\n}\ndiv.filters-container span.clear-filters {\n    font-size: 16px;\n    color: #054E7A;\n    font-family: \"Lato\", sans-serif;\n    cursor: pointer;\n    display: block;\n    float: left;\n    margin-bottom: 20px;\n    display: none;\n}\ndiv.filters-container span.clear-filters img {\n      margin-right: 10px;\n      float: left;\n      margin-top: 6px;\n}\ndiv.filters-container input[type=\"text\"].search {\n    -webkit-box-shadow: none;\n            box-shadow: none;\n    border-radius: 3px;\n    color: #BABABA;\n    font-size: 16px;\n    font-family: \"Lato\", sans-serif;\n    background-image: url(\"/img/search-icon.svg\");\n    background-repeat: no-repeat;\n    background-position: 6px;\n    padding-left: 35px;\n    padding-top: 5px;\n    padding-bottom: 5px;\n}\ndiv.filters-container label.filter-label {\n    font-family: \"Lato\", sans-serif;\n    text-transform: uppercase;\n    font-weight: bold;\n    color: black;\n    margin-top: 20px;\n    margin-bottom: 10px;\n}\ndiv.filters-container div.location-filter {\n    text-align: center;\n    font-family: \"Lato\", sans-serif;\n    font-size: 16px;\n    color: #E8635F;\n    border-bottom: 1px solid #E8635F;\n    border-top: 1px solid #E8635F;\n    border-left: 1px solid #E8635F;\n    border-right: 1px solid #E8635F;\n    width: 33%;\n    display: inline-block;\n    height: 55px;\n    line-height: 55px;\n    cursor: pointer;\n    margin-bottom: 5px;\n}\ndiv.filters-container div.location-filter.active {\n      color: white;\n      background-color: #E8635F;\n}\ndiv.filters-container div.location-filter.all-locations {\n      border-top-left-radius: 3px;\n      border-bottom-left-radius: 3px;\n}\ndiv.filters-container div.location-filter.roasters {\n      border-left: none;\n      border-right: none;\n}\ndiv.filters-container div.location-filter.restaurants {\n      border-top-right-radius: 3px;\n      border-bottom-right-radius: 3px;\n}\ndiv.filters-container div.brew-method {\n    font-size: 16px;\n    color: #666666;\n    font-family: \"Lato\", sans-serif;\n    border-radius: 4px;\n    background-color: #F9F9FA;\n    width: 150px;\n    height: 57px;\n    float: left;\n    margin-right: 10px;\n    margin-bottom: 10px;\n    padding: 5px;\n    cursor: pointer;\n    position: relative;\n}\ndiv.filters-container div.brew-method.active {\n      color: white;\n      background-color: #E8635F;\n}\ndiv.filters-container div.brew-method div.brew-method-container {\n      position: absolute;\n      top: 50%;\n      -webkit-transform: translateY(-50%);\n              transform: translateY(-50%);\n}\ndiv.filters-container div.brew-method div.brew-method-container img.brew-method-icon {\n        display: inline-block;\n        margin-right: 10px;\n        margin-left: 5px;\n        width: 20px;\n        max-height: 30px;\n}\ndiv.filters-container div.brew-method div.brew-method-container span.brew-method-name {\n        display: inline-block;\n        width: calc( 100% - 40px);\n        vertical-align: middle;\n}\ndiv.filters-container span.liked-location-label {\n    color: #666666;\n    font-size: 16px;\n    font-family: \"Lato\", sans-serif;\n    margin-left: 10px;\n}\ndiv.filters-container div.restaurant-grid-container {\n    overflow: auto;\n    padding-bottom: 10px;\n}\ndiv.filters-container div.close-filters {\n    height: 90px;\n    width: 23px;\n    position: absolute;\n    right: -20px;\n    background-color: white;\n    border-top-right-radius: 3px;\n    border-bottom-right-radius: 3px;\n    line-height: 90px;\n    top: 50%;\n    cursor: pointer;\n    margin-top: -82px;\n    text-align: center;\n}\ndiv.filters-container span.no-results {\n    display: block;\n    text-align: center;\n    margin-top: 50px;\n    color: #666666;\n    text-transform: uppercase;\n    font-weight: 600;\n}\n\n/* Small only */\n@media screen and (max-width: 39.9375em) {\ndiv.filters-container {\n    padding-top: 25px;\n    overflow-y: auto;\n}\ndiv.filters-container span.clear-filters {\n      display: block;\n}\ndiv.filters-container div.restaurant-grid-container {\n      height: inherit;\n}\ndiv.filters-container div.close-filters {\n      display: none;\n}\n}\n\n/* Medium only */\n/* Large only */\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 112 */
+/* 109 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__event_bus_js__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_cafes_CafeCard_vue__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_cafes_CafeCard_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_cafes_CafeCard_vue__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_restaurants_RestaurantCard_vue__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_restaurants_RestaurantCard_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_restaurants_RestaurantCard_vue__);
 //
 //
 //
@@ -59892,7 +59738,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       textSearch: '',
       activeLocationFilter: 'all',
       onlyLiked: false,
-      brewMethodsFilter: [],
       shownCount: 1
     };
   },
@@ -59908,16 +59753,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     onlyLiked: function onlyLiked() {
       this.updateFilterDisplay();
     },
-    brewMethodsFilter: function brewMethodsFilter() {
-      this.updateFilterDisplay();
-    },
     showFilters: function showFilters() {
       this.computeHeight();
     }
   },
 
   components: {
-    CafeCard: __WEBPACK_IMPORTED_MODULE_1__components_cafes_CafeCard_vue___default.a
+    RestaurantCard: __WEBPACK_IMPORTED_MODULE_1__components_restaurants_RestaurantCard_vue___default.a
   },
 
   mounted: function mounted() {
@@ -59935,11 +59777,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     showFilters: function showFilters() {
       return this.$store.getters.getShowFilters;
     },
-    brewMethods: function brewMethods() {
-      return this.$store.getters.getBrewMethods;
-    },
-    cafes: function cafes() {
-      return this.$store.getters.getCafes;
+    restaurants: function restaurants() {
+      return this.$store.getters.getRestaurants;
     },
     user: function user() {
       return this.$store.getters.getUser;
@@ -59953,19 +59792,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     setActiveLocationFilter: function setActiveLocationFilter(filter) {
       this.activeLocationFilter = filter;
     },
-    toggleBrewMethodFilter: function toggleBrewMethodFilter(id) {
-      if (this.brewMethodsFilter.indexOf(id) >= 0) {
-        this.brewMethodsFilter.splice(this.brewMethodsFilter.indexOf(id), 1);
-      } else {
-        this.brewMethodsFilter.push(id);
-      }
-    },
     updateFilterDisplay: function updateFilterDisplay() {
       __WEBPACK_IMPORTED_MODULE_0__event_bus_js__["a" /* EventBus */].$emit('filters-updated', {
         text: this.textSearch,
         type: this.activeLocationFilter,
-        liked: this.onlyLiked,
-        brewMethods: this.brewMethodsFilter
+        liked: this.onlyLiked
       });
 
       this.$nextTick(function () {
@@ -59973,14 +59804,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       });
     },
     computeShown: function computeShown() {
-      this.shownCount = $('.cafe-card-container').filter(function () {
+      this.shownCount = $('.restaurant-card-container').filter(function () {
         return $(this).css('display') !== 'none';
       }).length;
     },
     computeHeight: function computeHeight() {
       var filtersHeight = $('#filters-container').height();
 
-      $('#cafe-grid').css('height', filtersHeight - 460 + 'px');
+      $('#restaurant-grid').css('height', filtersHeight - 460 + 'px');
     },
     toggleShowFilters: function toggleShowFilters() {
       this.$store.dispatch('toggleShowFilters', { showFilters: !this.showFilters });
@@ -59989,25 +59820,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.textSearch = '';
       this.activeLocationFilter = 'all';
       this.onlyLiked = false;
-      this.brewMethodsFilter = [];
     }
   }
 });
 
 /***/ }),
-/* 113 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(114)
+  __webpack_require__(111)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(116)
+var __vue_script__ = __webpack_require__(113)
 /* template */
-var __vue_template__ = __webpack_require__(117)
+var __vue_template__ = __webpack_require__(114)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -60024,7 +59854,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/cafes/CafeCard.vue"
+Component.options.__file = "resources/assets/js/components/restaurants/RestaurantCard.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -60033,9 +59863,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-d8812e86", Component.options)
+    hotAPI.createRecord("data-v-1c49febd", Component.options)
   } else {
-    hotAPI.reload("data-v-d8812e86", Component.options)
+    hotAPI.reload("data-v-1c49febd", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -60046,23 +59876,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 114 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(115);
+var content = __webpack_require__(112);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("a0439bbe", content, false, {});
+var update = __webpack_require__(4)("637328a7", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d8812e86\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CafeCard.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d8812e86\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CafeCard.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1c49febd\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./RestaurantCard.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1c49febd\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./RestaurantCard.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -60072,7 +59902,7 @@ if(false) {
 }
 
 /***/ }),
-/* 115 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -60080,22 +59910,21 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\ndiv.cafe-card {\n  border-radius: 5px;\n  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);\n          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);\n  padding: 15px 5px;\n  margin-top: 20px;\n  cursor: pointer;\n  -webkit-transform: scaleX(1) scaleY(1);\n  transform: scaleX(1) scaleY(1);\n  -webkit-transition: .2s;\n  transition: .2s;\n}\ndiv.cafe-card span.title {\n    display: block;\n    text-align: center;\n    color: black;\n    font-size: 18px;\n    font-weight: bold;\n    font-family: 'Lato', sans-serif;\n}\ndiv.cafe-card span.address {\n    display: block;\n    text-align: center;\n    margin-top: 5px;\n    color: #A0A0A0;\n    font-family: 'Lato', sans-serif;\n}\ndiv.cafe-card span.address span.street {\n      font-size: 14px;\n      display: block;\n}\ndiv.cafe-card span.address span.city {\n      font-size: 14px;\n}\ndiv.cafe-card span.address span.state {\n      font-size: 14px;\n}\ndiv.cafe-card span.address span.zip {\n      font-size: 14px;\n      display: block;\n}\ndiv.cafe-card:hover {\n    -webkit-transform: scaleX(1.041) scaleY(1.041);\n    transform: scaleX(1.041) scaleY(1.041);\n    -webkit-transition: .2s;\n    transition: .2s;\n}\n", ""]);
+exports.push([module.i, "\ndiv.restaurant-card {\n  border-radius: 5px;\n  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);\n          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);\n  padding: 15px 5px;\n  margin-top: 20px;\n  cursor: pointer;\n  -webkit-transform: scaleX(1) scaleY(1);\n  transform: scaleX(1) scaleY(1);\n  -webkit-transition: .2s;\n  transition: .2s;\n}\ndiv.restaurant-card span.title {\n    display: block;\n    text-align: center;\n    color: black;\n    font-size: 18px;\n    font-weight: bold;\n    font-family: 'Lato', sans-serif;\n}\ndiv.restaurant-card span.address {\n    display: block;\n    text-align: center;\n    margin-top: 5px;\n    color: #A0A0A0;\n    font-family: 'Lato', sans-serif;\n}\ndiv.restaurant-card span.address span.street {\n      font-size: 14px;\n      display: block;\n}\ndiv.restaurant-card span.address span.city {\n      font-size: 14px;\n}\ndiv.restaurant-card span.address span.state {\n      font-size: 14px;\n}\ndiv.restaurant-card span.address span.zip {\n      font-size: 14px;\n      display: block;\n}\ndiv.restaurant-card:hover {\n    -webkit-transform: scaleX(1.041) scaleY(1.041);\n    transform: scaleX(1.041) scaleY(1.041);\n    -webkit-transition: .2s;\n    transition: .2s;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 116 */
+/* 113 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_filters_CafeTypeFilter_js__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_filters_CafeBrewMethodsFilter_js__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mixins_filters_CafeTextFilter_js__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mixins_filters_CafeUserLikeFilter_js__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__event_bus_js__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_filters_RestaurantTypeFilter_js__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_filters_RestaurantTextFilter_js__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mixins_filters_RestaurantUserLikeFilter_js__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__event_bus_js__ = __webpack_require__(6);
 //
 //
 //
@@ -60169,7 +59998,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-
+// import { RestaurantBrewMethodsFilter } from '../../mixins/filters/RestaurantBrewMethodsFilter.js';
 
 
 
@@ -60179,7 +60008,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['cafe'],
+  props: ['restaurant'],
 
   data: function data() {
     return {
@@ -60188,10 +60017,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
 
-  mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins_filters_CafeTypeFilter_js__["a" /* CafeTypeFilter */], __WEBPACK_IMPORTED_MODULE_1__mixins_filters_CafeBrewMethodsFilter_js__["a" /* CafeBrewMethodsFilter */], __WEBPACK_IMPORTED_MODULE_2__mixins_filters_CafeTextFilter_js__["a" /* CafeTextFilter */], __WEBPACK_IMPORTED_MODULE_3__mixins_filters_CafeUserLikeFilter_js__["a" /* CafeUserLikeFilter */]],
+  mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins_filters_RestaurantTypeFilter_js__["a" /* RestaurantTypeFilter */],
+  // RestaurantBrewMethodsFilter,
+  __WEBPACK_IMPORTED_MODULE_1__mixins_filters_RestaurantTextFilter_js__["a" /* RestaurantTextFilter */], __WEBPACK_IMPORTED_MODULE_2__mixins_filters_RestaurantUserLikeFilter_js__["a" /* RestaurantUserLikeFilter */]],
 
   mounted: function mounted() {
-    __WEBPACK_IMPORTED_MODULE_4__event_bus_js__["a" /* EventBus */].$on('filters-updated', function (filters) {
+    __WEBPACK_IMPORTED_MODULE_3__event_bus_js__["a" /* EventBus */].$on('filters-updated', function (filters) {
       this.processFilters(filters);
     }.bind(this));
   },
@@ -60216,14 +60047,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         /*
           Check if the roaster passes
         */
-        if (this.processCafeTypeFilter(this.cafe, filters.type)) {
+        if (this.processRestaurantTypeFilter(this.restaurant, filters.type)) {
           typePassed = true;
         }
 
         /*
           Check if text passes
         */
-        if (filters.text != '' && this.processCafeTextFilter(this.cafe, filters.text)) {
+        if (filters.text != '' && this.processRestaurantTextFilter(this.restaurant, filters.text)) {
           textPassed = true;
         } else if (filters.text == '') {
           textPassed = true;
@@ -60232,7 +60063,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         /*
           Check if brew methods passes
         */
-        if (filters.brewMethods.length != 0 && this.processCafeBrewMethodsFilter(this.cafe, filters.brewMethods)) {
+        if (filters.brewMethods.length != 0 && this.processRestaurantBrewMethodsFilter(this.restaurant, filters.brewMethods)) {
           brewMethodsPassed = true;
         } else if (filters.brewMethods.length == 0) {
           brewMethodsPassed = true;
@@ -60241,14 +60072,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         /*
           Check if liked passes
         */
-        if (filters.liked && this.processCafeUserLikeFilter(this.cafe)) {
+        if (filters.liked && this.processRestaurantUserLikeFilter(this.restaurant)) {
           likedPassed = true;
         } else if (!filters.liked) {
           likedPassed = true;
         }
 
         /*
-          If everything passes, then we show the Cafe Card
+          If everything passes, then we show the Restaurant Card
         */
         if (typePassed && textPassed && brewMethodsPassed && likedPassed) {
           this.show = true;
@@ -60257,14 +60088,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
       }
     },
-    panToLocation: function panToLocation(cafe) {
-      __WEBPACK_IMPORTED_MODULE_4__event_bus_js__["a" /* EventBus */].$emit('location-selected', { lat: parseFloat(cafe.latitude), lng: parseFloat(cafe.longitude) });
+    panToLocation: function panToLocation(restaurant) {
+      __WEBPACK_IMPORTED_MODULE_3__event_bus_js__["a" /* EventBus */].$emit('location-selected', { lat: parseFloat(restaurant.latitude), lng: parseFloat(restaurant.longitude) });
     }
   }
 });
 
 /***/ }),
-/* 117 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -60277,39 +60108,43 @@ var render = function() {
       directives: [
         { name: "show", rawName: "v-show", value: _vm.show, expression: "show" }
       ],
-      staticClass: "large-6 medium-6 small-6 cell cafe-card-container"
+      staticClass: "large-6 medium-6 small-6 cell restaurant-card-container"
     },
     [
       _c(
         "router-link",
         {
-          attrs: { to: { name: "cafe", params: { id: _vm.cafe.id } } },
+          attrs: {
+            to: { name: "restaurant", params: { id: _vm.restaurant.id } }
+          },
           nativeOn: {
             click: function($event) {
-              _vm.panToLocation(_vm.cafe)
+              _vm.panToLocation(_vm.restaurant)
             }
           }
         },
         [
-          _c("div", { staticClass: "cafe-card" }, [
+          _c("div", { staticClass: "restaurant-card" }, [
             _c("span", { staticClass: "title" }, [
-              _vm._v(_vm._s(_vm.cafe.company.name))
+              _vm._v(_vm._s(_vm.restaurant.name))
             ]),
             _vm._v(" "),
             _c("span", { staticClass: "address" }, [
               _c("span", { staticClass: "street" }, [
-                _vm._v(_vm._s(_vm.cafe.address))
+                _vm._v(_vm._s(_vm.restaurant.address))
               ]),
               _vm._v(" "),
               _c("span", { staticClass: "city" }, [
-                _vm._v(_vm._s(_vm.cafe.city))
+                _vm._v(_vm._s(_vm.restaurant.city))
               ]),
               _vm._v(" "),
               _c("span", { staticClass: "state" }, [
-                _vm._v(_vm._s(_vm.cafe.state))
+                _vm._v(_vm._s(_vm.restaurant.state))
               ]),
               _vm._v(" "),
-              _c("span", { staticClass: "zip" }, [_vm._v(_vm._s(_vm.cafe.zip))])
+              _c("span", { staticClass: "zip" }, [
+                _vm._v(_vm._s(_vm.restaurant.zip))
+              ])
             ])
           ])
         ]
@@ -60324,12 +60159,12 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-d8812e86", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-1c49febd", module.exports)
   }
 }
 
 /***/ }),
-/* 118 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -60432,179 +60267,105 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "grid-x grid-padding-x" }, [
-            _c("div", { staticClass: "large-12 medium-12 small-12 cell" }, [
-              _c(
-                "div",
+            _c("div", { staticClass: "large-12 medium-12 small-12 cell" })
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              directives: [
                 {
-                  staticClass: "location-filter all-locations",
-                  class: { active: _vm.activeLocationFilter == "all" },
-                  on: {
-                    click: function($event) {
-                      _vm.setActiveLocationFilter("all")
-                    }
-                  }
-                },
-                [_vm._v("\n            All Locations\n          ")]
-              ),
-              _c(
-                "div",
-                {
-                  staticClass: "location-filter roasters",
-                  class: { active: _vm.activeLocationFilter == "roasters" },
-                  on: {
-                    click: function($event) {
-                      _vm.setActiveLocationFilter("roasters")
-                    }
-                  }
-                },
-                [_vm._v("\n            Roasters\n          ")]
-              ),
-              _c(
-                "div",
-                {
-                  staticClass: "location-filter cafes",
-                  class: { active: _vm.activeLocationFilter == "cafes" },
-                  on: {
-                    click: function($event) {
-                      _vm.setActiveLocationFilter("cafes")
-                    }
-                  }
-                },
-                [_vm._v("\n            Cafes\n          ")]
-              )
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.user != "" && _vm.userLoadStatus == 2,
-                expression: "user != '' && userLoadStatus == 2"
-              }
-            ],
-            staticClass: "grid-x grid-padding-x",
-            attrs: { id: "only-liked-container" }
-          },
-          [
-            _c("div", { staticClass: "large-12 medium-12 small-12 cell" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.onlyLiked,
-                    expression: "onlyLiked"
-                  }
-                ],
-                attrs: { type: "checkbox" },
-                domProps: {
-                  checked: Array.isArray(_vm.onlyLiked)
-                    ? _vm._i(_vm.onlyLiked, null) > -1
-                    : _vm.onlyLiked
-                },
-                on: {
-                  change: function($event) {
-                    var $$a = _vm.onlyLiked,
-                      $$el = $event.target,
-                      $$c = $$el.checked ? true : false
-                    if (Array.isArray($$a)) {
-                      var $$v = null,
-                        $$i = _vm._i($$a, $$v)
-                      if ($$el.checked) {
-                        $$i < 0 && (_vm.onlyLiked = $$a.concat([$$v]))
-                      } else {
-                        $$i > -1 &&
-                          (_vm.onlyLiked = $$a
-                            .slice(0, $$i)
-                            .concat($$a.slice($$i + 1)))
-                      }
-                    } else {
-                      _vm.onlyLiked = $$c
-                    }
-                  }
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.user != "" && _vm.userLoadStatus == 2,
+                  expression: "user != '' && userLoadStatus == 2"
                 }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "liked-location-label" }, [
-                _vm._v("Show only locations that I like")
+              ],
+              staticClass: "grid-x grid-padding-x",
+              attrs: { id: "only-liked-container" }
+            },
+            [
+              _c("div", { staticClass: "large-12 medium-12 small-12 cell" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.onlyLiked,
+                      expression: "onlyLiked"
+                    }
+                  ],
+                  attrs: { type: "checkbox" },
+                  domProps: {
+                    checked: Array.isArray(_vm.onlyLiked)
+                      ? _vm._i(_vm.onlyLiked, null) > -1
+                      : _vm.onlyLiked
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.onlyLiked,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = null,
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 && (_vm.onlyLiked = $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            (_vm.onlyLiked = $$a
+                              .slice(0, $$i)
+                              .concat($$a.slice($$i + 1)))
+                        }
+                      } else {
+                        _vm.onlyLiked = $$c
+                      }
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("span", { staticClass: "liked-location-label" }, [
+                  _vm._v("Show only locations that I like")
+                ])
               ])
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c("div", { attrs: { id: "brew-methods-container" } }, [
-          _c("div", { staticClass: "grid-x grid-padding-x" }, [
-            _c("div", { staticClass: "large-12 medium-12 small-12 cell" }, [
-              _c("label", { staticClass: "filter-label" }, [
-                _vm._v("Brew Methods")
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", { attrs: { id: "brew-methods-container" } }, [
+            _c("div", { staticClass: "grid-x grid-padding-x" }, [
+              _c("div", { staticClass: "large-12 medium-12 small-12 cell" }, [
+                _c("label", { staticClass: "filter-label" }, [
+                  _vm._v("Brew Methods")
+                ])
               ])
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "grid-x grid-padding-x" }, [
-            _c(
-              "div",
-              { staticClass: "large-12 medium-12 small-12 cell" },
-              _vm._l(_vm.brewMethods, function(method) {
-                return method.cafes_count > 0
-                  ? _c(
-                      "div",
-                      {
-                        staticClass: "brew-method",
-                        class: {
-                          active: _vm.brewMethodsFilter.indexOf(method.id) >= 0
-                        },
-                        on: {
-                          click: function($event) {
-                            _vm.toggleBrewMethodFilter(method.id)
-                          }
-                        }
-                      },
-                      [
-                        _c("div", { staticClass: "brew-method-container" }, [
-                          _c("img", {
-                            staticClass: "brew-method-icon",
-                            attrs: { src: method.icon + ".svg" }
-                          }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "brew-method-name" }, [
-                            _vm._v(_vm._s(method.method))
-                          ])
-                        ])
-                      ]
-                    )
+          _c(
+            "div",
+            {
+              staticClass: "grid-x grid-padding-x restaurant-grid-container",
+              attrs: { id: "restaurant-grid" }
+            },
+            [
+              _vm._l(_vm.restaurants, function(restaurant) {
+                return _c("restaurant-card", {
+                  key: restaurant.id,
+                  attrs: { restaurant: restaurant }
+                })
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "large-12 medium-12 small-12 cell" }, [
+                _vm.shownCount == 0
+                  ? _c("span", { staticClass: "no-results" }, [
+                      _vm._v("No Results")
+                    ])
                   : _vm._e()
-              })
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "grid-x grid-padding-x cafe-grid-container",
-            attrs: { id: "cafe-grid" }
-          },
-          [
-            _vm._l(_vm.cafes, function(cafe) {
-              return _c("cafe-card", { key: cafe.id, attrs: { cafe: cafe } })
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "large-12 medium-12 small-12 cell" }, [
-              _vm.shownCount == 0
-                ? _c("span", { staticClass: "no-results" }, [
-                    _vm._v("No Results")
-                  ])
-                : _vm._e()
-            ])
-          ],
-          2
-        )
+              ])
+            ],
+            2
+          )
+        ])
       ]
     )
   ])
@@ -60620,19 +60381,19 @@ if (false) {
 }
 
 /***/ }),
-/* 119 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(120)
+  __webpack_require__(117)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(122)
+var __vue_script__ = __webpack_require__(119)
 /* template */
-var __vue_template__ = __webpack_require__(123)
+var __vue_template__ = __webpack_require__(120)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -60671,13 +60432,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 120 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(121);
+var content = __webpack_require__(118);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -60697,7 +60458,7 @@ if(false) {
 }
 
 /***/ }),
-/* 121 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -60711,7 +60472,7 @@ exports.push([module.i, "\ndiv.pop-out {\n  position: fixed;\n  left: 0;\n  righ
 
 
 /***/ }),
-/* 122 */
+/* 119 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -60865,7 +60626,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 123 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -60929,14 +60690,14 @@ var render = function() {
                     _c(
                       "router-link",
                       {
-                        attrs: { to: { name: "newcafe" } },
+                        attrs: { to: { name: "newrestaurant" } },
                         nativeOn: {
                           click: function($event) {
                             _vm.hideNav()
                           }
                         }
                       },
-                      [_vm._v("\n          Add Cafe\n        ")]
+                      [_vm._v("\n          Add Restaurant\n        ")]
                     )
                   ],
                   1
@@ -61066,19 +60827,19 @@ if (false) {
 }
 
 /***/ }),
-/* 124 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(125)
+  __webpack_require__(122)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(127)
+var __vue_script__ = __webpack_require__(124)
 /* template */
-var __vue_template__ = __webpack_require__(128)
+var __vue_template__ = __webpack_require__(125)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -61117,13 +60878,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 125 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(126);
+var content = __webpack_require__(123);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -61143,7 +60904,7 @@ if(false) {
 }
 
 /***/ }),
-/* 126 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -61157,7 +60918,7 @@ exports.push([module.i, "\ndiv.success-notification-container {\n  position: fix
 
 
 /***/ }),
-/* 127 */
+/* 124 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -61232,7 +60993,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 128 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -61273,19 +61034,19 @@ if (false) {
 }
 
 /***/ }),
-/* 129 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(130)
+  __webpack_require__(127)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(132)
+var __vue_script__ = __webpack_require__(129)
 /* template */
-var __vue_template__ = __webpack_require__(133)
+var __vue_template__ = __webpack_require__(130)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -61324,13 +61085,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 130 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(131);
+var content = __webpack_require__(128);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -61350,7 +61111,7 @@ if(false) {
 }
 
 /***/ }),
-/* 131 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -61364,7 +61125,7 @@ exports.push([module.i, "\ndiv.error-notification-container {\n  position: fixed
 
 
 /***/ }),
-/* 132 */
+/* 129 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -61440,7 +61201,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 133 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -61481,7 +61242,7 @@ if (false) {
 }
 
 /***/ }),
-/* 134 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -61541,19 +61302,19 @@ if (false) {
 }
 
 /***/ }),
-/* 135 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(136)
+  __webpack_require__(133)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(138)
+var __vue_script__ = __webpack_require__(135)
 /* template */
-var __vue_template__ = __webpack_require__(150)
+var __vue_template__ = __webpack_require__(147)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -61592,13 +61353,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 136 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(137);
+var content = __webpack_require__(134);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -61618,7 +61379,7 @@ if(false) {
 }
 
 /***/ }),
-/* 137 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -61632,15 +61393,15 @@ exports.push([module.i, "\n\n", ""]);
 
 
 /***/ }),
-/* 138 */
+/* 135 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_cafes_CafeMap_vue__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_cafes_CafeMap_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_cafes_CafeMap_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_cafes_AddCafeButton_vue__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_cafes_AddCafeButton_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_cafes_AddCafeButton_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_restaurants_RestaurantMap_vue__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_restaurants_RestaurantMap_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_restaurants_RestaurantMap_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_restaurants_AddRestaurantButton_vue__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_restaurants_AddRestaurantButton_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_restaurants_AddRestaurantButton_vue__);
 //
 //
 //
@@ -61661,25 +61422,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    CafeMap: __WEBPACK_IMPORTED_MODULE_0__components_cafes_CafeMap_vue___default.a,
-    AddCafeButton: __WEBPACK_IMPORTED_MODULE_1__components_cafes_AddCafeButton_vue___default.a
+    RestaurantMap: __WEBPACK_IMPORTED_MODULE_0__components_restaurants_RestaurantMap_vue___default.a,
+    AddRestaurantButton: __WEBPACK_IMPORTED_MODULE_1__components_restaurants_AddRestaurantButton_vue___default.a
   }
 });
 
 /***/ }),
-/* 139 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(140)
+  __webpack_require__(137)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(142)
+var __vue_script__ = __webpack_require__(139)
 /* template */
-var __vue_template__ = __webpack_require__(144)
+var __vue_template__ = __webpack_require__(141)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -61696,7 +61457,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/cafes/CafeMap.vue"
+Component.options.__file = "resources/assets/js/components/restaurants/RestaurantMap.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -61705,9 +61466,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1dd0d03f", Component.options)
+    hotAPI.createRecord("data-v-a2c90b82", Component.options)
   } else {
-    hotAPI.reload("data-v-1dd0d03f", Component.options)
+    hotAPI.reload("data-v-a2c90b82", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -61718,23 +61479,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 140 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(141);
+var content = __webpack_require__(138);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("715deadf", content, false, {});
+var update = __webpack_require__(4)("794086ec", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1dd0d03f\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CafeMap.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1dd0d03f\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CafeMap.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a2c90b82\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./RestaurantMap.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a2c90b82\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./RestaurantMap.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -61744,7 +61505,7 @@ if(false) {
 }
 
 /***/ }),
-/* 141 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -61752,23 +61513,22 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\ndiv#cafe-map-container {\n  position: absolute;\n  top: 75px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n}\ndiv#cafe-map-container div#cafe-map {\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    right: 0px;\n    bottom: 0px;\n}\ndiv#cafe-map-container div.cafe-info-window div.cafe-name {\n    display: block;\n    text-align: center;\n    color: #7F5F2A;\n    font-family: 'Josefin Sans', sans-serif;\n}\ndiv#cafe-map-container div.cafe-info-window div.cafe-address {\n    display: block;\n    text-align: center;\n    margin-top: 5px;\n    color: #A0A0A0;\n    font-family: 'Lato', sans-serif;\n}\ndiv#cafe-map-container div.cafe-info-window div.cafe-address span.street {\n      font-size: 14px;\n      display: block;\n}\ndiv#cafe-map-container div.cafe-info-window div.cafe-address span.city {\n      font-size: 12px;\n}\ndiv#cafe-map-container div.cafe-info-window div.cafe-address span.state {\n      font-size: 12px;\n}\ndiv#cafe-map-container div.cafe-info-window div.cafe-address span.zip {\n      font-size: 12px;\n      display: block;\n}\ndiv#cafe-map-container div.cafe-info-window div.cafe-address a {\n      color: #E8635F;\n      font-weight: bold;\n}\n", ""]);
+exports.push([module.i, "\ndiv#restaurant-map-container {\n  position: absolute;\n  top: 75px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n}\ndiv#restaurant-map-container div#restaurant-map {\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    right: 0px;\n    bottom: 0px;\n}\ndiv#restaurant-map-container div.restaurant-info-window div.restaurant-name {\n    display: block;\n    text-align: center;\n    color: #7F5F2A;\n    font-family: 'Josefin Sans', sans-serif;\n}\ndiv#restaurant-map-container div.restaurant-info-window div.restaurant-address {\n    display: block;\n    text-align: center;\n    margin-top: 5px;\n    color: #A0A0A0;\n    font-family: 'Lato', sans-serif;\n}\ndiv#restaurant-map-container div.restaurant-info-window div.restaurant-address span.street {\n      font-size: 14px;\n      display: block;\n}\ndiv#restaurant-map-container div.restaurant-info-window div.restaurant-address span.city {\n      font-size: 12px;\n}\ndiv#restaurant-map-container div.restaurant-info-window div.restaurant-address span.state {\n      font-size: 12px;\n}\ndiv#restaurant-map-container div.restaurant-info-window div.restaurant-address span.zip {\n      font-size: 12px;\n      display: block;\n}\ndiv#restaurant-map-container div.restaurant-info-window div.restaurant-address a {\n      color: #E8635F;\n      font-weight: bold;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 142 */
+/* 139 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_filters_CafeTypeFilter_js__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_filters_CafeBrewMethodsFilter_js__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mixins_filters_CafeTagsFilter_js__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mixins_filters_CafeTextFilter_js__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mixins_filters_CafeUserLikeFilter_js__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__event_bus_js__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_filters_RestaurantTypeFilter_js__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_filters_RestaurantTagsFilter_js__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mixins_filters_RestaurantTextFilter_js__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mixins_filters_RestaurantUserLikeFilter_js__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__event_bus_js__ = __webpack_require__(6);
 //
 //
 //
@@ -61839,7 +61599,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-
+// import { RestaurantBrewMethodsFilter } from '../../mixins/filters/RestaurantBrewMethodsFilter.js';
 
 
 
@@ -61876,23 +61636,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
 
-  mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins_filters_CafeTypeFilter_js__["a" /* CafeTypeFilter */], __WEBPACK_IMPORTED_MODULE_1__mixins_filters_CafeBrewMethodsFilter_js__["a" /* CafeBrewMethodsFilter */], __WEBPACK_IMPORTED_MODULE_2__mixins_filters_CafeTagsFilter_js__["a" /* CafeTagsFilter */], __WEBPACK_IMPORTED_MODULE_3__mixins_filters_CafeTextFilter_js__["a" /* CafeTextFilter */], __WEBPACK_IMPORTED_MODULE_4__mixins_filters_CafeUserLikeFilter_js__["a" /* CafeUserLikeFilter */]],
+  mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins_filters_RestaurantTypeFilter_js__["a" /* RestaurantTypeFilter */],
+  // RestaurantBrewMethodsFilter,
+  __WEBPACK_IMPORTED_MODULE_1__mixins_filters_RestaurantTagsFilter_js__["a" /* RestaurantTagsFilter */], __WEBPACK_IMPORTED_MODULE_2__mixins_filters_RestaurantTextFilter_js__["a" /* RestaurantTextFilter */], __WEBPACK_IMPORTED_MODULE_3__mixins_filters_RestaurantUserLikeFilter_js__["a" /* RestaurantUserLikeFilter */]],
 
   computed: {
     /*
-      Gets the cafes
+      Gets the restaurants
     */
-    cafes: function cafes() {
-      return this.$store.getters.getCafes;
+    restaurants: function restaurants() {
+      return this.$store.getters.getRestaurants;
     }
   },
 
   watch: {
     /*
-      Watches the cafes. When they are updated, clear the markers
+      Watches the restaurants. When they are updated, clear the markers
       and re build them.
     */
-    cafes: function cafes() {
+    restaurants: function restaurants() {
       this.clearMarkers();
       this.buildMarkers();
     }
@@ -61901,7 +61663,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   mounted: function mounted() {
     this.$markers = [];
 
-    this.$map = new google.maps.Map(document.getElementById('cafe-map'), {
+    this.$map = new google.maps.Map(document.getElementById('restaurant-map'), {
       center: { lat: this.latitude, lng: this.longitude },
       zoom: this.zoom
     });
@@ -61915,12 +61677,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     /*
       Listen to the filters-updated event to filter the map markers
     */
-    __WEBPACK_IMPORTED_MODULE_5__event_bus_js__["a" /* EventBus */].$on('filters-updated', function (filters) {
+    __WEBPACK_IMPORTED_MODULE_4__event_bus_js__["a" /* EventBus */].$on('filters-updated', function (filters) {
       this.processFilters(filters);
     }.bind(this));
 
-    __WEBPACK_IMPORTED_MODULE_5__event_bus_js__["a" /* EventBus */].$on('location-selected', function (cafe) {
-      var latLng = new google.maps.LatLng(cafe.lat, cafe.lng);
+    __WEBPACK_IMPORTED_MODULE_4__event_bus_js__["a" /* EventBus */].$on('location-selected', function (restaurant) {
+      var latLng = new google.maps.LatLng(restaurant.lat, restaurant.lng);
       this.$map.setZoom(17);
       this.$map.panTo(latLng);
     }.bind(this));
@@ -61941,21 +61703,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             Initialize flags for the filtering
           */
           var textPassed = false;
-          var brewMethodsPassed = false;
+          // var brewMethodsPassed = false;
           var typePassed = false;
           var likedPassed = false;
 
           /*
             Check if the roaster passes
           */
-          if (this.processCafeTypeFilter(this.$markers[i].cafe, filters.type)) {
+          if (this.processRestaurantTypeFilter(this.$markers[i].restaurant, filters.type)) {
             typePassed = true;
           }
 
           /*
             Check if text passes
           */
-          if (filters.text != '' && this.processCafeTextFilter(this.$markers[i].cafe, filters.text)) {
+          if (filters.text != '' && this.processRestaurantTextFilter(this.$markers[i].restaurant, filters.text)) {
             textPassed = true;
           } else if (filters.text == '') {
             textPassed = true;
@@ -61964,23 +61726,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           /*
             Check if brew methods passes
           */
-          if (filters.brewMethods.length != 0 && this.processCafeBrewMethodsFilter(this.$markers[i].cafe, filters.brewMethods)) {
-            brewMethodsPassed = true;
-          } else if (filters.brewMethods.length == 0) {
-            brewMethodsPassed = true;
-          }
+          // if( filters.brewMethods.length != 0 && this.processRestaurantBrewMethodsFilter( this.$markers[i].restaurant, filters.brewMethods ) ){
+          //   brewMethodsPassed = true;
+          // }else if( filters.brewMethods.length == 0 ){
+          //   brewMethodsPassed = true;
+          // }
 
           /*
             Check if liked passes
           */
-          if (filters.liked && this.processCafeUserLikeFilter(this.$markers[i].cafe)) {
+          if (filters.liked && this.processRestaurantUserLikeFilter(this.$markers[i].restaurant)) {
             likedPassed = true;
           } else if (!filters.liked) {
             likedPassed = true;
           }
 
           /*
-            If everything passes, then we show the Cafe Marker
+            If everything passes, then we show the Restaurant Marker
           */
           if (typePassed && textPassed && brewMethodsPassed && likedPassed) {
             this.$markers[i].setMap(this.$map);
@@ -62007,7 +61769,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
     /*
-      Builds all of the markers for the cafes
+      Builds all of the markers for the restaurants
     */
     buildMarkers: function buildMarkers() {
       var _this = this;
@@ -62018,37 +61780,45 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.$markers = [];
 
       /*
-        Iterate over all of the cafes
+        Iterate over all of the restaurants
       */
-      for (var i = 0; i < this.cafes.length; i++) {
+      for (var i = 0; i < this.restaurants.length; i++) {
 
         /*
-          Create the marker for each of the cafes and set the
+          Create the marker for each of the restaurants and set the
           latitude and longitude to the latitude and longitude
-          of the cafe. Also set the map to be the local map.
+          of the restaurant. Also set the map to be the local map.
         */
-        if (this.cafes[i].company.roaster == 1) {
-          var image = '/img/roaster-marker.svg';
-        } else {
-          var image = '/img/cafe-marker.svg';
-        }
 
-        if (this.cafes[i].latitude != null) {
+        // if( this.restaurants[i].company.roaster == 1 ){
+        //   var image = '/img/roaster-marker.svg';
+        // }  else  {
+        var image = '/img/logo.svg';
+        //}
+
+        if (this.restaurants[i].latitude != null) {
+          var icon;
           var marker;
 
           (function () {
+            icon = {
+              url: image, // url
+              scaledSize: new google.maps.Size(45, 45), // scaled size
+              origin: new google.maps.Point(0, 0), // origin
+              anchor: new google.maps.Point(0, 0) // anchor
+            };
             marker = new google.maps.Marker({
-              position: { lat: parseFloat(_this.cafes[i].latitude), lng: parseFloat(_this.cafes[i].longitude) },
+              position: { lat: parseFloat(_this.restaurants[i].latitude), lng: parseFloat(_this.restaurants[i].longitude) },
               map: _this.$map,
-              icon: image,
-              cafe: _this.cafes[i]
+              icon: icon,
+              restaurant: _this.restaurants[i]
             });
 
 
             var router = _this.$router;
 
             marker.addListener('click', function () {
-              router.push({ name: 'cafe', params: { id: this.cafe.id } });
+              router.push({ name: 'restaurant', params: { id: this.restaurant.id } });
             });
 
             /*
@@ -62063,29 +61833,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 143 */
+/* 140 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CafeTagsFilter; });
-var CafeTagsFilter = {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestaurantTagsFilter; });
+var RestaurantTagsFilter = {
   methods: {
-    processCafeTagsFilter: function processCafeTagsFilter(cafe, tags) {
+    processRestaurantTagsFilter: function processRestaurantTagsFilter(restaurant, tags) {
       /*
         If there are tags to be filtered, run the filter.
       */
       if (tags.length > 0) {
         /*
-          Makes array of the tags for the cafe
+          Makes array of the tags for the restaurant
         */
-        var cafeTags = [];
+        var restaurantTags = [];
 
         /*
-          Make array of cafe tags this is what we will check to
+          Make array of restaurant tags this is what we will check to
           see contains a filter.
         */
-        for (var i = 0; i < cafe.tags.length; i++) {
-          cafeTags.push(cafe.tags[i].tag);
+        for (var i = 0; i < restaurant.tags.length; i++) {
+          restaurantTags.push(restaurant.tags[i].tag);
         }
 
         /*
@@ -62093,17 +61863,17 @@ var CafeTagsFilter = {
         */
         for (var i = 0; i < tags.length; i++) {
           /*
-            If the tag is in the array of cafe tags then
+            If the tag is in the array of restaurant tags then
             we return true.
           */
-          if (cafeTags.indexOf(tags[i]) > -1) {
+          if (restaurantTags.indexOf(tags[i]) > -1) {
             return true;
           }
         }
 
         /*
           If we made it this far, then we return false because
-          the cafe doesn't contain the tags
+          the restaurant doesn't contain the tags
         */
         return false;
       } else {
@@ -62114,7 +61884,7 @@ var CafeTagsFilter = {
 };
 
 /***/ }),
-/* 144 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -62128,8 +61898,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "cafe-map-container" } }, [
-      _c("div", { attrs: { id: "cafe-map" } })
+    return _c("div", { attrs: { id: "restaurant-map-container" } }, [
+      _c("div", { attrs: { id: "restaurant-map" } })
     ])
   }
 ]
@@ -62138,24 +61908,24 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-1dd0d03f", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-a2c90b82", module.exports)
   }
 }
 
 /***/ }),
-/* 145 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(146)
+  __webpack_require__(143)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(148)
+var __vue_script__ = __webpack_require__(145)
 /* template */
-var __vue_template__ = __webpack_require__(149)
+var __vue_template__ = __webpack_require__(146)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -62172,7 +61942,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/cafes/AddCafeButton.vue"
+Component.options.__file = "resources/assets/js/components/restaurants/AddRestaurantButton.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -62181,9 +61951,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-405821f0", Component.options)
+    hotAPI.createRecord("data-v-2790be70", Component.options)
   } else {
-    hotAPI.reload("data-v-405821f0", Component.options)
+    hotAPI.reload("data-v-2790be70", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -62194,23 +61964,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 146 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(147);
+var content = __webpack_require__(144);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("66243595", content, false, {});
+var update = __webpack_require__(4)("e1eac7b6", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-405821f0\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AddCafeButton.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-405821f0\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AddCafeButton.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2790be70\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AddRestaurantButton.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2790be70\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AddRestaurantButton.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -62220,7 +61990,7 @@ if(false) {
 }
 
 /***/ }),
-/* 147 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -62228,13 +61998,13 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\ndiv#add-cafe-button {\n  background-color: #E8635F;\n  width: 56px;\n  height: 56px;\n  border-radius: 50px;\n  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n  text-align: center;\n  z-index: 9;\n  cursor: pointer;\n  position: absolute;\n  right: 60px;\n  bottom: 30px;\n  color: white;\n  line-height: 50px;\n  font-size: 40px;\n}\n", ""]);
+exports.push([module.i, "\ndiv#add-restaurant-button {\n  background-color: #E8635F;\n  width: 56px;\n  height: 56px;\n  border-radius: 50px;\n  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n  text-align: center;\n  z-index: 9;\n  cursor: pointer;\n  position: absolute;\n  right: 60px;\n  bottom: 30px;\n  color: white;\n  line-height: 50px;\n  font-size: 40px;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 148 */
+/* 145 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -62294,14 +62064,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       if (this.user == '' && this.userLoadStatus == 2) {
         __WEBPACK_IMPORTED_MODULE_0__event_bus_js__["a" /* EventBus */].$emit('prompt-login');
       } else {
-        this.$router.push({ name: 'newcafe' });
+        this.$router.push({ name: 'newrestaurant' });
       }
     }
   }
 });
 
 /***/ }),
-/* 149 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -62311,7 +62081,7 @@ var render = function() {
   return _c(
     "div",
     {
-      attrs: { id: "add-cafe-button" },
+      attrs: { id: "add-restaurant-button" },
       on: {
         click: function($event) {
           _vm.checkAuth()
@@ -62327,12 +62097,12 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-405821f0", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-2790be70", module.exports)
   }
 }
 
 /***/ }),
-/* 150 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -62341,11 +62111,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "page", attrs: { id: "cafes" } },
+    { staticClass: "page", attrs: { id: "restaurants" } },
     [
-      _c("cafe-map"),
+      _c("restaurant-map"),
       _vm._v(" "),
-      _c("add-cafe-button"),
+      _c("add-restaurant-button"),
       _vm._v(" "),
       _c("router-view")
     ],
@@ -62363,25 +62133,25 @@ if (false) {
 }
 
 /***/ }),
-/* 151 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(152)
+  __webpack_require__(149)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(154)
+var __vue_script__ = __webpack_require__(151)
 /* template */
-var __vue_template__ = __webpack_require__(155)
+var __vue_template__ = __webpack_require__(152)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-10b7d3a0"
+var __vue_scopeId__ = "data-v-41ac8f90"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -62392,7 +62162,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/pages/NewCafe.vue"
+Component.options.__file = "resources/assets/js/pages/NewRestaurant.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -62401,9 +62171,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-10b7d3a0", Component.options)
+    hotAPI.createRecord("data-v-41ac8f90", Component.options)
   } else {
-    hotAPI.reload("data-v-10b7d3a0", Component.options)
+    hotAPI.reload("data-v-41ac8f90", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -62414,23 +62184,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 152 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(153);
+var content = __webpack_require__(150);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("71097a49", content, false, {});
+var update = __webpack_require__(4)("03b0ee17", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-10b7d3a0\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NewCafe.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-10b7d3a0\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NewCafe.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-41ac8f90\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NewRestaurant.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-41ac8f90\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NewRestaurant.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -62440,7 +62210,7 @@ if(false) {
 }
 
 /***/ }),
-/* 153 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -62448,13 +62218,13 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\ndiv#new-cafe-page[data-v-10b7d3a0] {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-color: white;\n  z-index: 99999;\n  overflow: auto;\n}\ndiv#new-cafe-page img#back[data-v-10b7d3a0] {\n    float: right;\n    margin-top: 20px;\n    margin-right: 20px;\n}\ndiv#new-cafe-page .centered[data-v-10b7d3a0] {\n    margin: auto;\n}\ndiv#new-cafe-page h2.page-title[data-v-10b7d3a0] {\n    color: #342C0C;\n    font-size: 36px;\n    font-weight: 900;\n    font-family: \"Lato\", sans-serif;\n    margin-top: 60px;\n}\ndiv#new-cafe-page label.form-label[data-v-10b7d3a0] {\n    font-family: \"Lato\", sans-serif;\n    text-transform: uppercase;\n    font-weight: bold;\n    color: black;\n    margin-top: 10px;\n    margin-bottom: 10px;\n}\ndiv#new-cafe-page input[type=\"text\"].form-input[data-v-10b7d3a0] {\n    border: 1px solid #BABABA;\n    border-radius: 3px;\n}\ndiv#new-cafe-page input[type=\"text\"].form-input.invalid[data-v-10b7d3a0] {\n      border: 1px solid #D0021B;\n}\ndiv#new-cafe-page div.validation[data-v-10b7d3a0] {\n    color: #D0021B;\n    font-family: \"Lato\", sans-serif;\n    font-size: 14px;\n    margin-top: -15px;\n    margin-bottom: 15px;\n}\ndiv#new-cafe-page div.location-type[data-v-10b7d3a0] {\n    text-align: center;\n    font-family: \"Lato\", sans-serif;\n    font-size: 16px;\n    color: #E8635F;\n    border-bottom: 1px solid #E8635F;\n    border-top: 1px solid #E8635F;\n    border-left: 1px solid #E8635F;\n    border-right: 1px solid #E8635F;\n    width: 25%;\n    display: inline-block;\n    height: 55px;\n    line-height: 55px;\n    cursor: pointer;\n    margin-bottom: 5px;\n}\ndiv#new-cafe-page div.location-type.active[data-v-10b7d3a0] {\n      color: white;\n      background-color: #E8635F;\n}\ndiv#new-cafe-page div.location-type.roaster[data-v-10b7d3a0] {\n      border-top-left-radius: 3px;\n      border-bottom-left-radius: 3px;\n      border-right: 0px;\n}\ndiv#new-cafe-page div.location-type.cafe[data-v-10b7d3a0] {\n      border-top-right-radius: 3px;\n      border-bottom-right-radius: 3px;\n}\ndiv#new-cafe-page div.brew-method[data-v-10b7d3a0] {\n    font-size: 16px;\n    color: #666666;\n    font-family: \"Lato\", sans-serif;\n    border-radius: 4px;\n    background-color: #F9F9FA;\n    width: 150px;\n    height: 57px;\n    float: left;\n    margin-right: 10px;\n    margin-bottom: 10px;\n    padding: 5px;\n    cursor: pointer;\n    position: relative;\n}\ndiv#new-cafe-page div.brew-method.active[data-v-10b7d3a0] {\n      color: white;\n      background-color: #E8635F;\n}\ndiv#new-cafe-page div.brew-method div.brew-method-container[data-v-10b7d3a0] {\n      position: absolute;\n      top: 50%;\n      -webkit-transform: translateY(-50%);\n              transform: translateY(-50%);\n}\ndiv#new-cafe-page div.brew-method div.brew-method-container img.brew-method-icon[data-v-10b7d3a0] {\n        display: inline-block;\n        margin-right: 10px;\n        margin-left: 5px;\n        width: 20px;\n        max-height: 30px;\n}\ndiv#new-cafe-page div.brew-method div.brew-method-container span.brew-method-name[data-v-10b7d3a0] {\n        display: inline-block;\n        width: calc( 100% - 40px);\n        vertical-align: middle;\n}\ndiv#new-cafe-page div.company-selection-container[data-v-10b7d3a0] {\n    position: relative;\n}\ndiv#new-cafe-page div.company-selection-container div.company-autocomplete-container[data-v-10b7d3a0] {\n      border-radius: 3px;\n      border: 1px solid #BABABA;\n      background-color: white;\n      margin-top: -17px;\n      width: 80%;\n      position: absolute;\n      z-index: 9999;\n}\ndiv#new-cafe-page div.company-selection-container div.company-autocomplete-container div.company-autocomplete[data-v-10b7d3a0] {\n        cursor: pointer;\n        padding-left: 12px;\n        padding-right: 12px;\n        padding-top: 8px;\n        padding-bottom: 8px;\n}\ndiv#new-cafe-page div.company-selection-container div.company-autocomplete-container div.company-autocomplete span.company-name[data-v-10b7d3a0] {\n          display: block;\n          color: #0D223F;\n          font-size: 16px;\n          font-family: \"Lato\", sans-serif;\n          font-weight: bold;\n}\ndiv#new-cafe-page div.company-selection-container div.company-autocomplete-container div.company-autocomplete span.company-locations[data-v-10b7d3a0] {\n          display: block;\n          font-size: 14px;\n          color: #676767;\n          font-family: \"Lato\", sans-serif;\n}\ndiv#new-cafe-page div.company-selection-container div.company-autocomplete-container div.company-autocomplete[data-v-10b7d3a0]:hover {\n          background-color: #F2F2F2;\n}\ndiv#new-cafe-page div.company-selection-container div.company-autocomplete-container div.new-company[data-v-10b7d3a0] {\n        cursor: pointer;\n        padding-left: 12px;\n        padding-right: 12px;\n        padding-top: 8px;\n        padding-bottom: 8px;\n        font-family: \"Lato\", sans-serif;\n        color: #054E7A;\n        font-style: italic;\n}\ndiv#new-cafe-page div.company-selection-container div.company-autocomplete-container div.new-company[data-v-10b7d3a0]:hover {\n          background-color: #F2F2F2;\n}\ndiv#new-cafe-page a.add-location-button[data-v-10b7d3a0] {\n    display: block;\n    text-align: center;\n    height: 50px;\n    color: white;\n    border-radius: 3px;\n    font-size: 18px;\n    font-family: \"Lato\", sans-serif;\n    background-color: #A7BE4D;\n    line-height: 50px;\n    margin-bottom: 50px;\n}\n\n/* Small only */\n@media screen and (max-width: 39.9375em) {\ndiv#new-cafe-page div.location-type[data-v-10b7d3a0] {\n    width: 50%;\n}\n}\n", ""]);
+exports.push([module.i, "\ndiv#new-restaurant-page[data-v-41ac8f90] {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-color: white;\n  z-index: 99999;\n  overflow: auto;\n}\ndiv#new-restaurant-page img#back[data-v-41ac8f90] {\n    float: right;\n    margin-top: 20px;\n    margin-right: 20px;\n}\ndiv#new-restaurant-page .centered[data-v-41ac8f90] {\n    margin: auto;\n}\ndiv#new-restaurant-page h2.page-title[data-v-41ac8f90] {\n    color: #342C0C;\n    font-size: 36px;\n    font-weight: 900;\n    font-family: \"Lato\", sans-serif;\n    margin-top: 60px;\n}\ndiv#new-restaurant-page label.form-label[data-v-41ac8f90] {\n    font-family: \"Lato\", sans-serif;\n    text-transform: uppercase;\n    font-weight: bold;\n    color: black;\n    margin-top: 10px;\n    margin-bottom: 10px;\n}\ndiv#new-restaurant-page input[type=\"text\"].form-input[data-v-41ac8f90] {\n    border: 1px solid #BABABA;\n    border-radius: 3px;\n}\ndiv#new-restaurant-page input[type=\"text\"].form-input.invalid[data-v-41ac8f90] {\n      border: 1px solid #D0021B;\n}\ndiv#new-restaurant-page div.validation[data-v-41ac8f90] {\n    color: #D0021B;\n    font-family: \"Lato\", sans-serif;\n    font-size: 14px;\n    margin-top: -15px;\n    margin-bottom: 15px;\n}\ndiv#new-restaurant-page div.location-type[data-v-41ac8f90] {\n    text-align: center;\n    font-family: \"Lato\", sans-serif;\n    font-size: 16px;\n    color: #E8635F;\n    border-bottom: 1px solid #E8635F;\n    border-top: 1px solid #E8635F;\n    border-left: 1px solid #E8635F;\n    border-right: 1px solid #E8635F;\n    width: 25%;\n    display: inline-block;\n    height: 55px;\n    line-height: 55px;\n    cursor: pointer;\n    margin-bottom: 5px;\n}\ndiv#new-restaurant-page div.location-type.active[data-v-41ac8f90] {\n      color: white;\n      background-color: #E8635F;\n}\ndiv#new-restaurant-page div.location-type.roaster[data-v-41ac8f90] {\n      border-top-left-radius: 3px;\n      border-bottom-left-radius: 3px;\n      border-right: 0px;\n}\ndiv#new-restaurant-page div.location-type.restaurant[data-v-41ac8f90] {\n      border-top-right-radius: 3px;\n      border-bottom-right-radius: 3px;\n}\ndiv#new-restaurant-page div.brew-method[data-v-41ac8f90] {\n    font-size: 16px;\n    color: #666666;\n    font-family: \"Lato\", sans-serif;\n    border-radius: 4px;\n    background-color: #F9F9FA;\n    width: 150px;\n    height: 57px;\n    float: left;\n    margin-right: 10px;\n    margin-bottom: 10px;\n    padding: 5px;\n    cursor: pointer;\n    position: relative;\n}\ndiv#new-restaurant-page div.brew-method.active[data-v-41ac8f90] {\n      color: white;\n      background-color: #E8635F;\n}\ndiv#new-restaurant-page div.brew-method div.brew-method-container[data-v-41ac8f90] {\n      position: absolute;\n      top: 50%;\n      -webkit-transform: translateY(-50%);\n              transform: translateY(-50%);\n}\ndiv#new-restaurant-page div.brew-method div.brew-method-container img.brew-method-icon[data-v-41ac8f90] {\n        display: inline-block;\n        margin-right: 10px;\n        margin-left: 5px;\n        width: 20px;\n        max-height: 30px;\n}\ndiv#new-restaurant-page div.brew-method div.brew-method-container span.brew-method-name[data-v-41ac8f90] {\n        display: inline-block;\n        width: calc( 100% - 40px);\n        vertical-align: middle;\n}\ndiv#new-restaurant-page div.company-selection-container[data-v-41ac8f90] {\n    position: relative;\n}\ndiv#new-restaurant-page div.company-selection-container div.company-autocomplete-container[data-v-41ac8f90] {\n      border-radius: 3px;\n      border: 1px solid #BABABA;\n      background-color: white;\n      margin-top: -17px;\n      width: 80%;\n      position: absolute;\n      z-index: 9999;\n}\ndiv#new-restaurant-page div.company-selection-container div.company-autocomplete-container div.company-autocomplete[data-v-41ac8f90] {\n        cursor: pointer;\n        padding-left: 12px;\n        padding-right: 12px;\n        padding-top: 8px;\n        padding-bottom: 8px;\n}\ndiv#new-restaurant-page div.company-selection-container div.company-autocomplete-container div.company-autocomplete span.company-name[data-v-41ac8f90] {\n          display: block;\n          color: #0D223F;\n          font-size: 16px;\n          font-family: \"Lato\", sans-serif;\n          font-weight: bold;\n}\ndiv#new-restaurant-page div.company-selection-container div.company-autocomplete-container div.company-autocomplete span.company-locations[data-v-41ac8f90] {\n          display: block;\n          font-size: 14px;\n          color: #676767;\n          font-family: \"Lato\", sans-serif;\n}\ndiv#new-restaurant-page div.company-selection-container div.company-autocomplete-container div.company-autocomplete[data-v-41ac8f90]:hover {\n          background-color: #F2F2F2;\n}\ndiv#new-restaurant-page div.company-selection-container div.company-autocomplete-container div.new-company[data-v-41ac8f90] {\n        cursor: pointer;\n        padding-left: 12px;\n        padding-right: 12px;\n        padding-top: 8px;\n        padding-bottom: 8px;\n        font-family: \"Lato\", sans-serif;\n        color: #054E7A;\n        font-style: italic;\n}\ndiv#new-restaurant-page div.company-selection-container div.company-autocomplete-container div.new-company[data-v-41ac8f90]:hover {\n          background-color: #F2F2F2;\n}\ndiv#new-restaurant-page a.add-location-button[data-v-41ac8f90] {\n    display: block;\n    text-align: center;\n    height: 50px;\n    color: white;\n    border-radius: 3px;\n    font-size: 18px;\n    font-family: \"Lato\", sans-serif;\n    background-color: #A7BE4D;\n    line-height: 50px;\n    margin-bottom: 50px;\n}\n\n/* Small only */\n@media screen and (max-width: 39.9375em) {\ndiv#new-restaurant-page div.location-type[data-v-41ac8f90] {\n    width: 50%;\n}\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 154 */
+/* 151 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -62462,7 +62232,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__event_bus_js__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_js__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_js__ = __webpack_require__(13);
+//
+//
 //
 //
 //
@@ -62862,7 +62634,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /*
-  Builds the compnent to add a new cafe
+  Builds the compnent to add a new restaurant
 */
 /* harmony default export */ __webpack_exports__["default"] = ({
   /*
@@ -62870,13 +62642,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   */
   data: function data() {
     return {
-      companyResults: [],
+      // companyResults: [],
       showAutocomplete: true,
 
-      companyName: '',
-      companyID: '',
-      newCompany: false,
-      companyType: 'roaster',
+      // companyName: '',
+      // companyID: '',
+      // newCompany: false,
+      // companyType: 'restaurant',
       website: '',
 
       locationName: '',
@@ -62886,13 +62658,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       zip: '',
       lat: '',
       lng: '',
-      brewMethodsSelected: [],
+      // brewMethodsSelected: [],
+
 
       validations: {
-        companyName: {
-          is_valid: true,
-          text: ''
-        },
+        // companyName: {
+        //   is_valid: true,
+        //   text: ''
+        // },
         website: {
           is_valid: true,
           text: ''
@@ -62920,14 +62693,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   /*
     Loads the Vuex data we need such as brew methods
-    and add cafe status.
+    and add restaurant status.
   */
   computed: {
-    brewMethods: function brewMethods() {
-      return this.$store.getters.getBrewMethods;
-    },
-    addCafeStatus: function addCafeStatus() {
-      return this.$store.getters.getCafeAddStatus;
+    // brewMethods(){
+    //   return this.$store.getters.getBrewMethods;
+    // },
+    addRestaurantStatus: function addRestaurantStatus() {
+      return this.$store.getters.getRestaurantAddStatus;
     }
   },
 
@@ -62935,10 +62708,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     Defines what we need to watch on the page.
   */
   watch: {
-    'addCafeStatus': function addCafeStatus() {
-      if (this.addCafeStatus == 2) {
+    'addRestaurantStatus': function addRestaurantStatus() {
+      if (this.addRestaurantStatus == 2) {
         this.clearForm();
-        this.$router.push({ name: 'cafes' });
+        this.$router.push({ name: 'restaurants' });
       }
     }
   },
@@ -62986,7 +62759,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   */
   methods: {
     /*
-      Sets the type of the company as either roaster or cafe.
+      Sets the type of the company as either roaster or restaurant.
     */
     setCompanyType: function setCompanyType(type) {
       this.companyType = type;
@@ -62996,14 +62769,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     /*
       Toggles the selected brew method
     */
-    toggleSelectedBrewMethod: function toggleSelectedBrewMethod(id) {
-      if (this.brewMethodsSelected.indexOf(id) >= 0) {
-        this.brewMethodsSelected.splice(this.brewMethodsSelected.indexOf(id), 1);
-      } else {
-        this.brewMethodsSelected.push(id);
-      }
-    },
-
+    // toggleSelectedBrewMethod( id ){
+    //   if( this.brewMethodsSelected.indexOf( id ) >= 0 ){
+    //     this.brewMethodsSelected.splice( this.brewMethodsSelected.indexOf( id ), 1 );
+    //   }else{
+    //     this.brewMethodsSelected.push( id );
+    //   }
+    // },
 
     /*
       Searches the API route for companies
@@ -63022,91 +62794,85 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }, 300),
 
     /*
-      Submits a new cafe
+      Submits a new restaurant
     */
-    submitNewCafe: function submitNewCafe() {
-      if (this.validateNewCafe()) {
-        this.$store.dispatch('addCafe', {
-          company_name: this.companyName,
-          company_id: this.companyID,
-          company_type: this.companyType,
-          website: this.website,
+    submitNewRestaurant: function submitNewRestaurant() {
+      if (this.validateNewRestaurant()) {
+        this.$store.dispatch('addRestaurant', {
+          // website: this.website,
           location_name: this.locationName,
           address: this.address,
           city: this.city,
           state: this.state,
-          zip: this.zip,
+          // zip: this.zip,
           lat: this.lat,
-          lng: this.lng,
-          brew_methods: this.brewMethodsSelected
+          lng: this.lng
         });
       }
     },
 
 
-    /*
-      Adds a new company
-    */
-    addNewCompany: function addNewCompany() {
-      this.showAutocomplete = false;
-      this.newCompany = true;
-      this.companyResults = [];
-    },
+    // /*
+    //   Adds a new company
+    // */
+    // addNewCompany(){
+    //   this.showAutocomplete = false;
+    //   this.newCompany = true;
+    //   this.companyResults = [];
+    // },
 
-
-    /*
-      Selects an existing company
-    */
-    selectCompany: function selectCompany(company) {
-      this.showAutocomplete = false;
-      this.companyName = company.name;
-      this.companyID = company.id;
-      this.newCompany = false;
-      this.companyResults = [];
-      this.website = company.website;
-    },
-
+    // /*
+    //   Selects an existing company
+    // */
+    // selectCompany( company ){
+    //   this.showAutocomplete = false;
+    //   this.companyName = company.name;
+    //   this.companyID = company.id;
+    //   this.newCompany = false;
+    //   this.companyResults = [];
+    //   this.website = company.website;
+    // },
 
     /*
-      Validates a new cafe
+      Validates a new restaurant
     */
-    validateNewCafe: function validateNewCafe() {
-      var validNewCafeForm = true;
+    validateNewRestaurant: function validateNewRestaurant() {
+      var validNewRestaurantForm = true;
 
       /*
         Ensure a name has been entered
       */
-      if (this.companyName.trim() == '') {
-        validNewCafeForm = false;
-        this.validations.companyName.is_valid = false;
-        this.validations.companyName.text = 'Please enter a name for the company.';
-      } else {
-        this.validations.companyName.is_valid = true;
-        this.validations.companyName.text = '';
-      }
+      // if( this.companyName.trim() == '' ){
+      //   validNewRestaurantForm = false;
+      //   this.validations.companyName.is_valid = false;
+      //   this.validations.companyName.text = 'Please enter a name for the company.';
+      // }else{
+      //   this.validations.companyName.is_valid = true;
+      //   this.validations.companyName.text = '';
+      // }
 
       /*
         If a website has been entered, ensure the URL is valid. We only check if the
         company is new.
       */
-      if (this.newCompany) {
-        if (this.website.trim != '' && !this.website.match(/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/)) {
-          validNewCafeForm = false;
-          this.validations.website.is_valid = false;
-          this.validations.website.text = 'Please enter a valid URL for the website.';
-        } else {
-          this.validations.website.is_valid = true;
-          this.validations.website.text = '';
-        }
-      }
+      // if( this.newCompany ){
+      //   if( this.website.trim != '' && !this.website.match(/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/ ) ){
+      //     validNewRestaurantForm = false;
+      //     this.validations.website.is_valid = false;
+      //     this.validations.website.text = 'Please enter a valid URL for the website.';
+      //   }else{
+      //     this.validations.website.is_valid = true;
+      //     this.validations.website.text = '';
+      //   }
+      // }
 
       /*
         Ensure an address has been entered
       */
       if (this.address.trim() == '') {
-        validNewCafeForm = false;
+        validNewRestaurantForm = false;
         this.validations.address.is_valid = false;
-        this.validations.address.text = 'Please enter an address for the new cafe.';
+        this.validations.address.text = 'Please enter an address for the new restaurant.';
       } else {
         this.validations.address.is_valid = true;
         this.validations.address.text = '';
@@ -63116,9 +62882,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         Ensure a city has been entered
       */
       if (this.city.trim() == '') {
-        validNewCafeForm = false;
+        validNewRestaurantForm = false;
         this.validations.city.is_valid = false;
-        this.validations.city.text = 'Please enter a city for the new cafe.';
+        this.validations.city.text = 'Please enter a city for the new restaurant.';
       } else {
         this.validations.city.is_valid = true;
         this.validations.city.text = '';
@@ -63128,9 +62894,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         Ensure a state has been entered
       */
       if (this.state.trim() == '') {
-        validNewCafeForm = false;
+        validNewRestaurantForm = false;
         this.validations.state.is_valid = false;
-        this.validations.state.text = 'Please enter a state for the new cafe.';
+        this.validations.state.text = 'Please enter a state for the new restaurant.';
       } else {
         this.validations.state.is_valid = true;
         this.validations.state.text = '';
@@ -63139,16 +62905,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       /*
         Ensure a zip has been entered
       */
-      if (this.zip.trim() == '' || !this.zip.match(/(^\d{5}$)/)) {
-        validNewCafeForm = false;
-        this.validations.zip.is_valid = false;
-        this.validations.zip.text = 'Please enter a valid zip code for the new cafe.';
-      } else {
-        this.validations.zip.is_valid = true;
-        this.validations.zip.text = '';
-      }
+      // if( this.zip.trim() == '' || !this.zip.match(/(^\d{5}$)/) ){
+      //   validNewRestaurantForm = false;
+      //   this.validations.zip.is_valid = false;
+      //   this.validations.zip.text = 'Please enter a valid zip code for the new restaurant.';
+      // }else{
+      //   this.validations.zip.is_valid = true;
+      //   this.validations.zip.text = '';
+      // }
 
-      return validNewCafeForm;
+      return validNewRestaurantForm;
     },
 
 
@@ -63170,14 +62936,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.brewMethodsSelected = [];
 
       this.validations = {
-        companyName: {
-          is_valid: true,
-          text: ''
-        },
-        website: {
-          is_valid: true,
-          text: ''
-        },
+        // companyName: {
+        //   is_valid: true,
+        //   text: ''
+        // },
+        // website: {
+        //   is_valid: true,
+        //   text: ''
+        // },
         address: {
           is_valid: true,
           text: ''
@@ -63189,18 +62955,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         state: {
           is_valid: true,
           text: ''
-        },
-        zip: {
-          is_valid: true,
-          text: ''
         }
+        // zip: {
+        //   is_valid: true,
+        //   text: ''
+        // }
       };
     }
   }
 });
 
 /***/ }),
-/* 155 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -63210,9 +62976,9 @@ var render = function() {
   return _c("transition", { attrs: { name: "scale-in-center" } }, [
     _c(
       "div",
-      { attrs: { id: "new-cafe-page" } },
+      { attrs: { id: "new-restaurant-page" } },
       [
-        _c("router-link", { attrs: { to: { name: "cafes" } } }, [
+        _c("router-link", { attrs: { to: { name: "restaurants" } } }, [
           _c("img", { attrs: { src: "/img/close-modal.svg", id: "back" } })
         ]),
         _vm._v(" "),
@@ -63221,783 +62987,582 @@ var render = function() {
             _c(
               "div",
               { staticClass: "large-8 medium-9 small-12 cell centered" },
-              [_c("h2", { staticClass: "page-title" }, [_vm._v("Add Cafe")])]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "grid-x grid-padding-x" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "large-8 medium-9 small-12 cell centered company-selection-container"
-              },
               [
-                _c("label", { staticClass: "form-label" }, [
-                  _vm._v("Company Name")
-                ]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.companyName,
-                      expression: "companyName"
-                    }
-                  ],
-                  staticClass: "form-input",
-                  class: { invalid: !_vm.validations.companyName.is_valid },
-                  attrs: { type: "text" },
-                  domProps: { value: _vm.companyName },
-                  on: {
-                    keyup: function($event) {
-                      _vm.searchCompanies()
-                    },
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.companyName = $event.target.value
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: !_vm.validations.companyName.is_valid,
-                        expression: "!validations.companyName.is_valid"
-                      }
-                    ],
-                    staticClass: "validation"
-                  },
-                  [_vm._v(_vm._s(_vm.validations.companyName.text))]
-                ),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.companyID,
-                      expression: "companyID"
-                    }
-                  ],
-                  attrs: { type: "hidden" },
-                  domProps: { value: _vm.companyID },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.companyID = $event.target.value
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value:
-                          _vm.companyName.length > 0 && _vm.showAutocomplete,
-                        expression: "companyName.length > 0 && showAutocomplete"
-                      }
-                    ],
-                    staticClass: "company-autocomplete-container"
-                  },
-                  [
-                    _vm._l(_vm.companyResults, function(companyResult) {
-                      return _c(
-                        "div",
-                        {
-                          staticClass: "company-autocomplete",
-                          on: {
-                            click: function($event) {
-                              _vm.selectCompany(companyResult)
-                            }
-                          }
-                        },
-                        [
-                          _c("span", { staticClass: "company-name" }, [
-                            _vm._v(_vm._s(companyResult.name))
-                          ]),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "company-locations" }, [
-                            _vm._v(
-                              _vm._s(companyResult.cafes_count) + " location"
-                            ),
-                            companyResult.cafes_count > 1
-                              ? _c("span", [_vm._v("s")])
-                              : _vm._e()
-                          ])
-                        ]
-                      )
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "new-company",
-                        on: {
-                          click: function($event) {
-                            _vm.addNewCompany()
-                          }
-                        }
-                      },
-                      [
-                        _vm._v(
-                          '\n              Add new company called "' +
-                            _vm._s(_vm.companyName) +
-                            '"\n            '
-                        )
-                      ]
-                    )
-                  ],
-                  2
-                )
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _vm.newCompany
-            ? _c("div", { staticClass: "grid-x grid-padding-x" }, [
-                _c(
-                  "div",
-                  { staticClass: "large-8 medium-9 small-12 cell centered" },
-                  [
-                    _c("label", { staticClass: "form-label" }, [
-                      _vm._v("Website")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "input",
-                      _vm._b(
-                        {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.website,
-                              expression: "website"
-                            }
-                          ],
-                          staticClass: "form-input",
-                          attrs: { type: "text" },
-                          domProps: { value: _vm.website },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.website = $event.target.value
-                            }
-                          }
-                        },
-                        "input",
-                        { invalid: !_vm.validations.website.is_valid },
-                        false
-                      )
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: !_vm.validations.website.is_valid,
-                            expression: "!validations.website.is_valid"
-                          }
-                        ],
-                        staticClass: "validation"
-                      },
-                      [_vm._v(_vm._s(_vm.validations.website.text))]
-                    )
-                  ]
-                )
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _c("div", { staticClass: "grid-x grid-padding-x" }, [
-            _c(
-              "div",
-              { staticClass: "large-8 medium-9 small-12 cell centered" },
-              [
-                _c("label", { staticClass: "form-label" }, [
-                  _vm._v("Location Type")
+                _c("h2", { staticClass: "page-title" }, [
+                  _vm._v("Add Restaurant")
                 ])
               ]
             )
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "grid-x grid-padding-x" }, [
-            _c(
-              "div",
-              { staticClass: "large-8 medium-9 small-12 cell centered" },
-              [
-                _c(
-                  "div",
-                  {
-                    staticClass: "location-type roaster",
-                    class: { active: _vm.companyType == "roaster" },
-                    on: {
-                      click: function($event) {
-                        _vm.setCompanyType("roaster")
-                      }
-                    }
-                  },
-                  [_vm._v("\n            Roaster\n          ")]
-                ),
-                _c(
-                  "div",
-                  {
-                    staticClass: "location-type cafe",
-                    class: { active: _vm.companyType == "cafe" },
-                    on: {
-                      click: function($event) {
-                        _vm.setCompanyType("cafe")
-                      }
-                    }
-                  },
-                  [_vm._v("\n            Cafe\n          ")]
-                )
-              ]
-            )
+            _c("div", {
+              staticClass:
+                "large-8 medium-9 small-12 cell centered company-selection-container"
+            })
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "grid-x grid-padding-x" }, [
-            _c(
-              "div",
-              { staticClass: "large-8 medium-9 small-12 cell centered" },
-              [
-                _c("label", { staticClass: "form-label" }, [
-                  _vm._v("Brew Methods Available")
-                ])
-              ]
-            )
+            _c("div", {
+              staticClass: "large-8 medium-9 small-12 cell centered"
+            })
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "grid-x grid-padding-x" }, [
-            _c(
-              "div",
-              { staticClass: "large-8 medium-9 small-12 cell centered" },
-              _vm._l(_vm.brewMethods, function(method) {
-                return _c(
-                  "div",
+            _c("div", {
+              staticClass: "large-8 medium-9 small-12 cell centered"
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "grid-x grid-padding-x" }, [
+            _c("div", {
+              staticClass: "large-8 medium-9 small-12 cell centered"
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "grid-x grid-padding-x" }, [
+            _c("div", {
+              staticClass: "large-8 medium-9 small-12 cell centered"
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "grid-x grid-padding-x" }, [
+          _c(
+            "div",
+            { staticClass: "large-8 medium-9 small-12 cell centered" },
+            [
+              _c("label", { staticClass: "form-label" }, [
+                _vm._v("Location Name")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
                   {
-                    staticClass: "brew-method",
-                    class: {
-                      active: _vm.brewMethodsSelected.indexOf(method.id) >= 0
-                    },
-                    on: {
-                      click: function($event) {
-                        _vm.toggleSelectedBrewMethod(method.id)
-                      }
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.locationName,
+                    expression: "locationName"
+                  }
+                ],
+                staticClass: "form-input",
+                attrs: { type: "text" },
+                domProps: { value: _vm.locationName },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
                     }
-                  },
-                  [
-                    _c("div", { staticClass: "brew-method-container" }, [
-                      _c("img", {
-                        staticClass: "brew-method-icon",
-                        attrs: { src: method.icon + ".svg" }
-                      }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "brew-method-name" }, [
-                        _vm._v(_vm._s(method.method))
-                      ])
-                    ])
-                  ]
-                )
+                    _vm.locationName = $event.target.value
+                  }
+                }
               })
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "grid-x grid-padding-x" }, [
-            _c(
-              "div",
-              { staticClass: "large-8 medium-9 small-12 cell centered" },
-              [
-                _c("label", { staticClass: "form-label" }, [
-                  _vm._v("Location Name")
-                ]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.locationName,
-                      expression: "locationName"
-                    }
-                  ],
-                  staticClass: "form-input",
-                  attrs: { type: "text" },
-                  domProps: { value: _vm.locationName },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.locationName = $event.target.value
-                    }
-                  }
-                })
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "grid-x grid-padding-x" }, [
-            _c(
-              "div",
-              { staticClass: "large-8 medium-9 small-12 cell centered" },
-              [
-                _c("label", { staticClass: "form-label" }, [
-                  _vm._v("Street Address")
-                ]),
-                _vm._v(" "),
-                _c("input", {
-                  staticClass: "form-input",
-                  class: { invalid: !_vm.validations.address.is_valid },
-                  attrs: {
-                    type: "text",
-                    id: "street-address",
-                    placeholder: "Street Address"
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.address,
-                      expression: "address"
-                    }
-                  ],
-                  attrs: { type: "hidden" },
-                  domProps: { value: _vm.address },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.address = $event.target.value
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "div",
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "grid-x grid-padding-x" }, [
+          _c(
+            "div",
+            { staticClass: "large-8 medium-9 small-12 cell centered" },
+            [
+              _c("label", { staticClass: "form-label" }, [
+                _vm._v("Street Address")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-input",
+                class: { invalid: !_vm.validations.address.is_valid },
+                attrs: {
+                  type: "text",
+                  id: "street-address",
+                  placeholder: "Street Address"
+                }
+              }),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
                   {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: !_vm.validations.address.is_valid,
-                        expression: "!validations.address.is_valid"
-                      }
-                    ],
-                    staticClass: "validation"
-                  },
-                  [_vm._v(_vm._s(_vm.validations.address.text))]
-                )
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "grid-x grid-padding-x" }, [
-            _c(
-              "div",
-              { staticClass: "large-8 medium-9 small-12 cell centered" },
-              [
-                _c("label", { staticClass: "form-label" }, [_vm._v("City")]),
-                _vm._v(" "),
-                _c("input", {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.address,
+                    expression: "address"
+                  }
+                ],
+                attrs: { type: "hidden" },
+                domProps: { value: _vm.address },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.address = $event.target.value
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.latitude,
+                    expression: "latitude"
+                  }
+                ],
+                attrs: { type: "hidden" },
+                domProps: { value: _vm.latitude },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.latitude = $event.target.value
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.longitude,
+                    expression: "longitude"
+                  }
+                ],
+                attrs: { type: "hidden" },
+                domProps: { value: _vm.longitude },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.longitude = $event.target.value
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.added_by,
+                    expression: "added_by"
+                  }
+                ],
+                attrs: { type: "hidden" },
+                domProps: { value: _vm.added_by },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.added_by = $event.target.value
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
                   directives: [
                     {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.city,
-                      expression: "city"
+                      name: "show",
+                      rawName: "v-show",
+                      value: !_vm.validations.address.is_valid,
+                      expression: "!validations.address.is_valid"
                     }
                   ],
-                  staticClass: "form-input",
-                  class: { invalid: !_vm.validations.city.is_valid },
-                  attrs: { type: "text" },
-                  domProps: { value: _vm.city },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.city = $event.target.value
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "div",
+                  staticClass: "validation"
+                },
+                [_vm._v(_vm._s(_vm.validations.address.text))]
+              )
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "grid-x grid-padding-x" }, [
+          _c(
+            "div",
+            { staticClass: "large-8 medium-9 small-12 cell centered" },
+            [
+              _c("label", { staticClass: "form-label" }, [_vm._v("City")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
                   {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: !_vm.validations.city.is_valid,
-                        expression: "!validations.city.is_valid"
-                      }
-                    ],
-                    staticClass: "validation"
-                  },
-                  [_vm._v(_vm._s(_vm.validations.city.text))]
-                )
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "grid-x grid-padding-x" }, [
-            _c(
-              "div",
-              { staticClass: "large-8 medium-9 small-12 cell centered" },
-              [
-                _c("div", { staticClass: "grid-x grid-padding-x" }, [
-                  _c("div", { staticClass: "large-6 medium-6 small-12 cell" }, [
-                    _c("label", { staticClass: "form-label" }, [
-                      _vm._v("State")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.state,
-                            expression: "state"
-                          }
-                        ],
-                        class: { invalid: !_vm.validations.state.is_valid },
-                        on: {
-                          change: function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.state = $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          }
-                        }
-                      },
-                      [
-                        _c("option", { attrs: { value: "" } }),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "AL" } }, [
-                          _vm._v("Alabama")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "AK" } }, [
-                          _vm._v("Alaska")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "AZ" } }, [
-                          _vm._v("Arizona")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "AR" } }, [
-                          _vm._v("Arkansas")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "CA" } }, [
-                          _vm._v("California")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "CO" } }, [
-                          _vm._v("Colorado")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "CT" } }, [
-                          _vm._v("Connecticut")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "DE" } }, [
-                          _vm._v("Delaware")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "DC" } }, [
-                          _vm._v("District Of Columbia")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "FL" } }, [
-                          _vm._v("Florida")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "GA" } }, [
-                          _vm._v("Georgia")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "HI" } }, [
-                          _vm._v("Hawaii")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "ID" } }, [
-                          _vm._v("Idaho")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "IL" } }, [
-                          _vm._v("Illinois")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "IN" } }, [
-                          _vm._v("Indiana")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "IA" } }, [
-                          _vm._v("Iowa")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "KS" } }, [
-                          _vm._v("Kansas")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "KY" } }, [
-                          _vm._v("Kentucky")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "LA" } }, [
-                          _vm._v("Louisiana")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "ME" } }, [
-                          _vm._v("Maine")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "MD" } }, [
-                          _vm._v("Maryland")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "MA" } }, [
-                          _vm._v("Massachusetts")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "MI" } }, [
-                          _vm._v("Michigan")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "MN" } }, [
-                          _vm._v("Minnesota")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "MS" } }, [
-                          _vm._v("Mississippi")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "MO" } }, [
-                          _vm._v("Missouri")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "MT" } }, [
-                          _vm._v("Montana")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "NE" } }, [
-                          _vm._v("Nebraska")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "NV" } }, [
-                          _vm._v("Nevada")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "NH" } }, [
-                          _vm._v("New Hampshire")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "NJ" } }, [
-                          _vm._v("New Jersey")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "NM" } }, [
-                          _vm._v("New Mexico")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "NY" } }, [
-                          _vm._v("New York")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "NC" } }, [
-                          _vm._v("North Carolina")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "ND" } }, [
-                          _vm._v("North Dakota")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "OH" } }, [
-                          _vm._v("Ohio")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "OK" } }, [
-                          _vm._v("Oklahoma")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "OR" } }, [
-                          _vm._v("Oregon")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "PA" } }, [
-                          _vm._v("Pennsylvania")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "RI" } }, [
-                          _vm._v("Rhode Island")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "SC" } }, [
-                          _vm._v("South Carolina")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "SD" } }, [
-                          _vm._v("South Dakota")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "TN" } }, [
-                          _vm._v("Tennessee")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "TX" } }, [
-                          _vm._v("Texas")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "UT" } }, [
-                          _vm._v("Utah")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "VT" } }, [
-                          _vm._v("Vermont")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "VA" } }, [
-                          _vm._v("Virginia")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "WA" } }, [
-                          _vm._v("Washington")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "WV" } }, [
-                          _vm._v("West Virginia")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "WI" } }, [
-                          _vm._v("Wisconsin")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "WY" } }, [
-                          _vm._v("Wyoming")
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: !_vm.validations.state.is_valid,
-                            expression: "!validations.state.is_valid"
-                          }
-                        ],
-                        staticClass: "validation"
-                      },
-                      [_vm._v(_vm._s(_vm.validations.state.text))]
-                    )
-                  ]),
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.city,
+                    expression: "city"
+                  }
+                ],
+                staticClass: "form-input",
+                class: { invalid: !_vm.validations.city.is_valid },
+                attrs: { type: "text" },
+                domProps: { value: _vm.city },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.city = $event.target.value
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: !_vm.validations.city.is_valid,
+                      expression: "!validations.city.is_valid"
+                    }
+                  ],
+                  staticClass: "validation"
+                },
+                [_vm._v(_vm._s(_vm.validations.city.text))]
+              )
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "grid-x grid-padding-x" }, [
+          _c(
+            "div",
+            { staticClass: "large-8 medium-9 small-12 cell centered" },
+            [
+              _c("div", { staticClass: "grid-x grid-padding-x" }, [
+                _c("div", { staticClass: "large-6 medium-6 small-12 cell" }, [
+                  _c("label", { staticClass: "form-label" }, [_vm._v("State")]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "large-6 medium-6 small-12 cell" }, [
-                    _c("label", { staticClass: "form-label" }, [
-                      _vm._v("Zip Code")
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
+                  _c(
+                    "select",
+                    {
                       directives: [
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.zip,
-                          expression: "zip"
+                          value: _vm.state,
+                          expression: "state"
                         }
                       ],
-                      staticClass: "form-input",
-                      class: { invalid: !_vm.validations.zip.is_valid },
-                      attrs: { type: "text" },
-                      domProps: { value: _vm.zip },
+                      class: { invalid: !_vm.validations.state.is_valid },
                       on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.zip = $event.target.value
+                        change: function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.state = $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
                         }
                       }
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "div",
+                    },
+                    [
+                      _c("option", { attrs: { value: "" } }),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "AL" } }, [
+                        _vm._v("Alabama")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "AK" } }, [
+                        _vm._v("Alaska")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "AZ" } }, [
+                        _vm._v("Arizona")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "AR" } }, [
+                        _vm._v("Arkansas")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "CA" } }, [
+                        _vm._v("California")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "CO" } }, [
+                        _vm._v("Colorado")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "CT" } }, [
+                        _vm._v("Connecticut")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "DE" } }, [
+                        _vm._v("Delaware")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "DC" } }, [
+                        _vm._v("District Of Columbia")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "FL" } }, [
+                        _vm._v("Florida")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "GA" } }, [
+                        _vm._v("Georgia")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "HI" } }, [
+                        _vm._v("Hawaii")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "ID" } }, [
+                        _vm._v("Idaho")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "IL" } }, [
+                        _vm._v("Illinois")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "IN" } }, [
+                        _vm._v("Indiana")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "IA" } }, [
+                        _vm._v("Iowa")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "KS" } }, [
+                        _vm._v("Kansas")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "KY" } }, [
+                        _vm._v("Kentucky")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "LA" } }, [
+                        _vm._v("Louisiana")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "ME" } }, [
+                        _vm._v("Maine")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "MD" } }, [
+                        _vm._v("Maryland")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "MA" } }, [
+                        _vm._v("Massachusetts")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "MI" } }, [
+                        _vm._v("Michigan")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "MN" } }, [
+                        _vm._v("Minnesota")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "MS" } }, [
+                        _vm._v("Mississippi")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "MO" } }, [
+                        _vm._v("Missouri")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "MT" } }, [
+                        _vm._v("Montana")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "NE" } }, [
+                        _vm._v("Nebraska")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "NV" } }, [
+                        _vm._v("Nevada")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "NH" } }, [
+                        _vm._v("New Hampshire")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "NJ" } }, [
+                        _vm._v("New Jersey")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "NM" } }, [
+                        _vm._v("New Mexico")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "NY" } }, [
+                        _vm._v("New York")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "NC" } }, [
+                        _vm._v("North Carolina")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "ND" } }, [
+                        _vm._v("North Dakota")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "OH" } }, [
+                        _vm._v("Ohio")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "OK" } }, [
+                        _vm._v("Oklahoma")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "OR" } }, [
+                        _vm._v("Oregon")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "PA" } }, [
+                        _vm._v("Pennsylvania")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "RI" } }, [
+                        _vm._v("Rhode Island")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "SC" } }, [
+                        _vm._v("South Carolina")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "SD" } }, [
+                        _vm._v("South Dakota")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "TN" } }, [
+                        _vm._v("Tennessee")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "TX" } }, [
+                        _vm._v("Texas")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "UT" } }, [
+                        _vm._v("Utah")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "VT" } }, [
+                        _vm._v("Vermont")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "VA" } }, [
+                        _vm._v("Virginia")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "WA" } }, [
+                        _vm._v("Washington")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "WV" } }, [
+                        _vm._v("West Virginia")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "WI" } }, [
+                        _vm._v("Wisconsin")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "WY" } }, [
+                        _vm._v("Wyoming")
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: !_vm.validations.state.is_valid,
+                          expression: "!validations.state.is_valid"
+                        }
+                      ],
+                      staticClass: "validation"
+                    },
+                    [_vm._v(_vm._s(_vm.validations.state.text))]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "large-6 medium-6 small-12 cell" }, [
+                  _c("label", { staticClass: "form-label" }, [
+                    _vm._v("Zip Code")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
                       {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: !_vm.validations.zip.is_valid,
-                            expression: "!validations.zip.is_valid"
-                          }
-                        ],
-                        staticClass: "validation"
-                      },
-                      [_vm._v(_vm._s(_vm.validations.zip.text))]
-                    )
-                  ])
-                ])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "grid-x grid-padding-x" }, [
-            _c(
-              "div",
-              { staticClass: "large-8 medium-9 small-12 cell centered" },
-              [
-                _c(
-                  "a",
-                  {
-                    staticClass: "add-location-button",
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.zip,
+                        expression: "zip"
+                      }
+                    ],
+                    staticClass: "form-input",
+                    class: { invalid: !_vm.validations.zip.is_valid },
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.zip },
                     on: {
-                      click: function($event) {
-                        _vm.submitNewCafe()
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.zip = $event.target.value
                       }
                     }
-                  },
-                  [_vm._v("Add Cafe")]
-                )
-              ]
-            )
-          ])
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: !_vm.validations.zip.is_valid,
+                          expression: "!validations.zip.is_valid"
+                        }
+                      ],
+                      staticClass: "validation"
+                    },
+                    [_vm._v(_vm._s(_vm.validations.zip.text))]
+                  )
+                ])
+              ])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "grid-x grid-padding-x" }, [
+          _c(
+            "div",
+            { staticClass: "large-8 medium-9 small-12 cell centered" },
+            [
+              _c(
+                "a",
+                {
+                  staticClass: "add-location-button",
+                  on: {
+                    click: function($event) {
+                      _vm.submitNewRestaurant()
+                    }
+                  }
+                },
+                [_vm._v("Add Restaurant")]
+              )
+            ]
+          )
         ])
       ],
       1
@@ -64010,24 +63575,24 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-10b7d3a0", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-41ac8f90", module.exports)
   }
 }
 
 /***/ }),
-/* 156 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(157)
+  __webpack_require__(154)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(159)
+var __vue_script__ = __webpack_require__(156)
 /* template */
-var __vue_template__ = __webpack_require__(174)
+var __vue_template__ = __webpack_require__(171)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -64044,7 +63609,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/pages/Cafe.vue"
+Component.options.__file = "resources/assets/js/pages/Restaurant.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -64053,9 +63618,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-4c1ef4da", Component.options)
+    hotAPI.createRecord("data-v-ca27728c", Component.options)
   } else {
-    hotAPI.reload("data-v-4c1ef4da", Component.options)
+    hotAPI.reload("data-v-ca27728c", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -64066,23 +63631,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 157 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(158);
+var content = __webpack_require__(155);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("03e969fc", content, false, {});
+var update = __webpack_require__(4)("10d985c6", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4c1ef4da\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Cafe.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4c1ef4da\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Cafe.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ca27728c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Restaurant.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ca27728c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Restaurant.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -64092,7 +63657,7 @@ if(false) {
 }
 
 /***/ }),
-/* 158 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -64100,13 +63665,13 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\ndiv#cafe-page {\n  position: absolute;\n  right: 30px;\n  top: 125px;\n  background: #FFFFFF;\n  -webkit-box-shadow: 0 2px 4px 0 rgba(3, 27, 78, 0.1);\n          box-shadow: 0 2px 4px 0 rgba(3, 27, 78, 0.1);\n  width: 100%;\n  max-width: 480px;\n  padding: 20px;\n  padding-top: 10px;\n}\ndiv#cafe-page img.close-icon {\n    float: right;\n    cursor: pointer;\n    margin-top: 10px;\n}\ndiv#cafe-page h2.cafe-title {\n    color: #342C0C;\n    font-size: 36px;\n    line-height: 44px;\n    font-family: \"Lato\", sans-serif;\n    font-weight: bolder;\n}\ndiv#cafe-page span.location-number {\n    display: inline-block;\n    color: #8E8E8E;\n    font-size: 18px;\n}\ndiv#cafe-page span.location-number span.location-image-container {\n      width: 35px;\n      text-align: center;\n      display: inline-block;\n}\ndiv#cafe-page label.cafe-label {\n    font-family: \"Lato\", sans-serif;\n    text-transform: uppercase;\n    font-weight: bold;\n    color: black;\n    margin-top: 20px;\n    margin-bottom: 10px;\n}\ndiv#cafe-page div.location-type {\n    color: white;\n    font-family: \"Lato\", sans-serif;\n    font-size: 16px;\n    width: 105px;\n    height: 45px;\n    text-align: center;\n    line-height: 45px;\n    border-radius: 3px;\n}\ndiv#cafe-page div.location-type img {\n      margin-right: 5px;\n}\ndiv#cafe-page div.location-type.roaster {\n      background-color: #E8635F;\n}\ndiv#cafe-page div.location-type.cafe {\n      background-color: #3D281E;\n}\ndiv#cafe-page div.location-type.cafe img {\n        margin-top: -6px;\n}\ndiv#cafe-page div.brew-method {\n    font-size: 16px;\n    color: #666666;\n    font-family: \"Lato\", sans-serif;\n    border-radius: 4px;\n    background-color: #F9F9FA;\n    width: 150px;\n    height: 57px;\n    float: left;\n    margin-right: 10px;\n    margin-bottom: 10px;\n    padding: 5px;\n    cursor: pointer;\n    position: relative;\n}\ndiv#cafe-page div.brew-method div.brew-method-container {\n      position: absolute;\n      top: 50%;\n      -webkit-transform: translateY(-50%);\n              transform: translateY(-50%);\n}\ndiv#cafe-page div.brew-method div.brew-method-container img.brew-method-icon {\n        display: inline-block;\n        margin-right: 10px;\n        margin-left: 5px;\n        width: 20px;\n        max-height: 30px;\n}\ndiv#cafe-page div.brew-method div.brew-method-container span.brew-method-name {\n        display: inline-block;\n        width: calc( 100% - 40px);\n        vertical-align: middle;\n}\ndiv#cafe-page div.address-container {\n    color: #666666;\n    font-size: 18px;\n    line-height: 23px;\n    font-family: \"Lato\", sans-serif;\n    margin-bottom: 5px;\n}\ndiv#cafe-page div.address-container span.address {\n      display: block;\n}\ndiv#cafe-page div.address-container span.city-state {\n      display: block;\n}\ndiv#cafe-page div.address-container span.zip {\n      display: block;\n}\ndiv#cafe-page a.cafe-website {\n    font-family: \"Lato\", sans-serif;\n    color: #543729;\n    font-size: 18px;\n}\ndiv#cafe-page a.suggest-cafe-edit {\n    font-family: \"Lato\", sans-serif;\n    color: #054E7A;\n    font-size: 14px;\n    display: inline-block;\n    margin-top: 30px;\n    text-decoration: underline;\n}\n\n/* Small only */\n@media screen and (max-width: 39.9375em) {\ndiv#cafe-page {\n    position: fixed;\n    right: 0px;\n    left: 0px;\n    top: 0px;\n    bottom: 0px;\n    z-index: 99999;\n}\n}\n\n/* Medium only */\n/* Large only */\n", ""]);
+exports.push([module.i, "\ndiv#restaurant-page {\n  position: absolute;\n  right: 30px;\n  top: 125px;\n  background: #FFFFFF;\n  -webkit-box-shadow: 0 2px 4px 0 rgba(3, 27, 78, 0.1);\n          box-shadow: 0 2px 4px 0 rgba(3, 27, 78, 0.1);\n  width: 100%;\n  max-width: 480px;\n  padding: 20px;\n  padding-top: 10px;\n}\ndiv#restaurant-page img.close-icon {\n    float: right;\n    cursor: pointer;\n    margin-top: 10px;\n}\ndiv#restaurant-page h2.restaurant-title {\n    color: #342C0C;\n    font-size: 36px;\n    line-height: 44px;\n    font-family: \"Lato\", sans-serif;\n    font-weight: bolder;\n}\ndiv#restaurant-page span.location-number {\n    display: inline-block;\n    color: #8E8E8E;\n    font-size: 18px;\n}\ndiv#restaurant-page span.location-number span.location-image-container {\n      width: 35px;\n      text-align: center;\n      display: inline-block;\n}\ndiv#restaurant-page label.restaurant-label {\n    font-family: \"Lato\", sans-serif;\n    text-transform: uppercase;\n    font-weight: bold;\n    color: black;\n    margin-top: 20px;\n    margin-bottom: 10px;\n}\ndiv#restaurant-page div.location-type {\n    color: white;\n    font-family: \"Lato\", sans-serif;\n    font-size: 16px;\n    width: 105px;\n    height: 45px;\n    text-align: center;\n    line-height: 45px;\n    border-radius: 3px;\n}\ndiv#restaurant-page div.location-type img {\n      margin-right: 5px;\n}\ndiv#restaurant-page div.location-type.roaster {\n      background-color: #E8635F;\n}\ndiv#restaurant-page div.location-type.restaurant {\n      background-color: #3D281E;\n}\ndiv#restaurant-page div.location-type.restaurant img {\n        margin-top: -6px;\n}\ndiv#restaurant-page div.brew-method {\n    font-size: 16px;\n    color: #666666;\n    font-family: \"Lato\", sans-serif;\n    border-radius: 4px;\n    background-color: #F9F9FA;\n    width: 150px;\n    height: 57px;\n    float: left;\n    margin-right: 10px;\n    margin-bottom: 10px;\n    padding: 5px;\n    cursor: pointer;\n    position: relative;\n}\ndiv#restaurant-page div.brew-method div.brew-method-container {\n      position: absolute;\n      top: 50%;\n      -webkit-transform: translateY(-50%);\n              transform: translateY(-50%);\n}\ndiv#restaurant-page div.brew-method div.brew-method-container img.brew-method-icon {\n        display: inline-block;\n        margin-right: 10px;\n        margin-left: 5px;\n        width: 20px;\n        max-height: 30px;\n}\ndiv#restaurant-page div.brew-method div.brew-method-container span.brew-method-name {\n        display: inline-block;\n        width: calc( 100% - 40px);\n        vertical-align: middle;\n}\ndiv#restaurant-page div.address-container {\n    color: #666666;\n    font-size: 18px;\n    line-height: 23px;\n    font-family: \"Lato\", sans-serif;\n    margin-bottom: 5px;\n}\ndiv#restaurant-page div.address-container span.address {\n      display: block;\n}\ndiv#restaurant-page div.address-container span.city-state {\n      display: block;\n}\ndiv#restaurant-page div.address-container span.zip {\n      display: block;\n}\ndiv#restaurant-page a.restaurant-website {\n    font-family: \"Lato\", sans-serif;\n    color: #543729;\n    font-size: 18px;\n}\ndiv#restaurant-page a.suggest-restaurant-edit {\n    font-family: \"Lato\", sans-serif;\n    color: #054E7A;\n    font-size: 14px;\n    display: inline-block;\n    margin-top: 30px;\n    text-decoration: underline;\n}\n\n/* Small only */\n@media screen and (max-width: 39.9375em) {\ndiv#restaurant-page {\n    position: fixed;\n    right: 0px;\n    left: 0px;\n    top: 0px;\n    bottom: 0px;\n    z-index: 99999;\n}\n}\n\n/* Medium only */\n/* Large only */\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 159 */
+/* 156 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -64114,10 +63679,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__event_bus_js__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_Loader_vue__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_Loader_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_global_Loader_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_cafes_IndividualCafeMap_vue__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_cafes_IndividualCafeMap_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_cafes_IndividualCafeMap_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_cafes_ToggleLike_vue__ = __webpack_require__(169);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_cafes_ToggleLike_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_cafes_ToggleLike_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_restaurants_IndividualRestaurantMap_vue__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_restaurants_IndividualRestaurantMap_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_restaurants_IndividualRestaurantMap_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_restaurants_ToggleLike_vue__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_restaurants_ToggleLike_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_restaurants_ToggleLike_vue__);
+//
+//
 //
 //
 //
@@ -64356,7 +63923,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /*
-  Import the loader and cafe map for use in the component.
+  Import the loader and restaurant map for use in the component.
 */
 
 
@@ -64368,16 +63935,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   */
   components: {
     Loader: __WEBPACK_IMPORTED_MODULE_1__components_global_Loader_vue___default.a,
-    IndividualCafeMap: __WEBPACK_IMPORTED_MODULE_2__components_cafes_IndividualCafeMap_vue___default.a,
-    ToggleLike: __WEBPACK_IMPORTED_MODULE_3__components_cafes_ToggleLike_vue___default.a
+    IndividualRestaurantMap: __WEBPACK_IMPORTED_MODULE_2__components_restaurants_IndividualRestaurantMap_vue___default.a,
+    ToggleLike: __WEBPACK_IMPORTED_MODULE_3__components_restaurants_ToggleLike_vue___default.a
   },
 
   /*
-    When created, load the cafe based on the ID in the
+    When created, load the restaurant based on the ID in the
     route parameter.
   */
   created: function created() {
-    this.$store.dispatch('loadCafe', {
+    this.$store.dispatch('loadRestaurant', {
       id: this.$route.params.id
     });
   },
@@ -64386,46 +63953,46 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   watch: {
     '$route.params.id': function $routeParamsId() {
       this.$store.dispatch('clearLikeAndUnlikeStatus');
-      this.$store.dispatch('loadCafe', {
+      this.$store.dispatch('loadRestaurant', {
         id: this.$route.params.id
       });
     },
 
-    'cafeLoadStatus': function cafeLoadStatus() {
-      if (this.cafeLoadStatus == 2) {
-        __WEBPACK_IMPORTED_MODULE_0__event_bus_js__["a" /* EventBus */].$emit('location-selected', { lat: parseFloat(this.cafe.latitude), lng: parseFloat(this.cafe.longitude) });
+    'restaurantLoadStatus': function restaurantLoadStatus() {
+      if (this.restaurantLoadStatus == 2) {
+        __WEBPACK_IMPORTED_MODULE_0__event_bus_js__["a" /* EventBus */].$emit('location-selected', { lat: parseFloat(this.restaurant.latitude), lng: parseFloat(this.restaurant.longitude) });
       }
 
-      if (this.cafeLoadStatus == 3) {
-        __WEBPACK_IMPORTED_MODULE_0__event_bus_js__["a" /* EventBus */].$emit('show-error', { notification: 'Cafe Not Found!' });
-        this.$router.push({ name: 'cafes' });
+      if (this.restaurantLoadStatus == 3) {
+        __WEBPACK_IMPORTED_MODULE_0__event_bus_js__["a" /* EventBus */].$emit('show-error', { notification: 'Restaurant Not Found!' });
+        this.$router.push({ name: 'restaurants' });
       }
     }
   },
 
   /*
-    Defines the computed variables on the cafe.
+    Defines the computed variables on the restaurant.
   */
   computed: {
     /*
-      Grabs the cafe load status from the Vuex state.
+      Grabs the restaurant load status from the Vuex state.
     */
-    cafeLoadStatus: function cafeLoadStatus() {
-      return this.$store.getters.getCafeLoadStatus;
+    restaurantLoadStatus: function restaurantLoadStatus() {
+      return this.$store.getters.getRestaurantLoadStatus;
     },
-    cafeLikeActionStatus: function cafeLikeActionStatus() {
-      return this.$store.getters.getCafeLikeActionStatus;
+    restaurantLikeActionStatus: function restaurantLikeActionStatus() {
+      return this.$store.getters.getRestaurantLikeActionStatus;
     },
-    cafeUnlikeActionStatus: function cafeUnlikeActionStatus() {
-      return this.$store.getters.getCafeUnlikeActionStatus;
+    restaurantUnlikeActionStatus: function restaurantUnlikeActionStatus() {
+      return this.$store.getters.getRestaurantUnlikeActionStatus;
     },
 
 
     /*
-      Grabs the cafe from the Vuex state.
+      Grabs the restaurant from the Vuex state.
     */
-    cafe: function cafe() {
-      return this.$store.getters.getCafe;
+    restaurant: function restaurant() {
+      return this.$store.getters.getRestaurant;
     },
 
 
@@ -64456,13 +64023,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 160 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(161);
+var content = __webpack_require__(158);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -64482,7 +64049,7 @@ if(false) {
 }
 
 /***/ }),
-/* 161 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -64496,7 +64063,7 @@ exports.push([module.i, "\ndiv.loader {\n  margin: auto;\n  vertical-align: midd
 
 
 /***/ }),
-/* 162 */
+/* 159 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -64543,7 +64110,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 163 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -64623,19 +64190,19 @@ if (false) {
 }
 
 /***/ }),
-/* 164 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(165)
+  __webpack_require__(162)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(167)
+var __vue_script__ = __webpack_require__(164)
 /* template */
-var __vue_template__ = __webpack_require__(168)
+var __vue_template__ = __webpack_require__(165)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -64652,7 +64219,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/cafes/IndividualCafeMap.vue"
+Component.options.__file = "resources/assets/js/components/restaurants/IndividualRestaurantMap.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -64661,9 +64228,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-12aa39e6", Component.options)
+    hotAPI.createRecord("data-v-19e37ab4", Component.options)
   } else {
-    hotAPI.reload("data-v-12aa39e6", Component.options)
+    hotAPI.reload("data-v-19e37ab4", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -64674,23 +64241,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 165 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(166);
+var content = __webpack_require__(163);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("3c6d4625", content, false, {});
+var update = __webpack_require__(4)("6034ac6b", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-12aa39e6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./IndividualCafeMap.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-12aa39e6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./IndividualCafeMap.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-19e37ab4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./IndividualRestaurantMap.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-19e37ab4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./IndividualRestaurantMap.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -64700,7 +64267,7 @@ if(false) {
 }
 
 /***/ }),
-/* 166 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -64708,13 +64275,13 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\ndiv#individual-cafe-map {\n  width: 700px;\n  height: 500px;\n  margin: auto;\n  margin-bottom: 200px;\n}\n", ""]);
+exports.push([module.i, "\ndiv#individual-restaurant-map {\n  width: 700px;\n  height: 500px;\n  margin: auto;\n  margin-bottom: 200px;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 167 */
+/* 164 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -64743,18 +64310,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   */
   computed: {
     /*
-      Gets the cafe load status from the Vuex state.
+      Gets the restaurant load status from the Vuex state.
     */
-    cafeLoadStatus: function cafeLoadStatus() {
-      return this.$store.getters.getCafeLoadStatus;
+    restaurantLoadStatus: function restaurantLoadStatus() {
+      return this.$store.getters.getRestaurantLoadStatus;
     },
 
 
     /*
-      Gets the cafe from the Vuex state.
+      Gets the restaurant from the Vuex state.
     */
-    cafe: function cafe() {
-      return this.$store.getters.getCafe;
+    restaurant: function restaurant() {
+      return this.$store.getters.getRestaurant;
     }
   },
 
@@ -64763,13 +64330,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   */
   watch: {
     /*
-      The cafe load status. When the cafe load status equals 2
-      we display the individual cafe map. We have to wait until the
-      cafe is loaded so we get the lat and long for the cafe.
+      The restaurant load status. When the restaurant load status equals 2
+      we display the individual restaurant map. We have to wait until the
+      restaurant is loaded so we get the lat and long for the restaurant.
     */
-    cafeLoadStatus: function cafeLoadStatus() {
-      if (this.cafeLoadStatus == 2) {
-        this.displayIndividualCafeMap();
+    restaurantLoadStatus: function restaurantLoadStatus() {
+      if (this.restaurantLoadStatus == 2) {
+        this.displayIndividualRestaurantMap();
       }
     }
   },
@@ -64779,14 +64346,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   */
   methods: {
     /*
-      Displays the individual cafe map.
+      Displays the individual restaurant map.
     */
-    displayIndividualCafeMap: function displayIndividualCafeMap() {
+    displayIndividualRestaurantMap: function displayIndividualRestaurantMap() {
       /*
-        Builds the individual cafe map.
+        Builds the individual restaurant map.
       */
-      this.map = new google.maps.Map(document.getElementById('individual-cafe-map'), {
-        center: { lat: parseFloat(this.cafe.latitude), lng: parseFloat(this.cafe.longitude) },
+      this.map = new google.maps.Map(document.getElementById('individual-restaurant-map'), {
+        center: { lat: parseFloat(this.restaurant.latitude), lng: parseFloat(this.restaurant.longitude) },
         zoom: 13
       });
 
@@ -64796,10 +64363,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var image = '/img/coffee-marker.png';
 
       /*
-        Builds the marker for the cafe on the map.
+        Builds the marker for the restaurant on the map.
       */
       var marker = new google.maps.Marker({
-        position: { lat: parseFloat(this.cafe.latitude), lng: parseFloat(this.cafe.longitude) },
+        position: { lat: parseFloat(this.restaurant.latitude), lng: parseFloat(this.restaurant.longitude) },
         map: this.map,
         icon: image
       });
@@ -64808,14 +64375,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 168 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "individual-cafe-map" } })
+  return _c("div", { attrs: { id: "individual-restaurant-map" } })
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -64823,24 +64390,24 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-12aa39e6", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-19e37ab4", module.exports)
   }
 }
 
 /***/ }),
-/* 169 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(170)
+  __webpack_require__(167)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(172)
+var __vue_script__ = __webpack_require__(169)
 /* template */
-var __vue_template__ = __webpack_require__(173)
+var __vue_template__ = __webpack_require__(170)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -64857,7 +64424,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/cafes/ToggleLike.vue"
+Component.options.__file = "resources/assets/js/components/restaurants/ToggleLike.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -64866,9 +64433,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-52d7667b", Component.options)
+    hotAPI.createRecord("data-v-e495c64a", Component.options)
   } else {
-    hotAPI.reload("data-v-52d7667b", Component.options)
+    hotAPI.reload("data-v-e495c64a", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -64879,23 +64446,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 170 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(171);
+var content = __webpack_require__(168);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("26ce4400", content, false, {});
+var update = __webpack_require__(4)("623421b0", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-52d7667b\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ToggleLike.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-52d7667b\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ToggleLike.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e495c64a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ToggleLike.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e495c64a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ToggleLike.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -64905,7 +64472,7 @@ if(false) {
 }
 
 /***/ }),
-/* 171 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -64919,7 +64486,7 @@ exports.push([module.i, "\nspan.toggle-like span.like-toggle {\n  display: inlin
 
 
 /***/ }),
-/* 172 */
+/* 169 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65001,61 +64568,61 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
     /*
-      Gets the cafe load status from the Vuex state.
+      Gets the restaurant load status from the Vuex state.
     */
-    cafeLoadStatus: function cafeLoadStatus() {
-      return this.$store.getters.getCafeLoadStatus;
+    restaurantLoadStatus: function restaurantLoadStatus() {
+      return this.$store.getters.getRestaurantLoadStatus;
     },
 
 
     /*
-      Gets the cafe from the Vuex state.
+      Gets the restaurant from the Vuex state.
     */
-    cafe: function cafe() {
-      return this.$store.getters.getCafe;
+    restaurant: function restaurant() {
+      return this.$store.getters.getRestaurant;
     },
 
 
     /*
-      Determines if the cafe is liked or not.
+      Determines if the restaurant is liked or not.
     */
     liked: function liked() {
-      return this.$store.getters.getCafeLikedStatus;
+      return this.$store.getters.getRestaurantLikedStatus;
     },
 
 
     /*
-      Determines if the cafe is still processing the like action.
+      Determines if the restaurant is still processing the like action.
     */
-    cafeLikeActionStatus: function cafeLikeActionStatus() {
-      return this.$store.getters.getCafeLikeActionStatus;
+    restaurantLikeActionStatus: function restaurantLikeActionStatus() {
+      return this.$store.getters.getRestaurantLikeActionStatus;
     },
 
 
     /*
-      Determines if the cafe is still processing the un-like action.
+      Determines if the restaurant is still processing the un-like action.
     */
-    cafeUnlikeActionStatus: function cafeUnlikeActionStatus() {
-      return this.$store.getters.getCafeUnlikeActionStatus;
+    restaurantUnlikeActionStatus: function restaurantUnlikeActionStatus() {
+      return this.$store.getters.getRestaurantUnlikeActionStatus;
     }
   },
 
   methods: {
-    likeCafe: function likeCafe(cafeID) {
-      this.$store.dispatch('likeCafe', {
-        id: this.cafe.id
+    likeRestaurant: function likeRestaurant(restaurantID) {
+      this.$store.dispatch('likeRestaurant', {
+        id: this.restaurant.id
       });
     },
-    unlikeCafe: function unlikeCafe(cafeID) {
-      this.$store.dispatch('unlikeCafe', {
-        id: this.cafe.id
+    unlikeRestaurant: function unlikeRestaurant(restaurantID) {
+      this.$store.dispatch('unlikeRestaurant', {
+        id: this.restaurant.id
       });
     }
   }
 });
 
 /***/ }),
-/* 173 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -65077,16 +64644,16 @@ var render = function() {
     },
     [
       !_vm.liked &&
-      _vm.cafeLoadStatus == 2 &&
-      _vm.cafeLikeActionStatus != 1 &&
-      _vm.cafeUnlikeActionStatus != 1
+      _vm.restaurantLoadStatus == 2 &&
+      _vm.restaurantLikeActionStatus != 1 &&
+      _vm.restaurantUnlikeActionStatus != 1
         ? _c(
             "span",
             {
               staticClass: "like like-toggle",
               on: {
                 click: function($event) {
-                  _vm.likeCafe(_vm.cafe.id)
+                  _vm.likeRestaurant(_vm.restaurant.id)
                 }
               }
             },
@@ -65095,16 +64662,16 @@ var render = function() {
         : _vm._e(),
       _vm._v(" "),
       _vm.liked &&
-      _vm.cafeLoadStatus == 2 &&
-      _vm.cafeLikeActionStatus != 1 &&
-      _vm.cafeUnlikeActionStatus != 1
+      _vm.restaurantLoadStatus == 2 &&
+      _vm.restaurantLikeActionStatus != 1 &&
+      _vm.restaurantUnlikeActionStatus != 1
         ? _c(
             "span",
             {
               staticClass: "un-like like-toggle",
               on: {
                 click: function($event) {
-                  _vm.unlikeCafe(_vm.cafe.id)
+                  _vm.unlikeRestaurant(_vm.restaurant.id)
                 }
               }
             },
@@ -65118,18 +64685,18 @@ var render = function() {
             name: "show",
             rawName: "v-show",
             value:
-              _vm.cafeLikeActionStatus == 1 ||
-              _vm.cafeUnlikeActionStatus == 1 ||
-              _vm.cafeLoadStatus != 2,
+              _vm.restaurantLikeActionStatus == 1 ||
+              _vm.restaurantUnlikeActionStatus == 1 ||
+              _vm.restaurantLoadStatus != 2,
             expression:
-              "cafeLikeActionStatus == 1 || cafeUnlikeActionStatus == 1 || cafeLoadStatus != 2"
+              "restaurantLikeActionStatus == 1 || restaurantUnlikeActionStatus == 1 || restaurantLoadStatus != 2"
           }
         ],
         attrs: { width: 23, height: 23, display: "inline-block" }
       }),
       _vm._v(" "),
       _c("span", { staticClass: "like-count" }, [
-        _vm._v("\n    " + _vm._s(_vm.cafe.likes_count) + " likes\n  ")
+        _vm._v("\n    " + _vm._s(_vm.restaurant.likes_count) + " likes\n  ")
       ])
     ],
     1
@@ -65158,37 +64725,37 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-52d7667b", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-e495c64a", module.exports)
   }
 }
 
 /***/ }),
-/* 174 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.cafeLoadStatus == 2 ||
-    (_vm.cafeLoadStatus != 2 &&
-      (_vm.cafeLikeActionStatus == 1 ||
-        _vm.cafeLikeActionStatus == 2 ||
-        _vm.cafeUnlikeActionStatus == 1 ||
-        _vm.cafeUnlikeActionStatus == 2))
+  return _vm.restaurantLoadStatus == 2 ||
+    (_vm.restaurantLoadStatus != 2 &&
+      (_vm.restaurantLikeActionStatus == 1 ||
+        _vm.restaurantLikeActionStatus == 2 ||
+        _vm.restaurantUnlikeActionStatus == 1 ||
+        _vm.restaurantUnlikeActionStatus == 2))
     ? _c(
         "div",
-        { attrs: { id: "cafe-page" } },
+        { attrs: { id: "restaurant-page" } },
         [
-          _c("router-link", { attrs: { to: { name: "cafes" } } }, [
+          _c("router-link", { attrs: { to: { name: "restaurants" } } }, [
             _c("img", {
               staticClass: "close-icon",
               attrs: { src: "/img/close-icon.svg" }
             })
           ]),
           _vm._v(" "),
-          _c("h2", { staticClass: "cafe-title" }, [
-            _vm._v(_vm._s(_vm.cafe.company.name))
+          _c("h2", { staticClass: "restaurant-title" }, [
+            _vm._v(_vm._s(_vm.restaurant.name))
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "grid-x" }, [
@@ -65200,103 +64767,56 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _vm.cafe.company.cafes_count > 1
-            ? _c("div", { staticClass: "grid-x" }, [
-                _c("div", { staticClass: "large-12 medium-12 small-12 cell" }, [
-                  _c("span", { staticClass: "location-number" }, [
-                    _vm._m(0),
-                    _vm._v(
-                      " " +
-                        _vm._s(_vm.cafe.company.cafes_count) +
-                        " other locations\n      "
-                    )
-                  ])
-                ])
-              ])
+          _vm.restaurant.count == 1
+            ? _c("div", { staticClass: "grid-x" }, [_vm._m(0)])
             : _vm._e(),
           _vm._v(" "),
-          _c("div", { staticClass: "grid-x" }, [
-            _c("div", { staticClass: "large-12 medium-12 small-12 cell" }, [
-              _c("label", { staticClass: "cafe-label" }, [
-                _vm._v("Location Type")
-              ]),
-              _vm._v(" "),
-              _vm.cafe.company.roaster == 1
-                ? _c("div", { staticClass: "location-type roaster" }, [
-                    _c("img", { attrs: { src: "/img/roaster-logo.svg" } }),
-                    _vm._v(" Roaster\n      ")
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.cafe.company.roaster == 0
-                ? _c("div", { staticClass: "location-type cafe" }, [
-                    _c("img", { attrs: { src: "/img/cafe-logo.svg" } }),
-                    _vm._v(" Cafe\n      ")
-                  ])
-                : _vm._e()
-            ])
-          ]),
+          _vm._m(1),
+          _vm._v(" "),
+          _vm._m(2),
           _vm._v(" "),
           _c("div", { staticClass: "grid-x" }, [
             _c(
               "div",
               { staticClass: "large-12 medium-12 small-12 cell" },
               [
-                _c("label", { staticClass: "cafe-label" }, [
-                  _vm._v("Brew Methods")
-                ]),
-                _vm._v(" "),
-                _vm._l(_vm.cafe.brew_methods, function(method) {
-                  return _c("div", { staticClass: "brew-method" }, [
-                    _c("div", { staticClass: "brew-method-container" }, [
-                      _c("img", {
-                        staticClass: "brew-method-icon",
-                        attrs: { src: method.icon + ".svg" }
-                      }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "brew-method-name" }, [
-                        _vm._v(_vm._s(method.method))
-                      ])
-                    ])
-                  ])
-                })
-              ],
-              2
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "grid-x" }, [
-            _c(
-              "div",
-              { staticClass: "large-12 medium-12 small-12 cell" },
-              [
-                _c("label", { staticClass: "cafe-label" }, [
+                _c("label", { staticClass: "restaurant-label" }, [
                   _vm._v("Location And Information")
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "address-container" }, [
                   _c("span", { staticClass: "address" }, [
-                    _vm._v(_vm._s(_vm.cafe.address))
+                    _vm._v(_vm._s(_vm.restaurant.address))
                   ]),
                   _vm._v(" "),
                   _c("span", { staticClass: "city-state" }, [
                     _vm._v(
-                      _vm._s(_vm.cafe.city) + ", " + _vm._s(_vm.cafe.state)
+                      _vm._s(_vm.restaurant.city) +
+                        ", " +
+                        _vm._s(_vm.restaurant.state)
                     )
                   ]),
                   _vm._v(" "),
                   _c("span", { staticClass: "zip" }, [
-                    _vm._v(_vm._s(_vm.cafe.zip))
+                    _vm._v(_vm._s(_vm.restaurant.zip))
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "latitude" }, [
+                    _vm._v(_vm._s(_vm.restaurant.latitude))
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "longitude" }, [
+                    _vm._v(_vm._s(_vm.restaurant.longitude))
                   ])
                 ]),
                 _vm._v(" "),
                 _c(
                   "a",
                   {
-                    staticClass: "cafe-website",
-                    attrs: { target: "_blank", href: _vm.cafe.company.website }
+                    staticClass: "restaurant-website",
+                    attrs: { target: "_blank", href: _vm.restaurant.website }
                   },
-                  [_vm._v(_vm._s(_vm.cafe.company.website))]
+                  [_vm._v(_vm._s(_vm.restaurant.website))]
                 ),
                 _vm._v(" "),
                 _c("br"),
@@ -65312,9 +64832,12 @@ var render = function() {
                         expression: "userLoadStatus == 2 && user != ''"
                       }
                     ],
-                    staticClass: "suggest-cafe-edit",
+                    staticClass: "suggest-restaurant-edit",
                     attrs: {
-                      to: { name: "editcafe", params: { id: _vm.cafe.id } }
+                      to: {
+                        name: "editrestaurant",
+                        params: { id: _vm.restaurant.id }
+                      }
                     }
                   },
                   [_vm._v("\n        Suggest an edit\n      ")]
@@ -65324,7 +64847,7 @@ var render = function() {
                   ? _c(
                       "a",
                       {
-                        staticClass: "suggest-cafe-edit",
+                        staticClass: "suggest-restaurant-edit",
                         on: {
                           click: function($event) {
                             _vm.loginToEdit()
@@ -65348,8 +64871,28 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "location-image-container" }, [
-      _c("img", { attrs: { src: "/img/location.svg" } })
+    return _c("div", { staticClass: "large-12 medium-12 small-12 cell" }, [
+      _c("span", { staticClass: "location-number" }, [
+        _c("span", { staticClass: "location-image-container" }, [
+          _c("img", { attrs: { src: "/img/location.svg" } })
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "grid-x" }, [
+      _c("div", { staticClass: "large-12 medium-12 small-12 cell" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "grid-x" }, [
+      _c("div", { staticClass: "large-12 medium-12 small-12 cell" })
     ])
   }
 ]
@@ -65358,30 +64901,30 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-4c1ef4da", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-ca27728c", module.exports)
   }
 }
 
 /***/ }),
-/* 175 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(176)
+  __webpack_require__(173)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(178)
+var __vue_script__ = __webpack_require__(175)
 /* template */
-var __vue_template__ = __webpack_require__(179)
+var __vue_template__ = __webpack_require__(176)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-10edfaf8"
+var __vue_scopeId__ = "data-v-60bbece4"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -65392,7 +64935,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/pages/EditCafe.vue"
+Component.options.__file = "resources/assets/js/pages/EditRestaurant.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -65401,9 +64944,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-10edfaf8", Component.options)
+    hotAPI.createRecord("data-v-60bbece4", Component.options)
   } else {
-    hotAPI.reload("data-v-10edfaf8", Component.options)
+    hotAPI.reload("data-v-60bbece4", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -65414,23 +64957,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 176 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(177);
+var content = __webpack_require__(174);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("5e4039f0", content, false, {});
+var update = __webpack_require__(4)("0a60050c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-10edfaf8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./EditCafe.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-10edfaf8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./EditCafe.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-60bbece4\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./EditRestaurant.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-60bbece4\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./EditRestaurant.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -65440,7 +64983,7 @@ if(false) {
 }
 
 /***/ }),
-/* 177 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -65448,13 +64991,13 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\ndiv#new-cafe-page[data-v-10edfaf8] {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-color: white;\n  z-index: 99999;\n  overflow: auto;\n}\ndiv#new-cafe-page img#back[data-v-10edfaf8] {\n    float: right;\n    margin-top: 20px;\n    margin-right: 20px;\n}\ndiv#new-cafe-page .centered[data-v-10edfaf8] {\n    margin: auto;\n}\ndiv#new-cafe-page h2.page-title[data-v-10edfaf8] {\n    color: #342C0C;\n    font-size: 36px;\n    font-weight: 900;\n    font-family: \"Lato\", sans-serif;\n    margin-top: 60px;\n}\ndiv#new-cafe-page label.form-label[data-v-10edfaf8] {\n    font-family: \"Lato\", sans-serif;\n    text-transform: uppercase;\n    font-weight: bold;\n    color: black;\n    margin-top: 10px;\n    margin-bottom: 10px;\n}\ndiv#new-cafe-page input[type=\"text\"].form-input[data-v-10edfaf8] {\n    border: 1px solid #BABABA;\n    border-radius: 3px;\n}\ndiv#new-cafe-page input[type=\"text\"].form-input.invalid[data-v-10edfaf8] {\n      border: 1px solid #D0021B;\n}\ndiv#new-cafe-page div.validation[data-v-10edfaf8] {\n    color: #D0021B;\n    font-family: \"Lato\", sans-serif;\n    font-size: 14px;\n    margin-top: -15px;\n    margin-bottom: 15px;\n}\ndiv#new-cafe-page div.location-type[data-v-10edfaf8] {\n    text-align: center;\n    font-family: \"Lato\", sans-serif;\n    font-size: 16px;\n    color: #E8635F;\n    border-bottom: 1px solid #E8635F;\n    border-top: 1px solid #E8635F;\n    border-left: 1px solid #E8635F;\n    border-right: 1px solid #E8635F;\n    width: 25%;\n    display: inline-block;\n    height: 55px;\n    line-height: 55px;\n    cursor: pointer;\n    margin-bottom: 5px;\n}\ndiv#new-cafe-page div.location-type.active[data-v-10edfaf8] {\n      color: white;\n      background-color: #E8635F;\n}\ndiv#new-cafe-page div.location-type.roaster[data-v-10edfaf8] {\n      border-top-left-radius: 3px;\n      border-bottom-left-radius: 3px;\n      border-right: 0px;\n}\ndiv#new-cafe-page div.location-type.cafe[data-v-10edfaf8] {\n      border-top-right-radius: 3px;\n      border-bottom-right-radius: 3px;\n}\ndiv#new-cafe-page div.brew-method[data-v-10edfaf8] {\n    font-size: 16px;\n    color: #666666;\n    font-family: \"Lato\", sans-serif;\n    border-radius: 4px;\n    background-color: #F9F9FA;\n    width: 150px;\n    height: 57px;\n    float: left;\n    margin-right: 10px;\n    margin-bottom: 10px;\n    padding: 5px;\n    cursor: pointer;\n    position: relative;\n}\ndiv#new-cafe-page div.brew-method.active[data-v-10edfaf8] {\n      color: white;\n      background-color: #E8635F;\n}\ndiv#new-cafe-page div.brew-method div.brew-method-container[data-v-10edfaf8] {\n      position: absolute;\n      top: 50%;\n      -webkit-transform: translateY(-50%);\n              transform: translateY(-50%);\n}\ndiv#new-cafe-page div.brew-method div.brew-method-container img.brew-method-icon[data-v-10edfaf8] {\n        display: inline-block;\n        margin-right: 10px;\n        margin-left: 5px;\n        width: 20px;\n        max-height: 30px;\n}\ndiv#new-cafe-page div.brew-method div.brew-method-container span.brew-method-name[data-v-10edfaf8] {\n        display: inline-block;\n        width: calc( 100% - 40px);\n        vertical-align: middle;\n}\ndiv#new-cafe-page div.company-selection-container[data-v-10edfaf8] {\n    position: relative;\n}\ndiv#new-cafe-page div.company-selection-container div.company-autocomplete-container[data-v-10edfaf8] {\n      border-radius: 3px;\n      border: 1px solid #BABABA;\n      background-color: white;\n      margin-top: -17px;\n      width: 80%;\n      position: absolute;\n      z-index: 9999;\n}\ndiv#new-cafe-page div.company-selection-container div.company-autocomplete-container div.company-autocomplete[data-v-10edfaf8] {\n        cursor: pointer;\n        padding-left: 12px;\n        padding-right: 12px;\n        padding-top: 8px;\n        padding-bottom: 8px;\n}\ndiv#new-cafe-page div.company-selection-container div.company-autocomplete-container div.company-autocomplete span.company-name[data-v-10edfaf8] {\n          display: block;\n          color: #0D223F;\n          font-size: 16px;\n          font-family: \"Lato\", sans-serif;\n          font-weight: bold;\n}\ndiv#new-cafe-page div.company-selection-container div.company-autocomplete-container div.company-autocomplete span.company-locations[data-v-10edfaf8] {\n          display: block;\n          font-size: 14px;\n          color: #676767;\n          font-family: \"Lato\", sans-serif;\n}\ndiv#new-cafe-page div.company-selection-container div.company-autocomplete-container div.company-autocomplete[data-v-10edfaf8]:hover {\n          background-color: #F2F2F2;\n}\ndiv#new-cafe-page div.company-selection-container div.company-autocomplete-container div.new-company[data-v-10edfaf8] {\n        cursor: pointer;\n        padding-left: 12px;\n        padding-right: 12px;\n        padding-top: 8px;\n        padding-bottom: 8px;\n        font-family: \"Lato\", sans-serif;\n        color: #054E7A;\n        font-style: italic;\n}\ndiv#new-cafe-page div.company-selection-container div.company-autocomplete-container div.new-company[data-v-10edfaf8]:hover {\n          background-color: #F2F2F2;\n}\ndiv#new-cafe-page a.edit-location-button[data-v-10edfaf8] {\n    display: block;\n    text-align: center;\n    height: 50px;\n    color: white;\n    border-radius: 3px;\n    font-size: 18px;\n    font-family: \"Lato\", sans-serif;\n    background-color: #A7BE4D;\n    line-height: 50px;\n    margin-bottom: 10px;\n}\ndiv#new-cafe-page a.delete-location[data-v-10edfaf8] {\n    color: #D0021B;\n    font-size: 14px;\n    text-decoration: underline;\n    display: inline-block;\n    margin-bottom: 50px;\n}\n\n/* Small only */\n@media screen and (max-width: 39.9375em) {\ndiv#new-cafe-page div.location-type[data-v-10edfaf8] {\n    width: 50%;\n}\n}\n", ""]);
+exports.push([module.i, "\ndiv#new-restaurant-page[data-v-60bbece4] {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-color: white;\n  z-index: 99999;\n  overflow: auto;\n}\ndiv#new-restaurant-page img#back[data-v-60bbece4] {\n    float: right;\n    margin-top: 20px;\n    margin-right: 20px;\n}\ndiv#new-restaurant-page .centered[data-v-60bbece4] {\n    margin: auto;\n}\ndiv#new-restaurant-page h2.page-title[data-v-60bbece4] {\n    color: #342C0C;\n    font-size: 36px;\n    font-weight: 900;\n    font-family: \"Lato\", sans-serif;\n    margin-top: 60px;\n}\ndiv#new-restaurant-page label.form-label[data-v-60bbece4] {\n    font-family: \"Lato\", sans-serif;\n    text-transform: uppercase;\n    font-weight: bold;\n    color: black;\n    margin-top: 10px;\n    margin-bottom: 10px;\n}\ndiv#new-restaurant-page input[type=\"text\"].form-input[data-v-60bbece4] {\n    border: 1px solid #BABABA;\n    border-radius: 3px;\n}\ndiv#new-restaurant-page input[type=\"text\"].form-input.invalid[data-v-60bbece4] {\n      border: 1px solid #D0021B;\n}\ndiv#new-restaurant-page div.validation[data-v-60bbece4] {\n    color: #D0021B;\n    font-family: \"Lato\", sans-serif;\n    font-size: 14px;\n    margin-top: -15px;\n    margin-bottom: 15px;\n}\ndiv#new-restaurant-page div.location-type[data-v-60bbece4] {\n    text-align: center;\n    font-family: \"Lato\", sans-serif;\n    font-size: 16px;\n    color: #E8635F;\n    border-bottom: 1px solid #E8635F;\n    border-top: 1px solid #E8635F;\n    border-left: 1px solid #E8635F;\n    border-right: 1px solid #E8635F;\n    width: 25%;\n    display: inline-block;\n    height: 55px;\n    line-height: 55px;\n    cursor: pointer;\n    margin-bottom: 5px;\n}\ndiv#new-restaurant-page div.location-type.active[data-v-60bbece4] {\n      color: white;\n      background-color: #E8635F;\n}\ndiv#new-restaurant-page div.location-type.roaster[data-v-60bbece4] {\n      border-top-left-radius: 3px;\n      border-bottom-left-radius: 3px;\n      border-right: 0px;\n}\ndiv#new-restaurant-page div.location-type.restaurant[data-v-60bbece4] {\n      border-top-right-radius: 3px;\n      border-bottom-right-radius: 3px;\n}\ndiv#new-restaurant-page div.brew-method[data-v-60bbece4] {\n    font-size: 16px;\n    color: #666666;\n    font-family: \"Lato\", sans-serif;\n    border-radius: 4px;\n    background-color: #F9F9FA;\n    width: 150px;\n    height: 57px;\n    float: left;\n    margin-right: 10px;\n    margin-bottom: 10px;\n    padding: 5px;\n    cursor: pointer;\n    position: relative;\n}\ndiv#new-restaurant-page div.brew-method.active[data-v-60bbece4] {\n      color: white;\n      background-color: #E8635F;\n}\ndiv#new-restaurant-page div.brew-method div.brew-method-container[data-v-60bbece4] {\n      position: absolute;\n      top: 50%;\n      -webkit-transform: translateY(-50%);\n              transform: translateY(-50%);\n}\ndiv#new-restaurant-page div.brew-method div.brew-method-container img.brew-method-icon[data-v-60bbece4] {\n        display: inline-block;\n        margin-right: 10px;\n        margin-left: 5px;\n        width: 20px;\n        max-height: 30px;\n}\ndiv#new-restaurant-page div.brew-method div.brew-method-container span.brew-method-name[data-v-60bbece4] {\n        display: inline-block;\n        width: calc( 100% - 40px);\n        vertical-align: middle;\n}\ndiv#new-restaurant-page div.company-selection-container[data-v-60bbece4] {\n    position: relative;\n}\ndiv#new-restaurant-page div.company-selection-container div.company-autocomplete-container[data-v-60bbece4] {\n      border-radius: 3px;\n      border: 1px solid #BABABA;\n      background-color: white;\n      margin-top: -17px;\n      width: 80%;\n      position: absolute;\n      z-index: 9999;\n}\ndiv#new-restaurant-page div.company-selection-container div.company-autocomplete-container div.company-autocomplete[data-v-60bbece4] {\n        cursor: pointer;\n        padding-left: 12px;\n        padding-right: 12px;\n        padding-top: 8px;\n        padding-bottom: 8px;\n}\ndiv#new-restaurant-page div.company-selection-container div.company-autocomplete-container div.company-autocomplete span.company-name[data-v-60bbece4] {\n          display: block;\n          color: #0D223F;\n          font-size: 16px;\n          font-family: \"Lato\", sans-serif;\n          font-weight: bold;\n}\ndiv#new-restaurant-page div.company-selection-container div.company-autocomplete-container div.company-autocomplete span.company-locations[data-v-60bbece4] {\n          display: block;\n          font-size: 14px;\n          color: #676767;\n          font-family: \"Lato\", sans-serif;\n}\ndiv#new-restaurant-page div.company-selection-container div.company-autocomplete-container div.company-autocomplete[data-v-60bbece4]:hover {\n          background-color: #F2F2F2;\n}\ndiv#new-restaurant-page div.company-selection-container div.company-autocomplete-container div.new-company[data-v-60bbece4] {\n        cursor: pointer;\n        padding-left: 12px;\n        padding-right: 12px;\n        padding-top: 8px;\n        padding-bottom: 8px;\n        font-family: \"Lato\", sans-serif;\n        color: #054E7A;\n        font-style: italic;\n}\ndiv#new-restaurant-page div.company-selection-container div.company-autocomplete-container div.new-company[data-v-60bbece4]:hover {\n          background-color: #F2F2F2;\n}\ndiv#new-restaurant-page a.edit-location-button[data-v-60bbece4] {\n    display: block;\n    text-align: center;\n    height: 50px;\n    color: white;\n    border-radius: 3px;\n    font-size: 18px;\n    font-family: \"Lato\", sans-serif;\n    background-color: #A7BE4D;\n    line-height: 50px;\n    margin-bottom: 10px;\n}\ndiv#new-restaurant-page a.delete-location[data-v-60bbece4] {\n    color: #D0021B;\n    font-size: 14px;\n    text-decoration: underline;\n    display: inline-block;\n    margin-bottom: 50px;\n}\n\n/* Small only */\n@media screen and (max-width: 39.9375em) {\ndiv#new-restaurant-page div.location-type[data-v-60bbece4] {\n    width: 50%;\n}\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 178 */
+/* 175 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65462,7 +65005,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__event_bus_js__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_js__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_js__ = __webpack_require__(13);
 //
 //
 //
@@ -65929,7 +65472,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
   /*
-    Sync the tags to send to the server for the new cafe.
+    Sync the tags to send to the server for the new restaurant.
   */
   mounted: function mounted() {
     this.autocomplete = document.getElementById('street-address');
@@ -65973,7 +65516,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     When the component is created, add a location
   */
   created: function created() {
-    this.$store.dispatch('loadCafeEdit', {
+    this.$store.dispatch('loadRestaurantEdit', {
       id: this.$route.params.id
     });
   },
@@ -65981,23 +65524,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   /*
     Loads the Vuex data we need such as brew methods
-    and add cafe status.
+    and add restaurant status.
   */
   computed: {
     brewMethods: function brewMethods() {
       return this.$store.getters.getBrewMethods;
     },
-    editCafeStatus: function editCafeStatus() {
-      return this.$store.getters.getCafeEditStatus;
+    editRestaurantStatus: function editRestaurantStatus() {
+      return this.$store.getters.getRestaurantEditStatus;
     },
-    editCafeLoadStatus: function editCafeLoadStatus() {
-      return this.$store.getters.getCafeEditLoadStatus;
+    editRestaurantLoadStatus: function editRestaurantLoadStatus() {
+      return this.$store.getters.getRestaurantEditLoadStatus;
     },
-    editCafe: function editCafe() {
-      return this.$store.getters.getCafeEdit;
+    editRestaurant: function editRestaurant() {
+      return this.$store.getters.getRestaurantEdit;
     },
-    deleteCafeStatus: function deleteCafeStatus() {
-      return this.$store.getters.getCafeDeletedStatus;
+    deleteRestaurantStatus: function deleteRestaurantStatus() {
+      return this.$store.getters.getRestaurantDeletedStatus;
     }
   },
 
@@ -66005,22 +65548,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     Defines what we need to watch on the page.
   */
   watch: {
-    'editCafeStatus': function editCafeStatus() {
-      if (this.editCafeStatus == 2) {
-        this.$router.push({ name: 'cafe', params: { id: this.$route.params.id } });
+    'editRestaurantStatus': function editRestaurantStatus() {
+      if (this.editRestaurantStatus == 2) {
+        this.$router.push({ name: 'restaurant', params: { id: this.$route.params.id } });
       }
     },
-    'editCafeLoadStatus': function editCafeLoadStatus() {
-      if (this.editCafeLoadStatus == 2) {
+    'editRestaurantLoadStatus': function editRestaurantLoadStatus() {
+      if (this.editRestaurantLoadStatus == 2) {
         this.populateForm();
       }
     },
-    'deleteCafeStatus': function deleteCafeStatus() {
-      if (this.deleteCafeStatus == 2) {
-        this.$router.push({ name: 'cafes' });
+    'deleteRestaurantStatus': function deleteRestaurantStatus() {
+      if (this.deleteRestaurantStatus == 2) {
+        this.$router.push({ name: 'restaurants' });
 
         __WEBPACK_IMPORTED_MODULE_0__event_bus_js__["a" /* EventBus */].$emit('show-success', {
-          notification: 'Cafe deleted successfully!'
+          notification: 'Restaurant deleted successfully!'
         });
       }
     }
@@ -66031,7 +65574,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   */
   methods: {
     /*
-      Sets the type of the company as either roaster or cafe.
+      Sets the type of the company as either roaster or restaurant.
     */
     setCompanyType: function setCompanyType(type) {
       this.companyType = type;
@@ -66070,22 +65613,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       Method populates the form with the data we need.
     */
     populateForm: function populateForm() {
-      this.companyName = this.editCafe.company.name;
-      this.companyID = this.editCafe.company.id;
+      this.companyName = this.editRestaurant.company.name;
+      this.companyID = this.editRestaurant.company.id;
       this.newCompany = false;
-      this.companyType = this.editCafe.company.roaster == 1 ? 'roaster' : 'cafe';
-      this.website = this.editCafe.company.website;
+      this.companyType = this.editRestaurant.company.roaster == 1 ? 'roaster' : 'restaurant';
+      this.website = this.editRestaurant.company.website;
 
-      this.locationName = this.editCafe.location_name;
-      this.address = this.editCafe.address;
-      this.city = this.editCafe.city;
-      this.state = this.editCafe.state;
-      this.zip = this.editCafe.zip;
-      this.lat = this.editCafe.latitude;
-      this.lng = this.editCafe.longitude;
+      this.locationName = this.editRestaurant.location_name;
+      this.address = this.editRestaurant.address;
+      this.city = this.editRestaurant.city;
+      this.state = this.editRestaurant.state;
+      this.zip = this.editRestaurant.zip;
+      this.lat = this.editRestaurant.latitude;
+      this.lng = this.editRestaurant.longitude;
 
-      for (var i = 0; i < this.editCafe.brew_methods.length; i++) {
-        this.brewMethodsSelected.push(this.editCafe.brew_methods[i].id);
+      for (var i = 0; i < this.editRestaurant.brew_methods.length; i++) {
+        this.brewMethodsSelected.push(this.editRestaurant.brew_methods[i].id);
       }
 
       this.addressSearch = this.address;
@@ -66095,12 +65638,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
     /*
-      Submits edits for a cafe
+      Submits edits for a restaurant
     */
-    submitEditCafe: function submitEditCafe() {
-      if (this.validateEditCafe()) {
-        this.$store.dispatch('editCafe', {
-          id: this.editCafe.id,
+    submitEditRestaurant: function submitEditRestaurant() {
+      if (this.validateEditRestaurant()) {
+        this.$store.dispatch('editRestaurant', {
+          id: this.editRestaurant.id,
           company_name: this.companyName,
           company_id: this.companyID,
           company_type: this.companyType,
@@ -66141,16 +65684,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
     /*
-      Validates cafe edits
+      Validates restaurant edits
     */
-    validateEditCafe: function validateEditCafe() {
-      var validNewCafeForm = true;
+    validateEditRestaurant: function validateEditRestaurant() {
+      var validNewRestaurantForm = true;
 
       /*
         Ensure a name has been entered
       */
       if (this.companyName.trim() == '') {
-        validNewCafeForm = false;
+        validNewRestaurantForm = false;
         this.validations.companyName.is_valid = false;
         this.validations.companyName.text = 'Please enter a name for the company.';
       } else {
@@ -66162,7 +65705,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         If a website has been entered, ensure the URL is valid
       */
       if (this.website.trim != '' && !this.website.match(/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/)) {
-        validNewCafeForm = false;
+        validNewRestaurantForm = false;
         this.validations.website.is_valid = false;
         this.validations.website.text = 'Please enter a valid URL for the website.';
       } else {
@@ -66174,9 +65717,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         Ensure an address has been entered
       */
       if (this.address.trim() == '') {
-        validNewCafeForm = false;
+        validNewRestaurantForm = false;
         this.validations.address.is_valid = false;
-        this.validations.address.text = 'Please enter an address for the new cafe.';
+        this.validations.address.text = 'Please enter an address for the new restaurant.';
       } else {
         this.validations.address.is_valid = true;
         this.validations.address.text = '';
@@ -66186,9 +65729,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         Ensure a city has been entered
       */
       if (this.city.trim() == '') {
-        validNewCafeForm = false;
+        validNewRestaurantForm = false;
         this.validations.city.is_valid = false;
-        this.validations.city.text = 'Please enter a city for the new cafe.';
+        this.validations.city.text = 'Please enter a city for the new restaurant.';
       } else {
         this.validations.city.is_valid = true;
         this.validations.city.text = '';
@@ -66198,9 +65741,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         Ensure a state has been entered
       */
       if (this.state.trim() == '') {
-        validNewCafeForm = false;
+        validNewRestaurantForm = false;
         this.validations.state.is_valid = false;
-        this.validations.state.text = 'Please enter a state for the new cafe.';
+        this.validations.state.text = 'Please enter a state for the new restaurant.';
       } else {
         this.validations.state.is_valid = true;
         this.validations.state.text = '';
@@ -66210,25 +65753,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         Ensure a zip has been entered
       */
       if (this.zip.trim() == '' || !this.zip.match(/(^\d{5}$)/)) {
-        validNewCafeForm = false;
+        validNewRestaurantForm = false;
         this.validations.zip.is_valid = false;
-        this.validations.zip.text = 'Please enter a valid zip code for the new cafe.';
+        this.validations.zip.text = 'Please enter a valid zip code for the new restaurant.';
       } else {
         this.validations.zip.is_valid = true;
         this.validations.zip.text = '';
       }
 
-      return validNewCafeForm;
+      return validNewRestaurantForm;
     },
 
 
     /*
-      Deletes a cafe
+      Deletes a restaurant
     */
-    deleteCafe: function deleteCafe() {
-      if (confirm('Are you sure you want to delete this cafe?')) {
-        this.$store.dispatch('deleteCafe', {
-          cafe_id: this.editCafe.id
+    deleteRestaurant: function deleteRestaurant() {
+      if (confirm('Are you sure you want to delete this restaurant?')) {
+        this.$store.dispatch('deleteRestaurant', {
+          restaurant_id: this.editRestaurant.id
         });
       }
     },
@@ -66282,7 +65825,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 179 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -66292,9 +65835,9 @@ var render = function() {
   return _c("transition", { attrs: { name: "scale-in-center" } }, [
     _c(
       "div",
-      { attrs: { id: "new-cafe-page" } },
+      { attrs: { id: "new-restaurant-page" } },
       [
-        _c("router-link", { attrs: { to: { name: "cafes" } } }, [
+        _c("router-link", { attrs: { to: { name: "restaurants" } } }, [
           _c("img", { attrs: { src: "/img/close-modal.svg", id: "back" } })
         ]),
         _vm._v(" "),
@@ -66303,7 +65846,11 @@ var render = function() {
             _c(
               "div",
               { staticClass: "large-8 medium-9 small-12 cell centered" },
-              [_c("h2", { staticClass: "page-title" }, [_vm._v("Edit Cafe")])]
+              [
+                _c("h2", { staticClass: "page-title" }, [
+                  _vm._v("Edit Restaurant")
+                ])
+              ]
             )
           ]),
           _vm._v(" "),
@@ -66415,9 +65962,10 @@ var render = function() {
                           _vm._v(" "),
                           _c("span", { staticClass: "company-locations" }, [
                             _vm._v(
-                              _vm._s(companyResult.cafes_count) + " location"
+                              _vm._s(companyResult.restaurants_count) +
+                                " location"
                             ),
-                            companyResult.cafes_count > 1
+                            companyResult.restaurants_count > 1
                               ? _c("span", [_vm._v("s")])
                               : _vm._e()
                           ])
@@ -66539,15 +66087,15 @@ var render = function() {
                 _c(
                   "div",
                   {
-                    staticClass: "location-type cafe",
-                    class: { active: _vm.companyType == "cafe" },
+                    staticClass: "location-type restaurant",
+                    class: { active: _vm.companyType == "restaurant" },
                     on: {
                       click: function($event) {
-                        _vm.setCompanyType("cafe")
+                        _vm.setCompanyType("restaurant")
                       }
                     }
                   },
-                  [_vm._v("\n            Cafe\n          ")]
+                  [_vm._v("\n            Restaurant\n          ")]
                 )
               ]
             )
@@ -67084,11 +66632,11 @@ var render = function() {
                     staticClass: "edit-location-button",
                     on: {
                       click: function($event) {
-                        _vm.submitEditCafe()
+                        _vm.submitEditRestaurant()
                       }
                     }
                   },
-                  [_vm._v("Update Cafe")]
+                  [_vm._v("Update Restaurant")]
                 )
               ]
             )
@@ -67105,11 +66653,11 @@ var render = function() {
                     staticClass: "delete-location",
                     on: {
                       click: function($event) {
-                        _vm.deleteCafe()
+                        _vm.deleteRestaurant()
                       }
                     }
                   },
-                  [_vm._v("Delete Cafe")]
+                  [_vm._v("Delete Restaurant")]
                 )
               ]
             )
@@ -67126,24 +66674,24 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-10edfaf8", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-60bbece4", module.exports)
   }
 }
 
 /***/ }),
-/* 180 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(181)
+  __webpack_require__(178)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(183)
+var __vue_script__ = __webpack_require__(180)
 /* template */
-var __vue_template__ = __webpack_require__(184)
+var __vue_template__ = __webpack_require__(181)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -67182,13 +66730,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 181 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(182);
+var content = __webpack_require__(179);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -67208,7 +66756,7 @@ if(false) {
 }
 
 /***/ }),
-/* 182 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -67222,7 +66770,7 @@ exports.push([module.i, "\ndiv#profile-page {\n  position: fixed;\n  top: 0;\n  
 
 
 /***/ }),
-/* 183 */
+/* 180 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -67502,7 +67050,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 184 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -67514,7 +67062,7 @@ var render = function() {
       "div",
       { attrs: { id: "profile-page" } },
       [
-        _c("router-link", { attrs: { to: { name: "cafes" } } }, [
+        _c("router-link", { attrs: { to: { name: "restaurants" } } }, [
           _c("img", { attrs: { src: "/img/close-modal.svg", id: "back" } })
         ]),
         _vm._v(" "),
@@ -67569,7 +67117,7 @@ var render = function() {
                 { staticClass: "large-8 medium-10 small-12 cell centered" },
                 [
                   _c("label", { staticClass: "form-label" }, [
-                    _vm._v("Favorite Coffee")
+                    _vm._v("Favorite Joint")
                   ]),
                   _vm._v(" "),
                   _c("textarea", {
@@ -67577,17 +67125,17 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.favorite_coffee,
-                        expression: "favorite_coffee"
+                        value: _vm.favorite_restaurant,
+                        expression: "favorite_restaurant"
                       }
                     ],
-                    domProps: { value: _vm.favorite_coffee },
+                    domProps: { value: _vm.favorite_restaurant },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.favorite_coffee = $event.target.value
+                        _vm.favorite_restaurant = $event.target.value
                       }
                     }
                   })
@@ -67601,7 +67149,7 @@ var render = function() {
                 { staticClass: "large-8 medium-10 small-12 cell centered" },
                 [
                   _c("label", { staticClass: "form-label" }, [
-                    _vm._v("Flavor Notes")
+                    _vm._v("Favorite Dish")
                   ]),
                   _vm._v(" "),
                   _c("textarea", {
@@ -67609,17 +67157,17 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.flavor_notes,
-                        expression: "flavor_notes"
+                        value: _vm.favorite_dish,
+                        expression: "favorite_dish"
                       }
                     ],
-                    domProps: { value: _vm.flavor_notes },
+                    domProps: { value: _vm.favorite_dish },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.flavor_notes = $event.target.value
+                        _vm.favorite_dish = $event.target.value
                       }
                     }
                   })
@@ -67993,19 +67541,19 @@ if (false) {
 }
 
 /***/ }),
-/* 185 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(186)
+  __webpack_require__(183)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(188)
+var __vue_script__ = __webpack_require__(185)
 /* template */
-var __vue_template__ = __webpack_require__(189)
+var __vue_template__ = __webpack_require__(186)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -68044,13 +67592,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 186 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(187);
+var content = __webpack_require__(184);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -68070,7 +67618,7 @@ if(false) {
 }
 
 /***/ }),
-/* 187 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -68084,12 +67632,12 @@ exports.push([module.i, "\ndiv#users div.center {\n  margin: auto;\n}\n", ""]);
 
 
 /***/ }),
-/* 188 */
+/* 185 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_js__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_js__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash__);
 //
@@ -68163,7 +67711,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 189 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -68213,7 +67761,7 @@ if (false) {
 }
 
 /***/ }),
-/* 190 */
+/* 187 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

@@ -15,7 +15,7 @@ class AddedRestaurantsTable extends Migration
     {
       Schema::create('restaurants', function( Blueprint $table ){
         $table->increments('id');
-        $table->string('name');
+        $table->string('name')->nullable();
         $table->text('address');
         $table->string('city');
         $table->string('state');

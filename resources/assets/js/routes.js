@@ -39,7 +39,7 @@ function requireAuth (to, from, next) {
 			if( store.getters.getUser != '' ){
       	next();
 			}else{
-				next('/cafes');
+				next('/restaurants');
 			}
     }
 	}
@@ -78,32 +78,32 @@ export default new VueRouter({
 	routes: [
 		{
 			path: '/',
-			redirect: { name: 'cafes' },
+			redirect: { name: 'restaurants' },
 			name: 'layout',
 			component: Vue.component( 'Layout', require( './pages/Layout.vue' ) ),
 			children: [
 				{
-					path: 'cafes',
-					name: 'cafes',
+					path: 'restaurants',
+					name: 'restaurants',
 					component: Vue.component( 'Home', require( './pages/Home.vue' ) ),
 					children: [
 						{
 							path: 'new',
-							name: 'newcafe',
-							component: Vue.component( 'NewCafe', require( './pages/NewCafe.vue' ) ),
+							name: 'newrestaurant',
+							component: Vue.component( 'NewRestaurant', require( './pages/NewRestaurant.vue' ) ),
 							beforeEnter: requireAuth
 						},
 						{
 							path: ':id',
-							name: 'cafe',
-							component: Vue.component( 'Cafe', require( './pages/Cafe.vue' ) )
+							name: 'restaurant',
+							component: Vue.component( 'Restaurant', require( './pages/Restaurant.vue' ) )
 						},
 					]
 				},
 				{
-					path: 'cafes/:id/edit',
-					name: 'editcafe',
-					component: Vue.component( 'EditCafe', require( './pages/EditCafe.vue' ) ),
+					path: 'restaurants/:id/edit',
+					name: 'editrestaurant',
+					component: Vue.component( 'EditRestaurant', require( './pages/EditRestaurant.vue' ) ),
 					beforeEnter: requireAuth
 				},
 				{

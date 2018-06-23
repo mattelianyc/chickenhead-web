@@ -1,14 +1,14 @@
 <style lang="scss">
   @import '~@/abstracts/_variables.scss';
 
-  div#cafe-map-container{
+  div#restaurant-map-container{
     position: absolute;
     top: 75px;
     left: 0px;
     right: 0px;
     bottom: 0px;
 
-    div#cafe-map{
+    div#restaurant-map{
       position: absolute;
       top: 0px;
       left: 0px;
@@ -16,15 +16,15 @@
       bottom: 0px;
     }
 
-    div.cafe-info-window{
-      div.cafe-name{
+    div.restaurant-info-window{
+      div.restaurant-name{
         display: block;
         text-align: center;
         color: $dark-color;
         font-family: 'Josefin Sans', sans-serif;
       }
 
-      div.cafe-address{
+      div.restaurant-address{
         display: block;
         text-align: center;
         margin-top: 5px;
@@ -59,19 +59,19 @@
 </style>
 
 <template>
-  <div id="cafe-map-container">
-    <div id="cafe-map">
+  <div id="restaurant-map-container">
+    <div id="restaurant-map">
 
     </div>
   </div>
 </template>
 
 <script>
-  import { CafeTypeFilter } from '../../mixins/filters/CafeTypeFilter.js';
-  import { CafeBrewMethodsFilter } from '../../mixins/filters/CafeBrewMethodsFilter.js';
-  import { CafeTagsFilter } from '../../mixins/filters/CafeTagsFilter.js';
-  import { CafeTextFilter } from '../../mixins/filters/CafeTextFilter.js';
-  import { CafeUserLikeFilter } from '../../mixins/filters/CafeUserLikeFilter.js';
+  import { RestaurantTypeFilter } from '../../mixins/filters/RestaurantTypeFilter.js';
+  // import { RestaurantBrewMethodsFilter } from '../../mixins/filters/RestaurantBrewMethodsFilter.js';
+  import { RestaurantTagsFilter } from '../../mixins/filters/RestaurantTagsFilter.js';
+  import { RestaurantTextFilter } from '../../mixins/filters/RestaurantTextFilter.js';
+  import { RestaurantUserLikeFilter } from '../../mixins/filters/RestaurantUserLikeFilter.js';
 
   /*
     Imports the Event Bus to pass updates.
@@ -107,28 +107,28 @@
     },
 
     mixins: [
-      CafeTypeFilter,
-      CafeBrewMethodsFilter,
-      CafeTagsFilter,
-      CafeTextFilter,
-      CafeUserLikeFilter
+      RestaurantTypeFilter,
+      // RestaurantBrewMethodsFilter,
+      RestaurantTagsFilter,
+      RestaurantTextFilter,
+      RestaurantUserLikeFilter
     ],
 
     computed: {
       /*
-        Gets the cafes
+        Gets the restaurants
       */
-      cafes(){
-        return this.$store.getters.getCafes;
+      restaurants(){
+        return this.$store.getters.getRestaurants;
       }
     },
 
     watch: {
       /*
-        Watches the cafes. When they are updated, clear the markers
+        Watches the restaurants. When they are updated, clear the markers
         and re build them.
       */
-      cafes(){
+      restaurants(){
         this.clearMarkers();
         this.buildMarkers();
       }
@@ -137,7 +137,7 @@
     mounted(){
       this.$markers = [];
 
-      this.$map = new google.maps.Map(document.getElementById('cafe-map'), {
+      this.$map = new google.maps.Map(document.getElementById('restaurant-map'), {
         center: {lat: this.latitude, lng: this.longitude},
         zoom: this.zoom
       });
@@ -155,8 +155,8 @@
         this.processFilters( filters );
       }.bind(this));
 
-      EventBus.$on('location-selected', function( cafe ){
-        var latLng = new google.maps.LatLng( cafe.lat, cafe.lng );
+      EventBus.$on('location-selected', function( restaurant ){
+        var latLng = new google.maps.LatLng( restaurant.lat, restaurant.lng );
         this.$map.setZoom( 17 );
         this.$map.panTo(latLng);
       }.bind(this));
@@ -179,7 +179,7 @@
                   Initialize flags for the filtering
                 */
                 var textPassed = false;
-                var brewMethodsPassed = false;
+                // var brewMethodsPassed = false;
                 var typePassed = false;
                 var likedPassed = false;
 
@@ -187,14 +187,14 @@
                 /*
                   Check if the roaster passes
                 */
-                if( this.processCafeTypeFilter( this.$markers[i].cafe, filters.type) ){
+                if( this.processRestaurantTypeFilter( this.$markers[i].restaurant, filters.type) ){
                   typePassed = true;
                 }
 
                 /*
                   Check if text passes
                 */
-                if( filters.text != '' && this.processCafeTextFilter( this.$markers[i].cafe, filters.text ) ){
+                if( filters.text != '' && this.processRestaurantTextFilter( this.$markers[i].restaurant, filters.text ) ){
                   textPassed = true;
                 }else if( filters.text == '' ){
                   textPassed = true;
@@ -203,23 +203,23 @@
                 /*
                   Check if brew methods passes
                 */
-                if( filters.brewMethods.length != 0 && this.processCafeBrewMethodsFilter( this.$markers[i].cafe, filters.brewMethods ) ){
-                  brewMethodsPassed = true;
-                }else if( filters.brewMethods.length == 0 ){
-                  brewMethodsPassed = true;
-                }
+                // if( filters.brewMethods.length != 0 && this.processRestaurantBrewMethodsFilter( this.$markers[i].restaurant, filters.brewMethods ) ){
+                //   brewMethodsPassed = true;
+                // }else if( filters.brewMethods.length == 0 ){
+                //   brewMethodsPassed = true;
+                // }
 
                 /*
                   Check if liked passes
                 */
-                if( filters.liked && this.processCafeUserLikeFilter( this.$markers[i].cafe ) ){
+                if( filters.liked && this.processRestaurantUserLikeFilter( this.$markers[i].restaurant ) ){
                   likedPassed = true;
                 }else if( !filters.liked ){
                   likedPassed = true;
                 }
 
                 /*
-                  If everything passes, then we show the Cafe Marker
+                  If everything passes, then we show the Restaurant Marker
                 */
                 if( typePassed && textPassed && brewMethodsPassed && likedPassed ){
                   this.$markers[i].setMap( this.$map );
@@ -244,7 +244,7 @@
       },
 
       /*
-        Builds all of the markers for the cafes
+        Builds all of the markers for the restaurants
       */
       buildMarkers(){
         /*
@@ -253,34 +253,40 @@
         this.$markers = [];
 
         /*
-          Iterate over all of the cafes
+          Iterate over all of the restaurants
         */
-        for( var i = 0; i < this.cafes.length; i++ ){
+        for( var i = 0; i < this.restaurants.length; i++ ){
 
           /*
-            Create the marker for each of the cafes and set the
+            Create the marker for each of the restaurants and set the
             latitude and longitude to the latitude and longitude
-            of the cafe. Also set the map to be the local map.
+            of the restaurant. Also set the map to be the local map.
           */
-          if( this.cafes[i].company.roaster == 1 ){
-            var image = '/img/roaster-marker.svg';
-          }else{
-            var image = '/img/cafe-marker.svg';
-          }
 
+          // if( this.restaurants[i].company.roaster == 1 ){
+          //   var image = '/img/roaster-marker.svg';
+          // }  else  {
+          var image = '/img/logo.svg';  
+          //}
 
-          if( this.cafes[i].latitude != null ){
+          if( this.restaurants[i].latitude != null ){
+            var icon = {
+                url: image, // url
+                scaledSize: new google.maps.Size(45, 45), // scaled size
+                origin: new google.maps.Point(0,0), // origin
+                anchor: new google.maps.Point(0, 0) // anchor
+            };
             var marker = new google.maps.Marker({
-              position: { lat: parseFloat( this.cafes[i].latitude ), lng: parseFloat( this.cafes[i].longitude ) },
+              position: { lat: parseFloat( this.restaurants[i].latitude ), lng: parseFloat( this.restaurants[i].longitude ) },
               map: this.$map,
-              icon: image,
-              cafe: this.cafes[i]
+              icon: icon,
+              restaurant: this.restaurants[i]
             });
 
             let router = this.$router;
 
             marker.addListener('click', function() {
-              router.push( { name: 'cafe', params: { id: this.cafe.id } } );
+              router.push( { name: 'restaurant', params: { id: this.restaurant.id } } );
             });
 
             /*

@@ -1,7 +1,7 @@
 <style lang="scss">
   @import '~@/abstracts/_variables.scss';
 
-  div#add-cafe-button{
+  div#add-restaurant-button{
     background-color: $secondary-color;
     width: 56px;
     height: 56px;
@@ -21,7 +21,7 @@
 </style>
 
 <template>
-  <div id="add-cafe-button" v-on:click="checkAuth()">
+  <div id="add-restaurant-button" v-on:click="checkAuth()">
     &plus;
   </div>
 </template>
@@ -51,7 +51,7 @@
         if( this.user == '' && this.userLoadStatus == 2 ){
           EventBus.$emit('prompt-login');
         }else{
-          this.$router.push({ name: 'newcafe'});
+          this.$router.push({ name: 'newrestaurant'});
         }
       }
     }

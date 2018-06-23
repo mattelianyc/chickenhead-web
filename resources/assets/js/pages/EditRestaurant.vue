@@ -1,7 +1,7 @@
 <style scoped lang="scss">
   @import '~@/abstracts/_variables.scss';
 
-  div#new-cafe-page{
+  div#new-restaurant-page{
     position: fixed;
     top: 0;
     bottom: 0;
@@ -82,7 +82,7 @@
         border-right: 0px;
       }
 
-      &.cafe{
+      &.restaurant{
         border-top-right-radius: 3px;
         border-bottom-right-radius: 3px;
       }
@@ -186,7 +186,7 @@
     }
 
 
-    a.add-location-button{
+    a.edit-location-button{
       display: block;
       text-align: center;
       height: 50px;
@@ -196,13 +196,21 @@
       font-family: "Lato", sans-serif;
       background-color: #A7BE4D;
       line-height: 50px;
+      margin-bottom: 10px;
+    }
+
+    a.delete-location{
+      color: #D0021B;
+      font-size: 14px;
+      text-decoration: underline;
+      display: inline-block;
       margin-bottom: 50px;
     }
   }
 
   /* Small only */
   @media screen and (max-width: 39.9375em) {
-    div#new-cafe-page{
+    div#new-restaurant-page{
       div.location-type{
         width: 50%;
       }
@@ -212,15 +220,15 @@
 
 <template>
   <transition name="scale-in-center">
-    <div id="new-cafe-page">
-      <router-link :to="{ name: 'cafes' }">
+    <div id="new-restaurant-page">
+      <router-link :to="{ name: 'restaurants' }">
         <img src="/img/close-modal.svg" id="back"/>
       </router-link>
 
       <div class="grid-container">
         <div class="grid-x grid-padding-x">
           <div class="large-8 medium-9 small-12 cell centered">
-            <h2 class="page-title">Add Cafe</h2>
+            <h2 class="page-title">Edit Restaurant</h2>
           </div>
         </div>
         <div class="grid-x grid-padding-x">
@@ -232,7 +240,7 @@
             <div class="company-autocomplete-container" v-show="companyName.length > 0 && showAutocomplete">
               <div class="company-autocomplete" v-for="companyResult in companyResults" v-on:click="selectCompany( companyResult )">
                 <span class="company-name">{{ companyResult.name }}</span>
-                <span class="company-locations">{{ companyResult.cafes_count }} location<span v-if="companyResult.cafes_count > 1">s</span></span>
+                <span class="company-locations">{{ companyResult.restaurants_count }} location<span v-if="companyResult.restaurants_count > 1">s</span></span>
               </div>
               <div class="new-company" v-on:click="addNewCompany()">
                 Add new company called "{{ companyName }}"
@@ -240,7 +248,7 @@
             </div>
           </div>
         </div>
-        <div class="grid-x grid-padding-x" v-if="newCompany">
+        <div class="grid-x grid-padding-x">
           <div class="large-8 medium-9 small-12 cell centered">
             <label class="form-label">Website</label>
             <input type="text" class="form-input" v-model="website" v-bind="{ 'invalid' : !validations.website.is_valid }"/>
@@ -256,8 +264,8 @@
           <div class="large-8 medium-9 small-12 cell centered">
             <div class="location-type roaster" v-bind:class="{ 'active': companyType == 'roaster' }" v-on:click="setCompanyType('roaster')">
               Roaster
-            </div><div class="location-type cafe" v-bind:class="{ 'active': companyType == 'cafe' }" v-on:click="setCompanyType('cafe')">
-              Cafe
+            </div><div class="location-type restaurant" v-bind:class="{ 'active': companyType == 'restaurant' }" v-on:click="setCompanyType('restaurant')">
+              Restaurant
             </div>
           </div>
         </div>
@@ -288,7 +296,7 @@
         <div class="grid-x grid-padding-x">
           <div class="large-8 medium-9 small-12 cell centered">
             <label class="form-label">Street Address</label>
-            <input type="text" id="street-address" placeholder="Street Address" class="form-input" v-bind:class="{'invalid' : !validations.address.is_valid }"/>
+            <input type="text" v-model="addressSearch" id="street-address" placeholder="Street Address" class="form-input" v-bind:class="{'invalid' : !validations.address.is_valid }"/>
             <input type="hidden" v-model="address"/>
             <div class="validation" v-show="!validations.address.is_valid">{{ validations.address.text }}</div>
           </div>
@@ -308,56 +316,56 @@
                 <select v-model="state" v-bind:class="{'invalid' : !validations.state.is_valid }">
                   <option value=""></option>
                   <option value="AL">Alabama</option>
-                	<option value="AK">Alaska</option>
-                	<option value="AZ">Arizona</option>
-                	<option value="AR">Arkansas</option>
-                	<option value="CA">California</option>
-                	<option value="CO">Colorado</option>
-                	<option value="CT">Connecticut</option>
-                	<option value="DE">Delaware</option>
-                	<option value="DC">District Of Columbia</option>
-                	<option value="FL">Florida</option>
-                	<option value="GA">Georgia</option>
-                	<option value="HI">Hawaii</option>
-                	<option value="ID">Idaho</option>
-                	<option value="IL">Illinois</option>
-                	<option value="IN">Indiana</option>
-                	<option value="IA">Iowa</option>
-                	<option value="KS">Kansas</option>
-                	<option value="KY">Kentucky</option>
-                	<option value="LA">Louisiana</option>
-                	<option value="ME">Maine</option>
-                	<option value="MD">Maryland</option>
-                	<option value="MA">Massachusetts</option>
-                	<option value="MI">Michigan</option>
-                	<option value="MN">Minnesota</option>
-                	<option value="MS">Mississippi</option>
-                	<option value="MO">Missouri</option>
-                	<option value="MT">Montana</option>
-                	<option value="NE">Nebraska</option>
-                	<option value="NV">Nevada</option>
-                	<option value="NH">New Hampshire</option>
-                	<option value="NJ">New Jersey</option>
-                	<option value="NM">New Mexico</option>
-                	<option value="NY">New York</option>
-                	<option value="NC">North Carolina</option>
-                	<option value="ND">North Dakota</option>
-                	<option value="OH">Ohio</option>
-                	<option value="OK">Oklahoma</option>
-                	<option value="OR">Oregon</option>
-                	<option value="PA">Pennsylvania</option>
-                	<option value="RI">Rhode Island</option>
-                	<option value="SC">South Carolina</option>
-                	<option value="SD">South Dakota</option>
-                	<option value="TN">Tennessee</option>
-                	<option value="TX">Texas</option>
-                	<option value="UT">Utah</option>
-                	<option value="VT">Vermont</option>
-                	<option value="VA">Virginia</option>
-                	<option value="WA">Washington</option>
-                	<option value="WV">West Virginia</option>
-                	<option value="WI">Wisconsin</option>
-                	<option value="WY">Wyoming</option>
+                  <option value="AK">Alaska</option>
+                  <option value="AZ">Arizona</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="CA">California</option>
+                  <option value="CO">Colorado</option>
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="DC">District Of Columbia</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="HI">Hawaii</option>
+                  <option value="ID">Idaho</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IN">Indiana</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NV">Nevada</option>
+                  <option value="NH">New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="OH">Ohio</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="OR">Oregon</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="TX">Texas</option>
+                  <option value="UT">Utah</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WA">Washington</option>
+                  <option value="WV">West Virginia</option>
+                  <option value="WI">Wisconsin</option>
+                  <option value="WY">Wyoming</option>
                 </select>
                 <div class="validation" v-show="!validations.state.is_valid">{{ validations.state.text }}</div>
               </div>
@@ -371,11 +379,15 @@
         </div>
         <div class="grid-x grid-padding-x">
           <div class="large-8 medium-9 small-12 cell centered">
-            <a class="add-location-button" v-on:click="submitNewCafe()">Add Cafe</a>
+            <a class="edit-location-button" v-on:click="submitEditRestaurant()">Update Restaurant</a>
+          </div>
+        </div>
+        <div class="grid-x grid-padding-x">
+          <div class="large-8 medium-9 small-12 cell centered">
+            <a class="delete-location" v-on:click="deleteRestaurant()">Delete Restaurant</a>
           </div>
         </div>
       </div>
-
     </div>
   </transition>
 </template>
@@ -396,9 +408,6 @@
   */
   import { ROAST_CONFIG } from '../config.js';
 
-  /*
-    Builds the compnent to add a new cafe
-  */
   export default {
     /*
       Defines the data used by the page
@@ -415,6 +424,7 @@
         website: '',
 
         locationName: '',
+        addressSearch: '',
         address: '',
         city: '',
         state: '',
@@ -422,7 +432,6 @@
         lat: '',
         lng: '',
         brewMethodsSelected: [],
-
 
         validations: {
           companyName: {
@@ -453,31 +462,10 @@
       }
     },
 
-    /*
-      Loads the Vuex data we need such as brew methods
-      and add cafe status.
-    */
-    computed: {
-      brewMethods(){
-        return this.$store.getters.getBrewMethods;
-      },
-      addCafeStatus(){
-        return this.$store.getters.getCafeAddStatus;
-      }
-    },
 
     /*
-      Defines what we need to watch on the page.
+      Sync the tags to send to the server for the new restaurant.
     */
-    watch: {
-      'addCafeStatus': function(){
-        if( this.addCafeStatus == 2 ){
-          this.clearForm();
-          this.$router.push({ name: 'cafes' });
-        }
-      }
-    },
-
     mounted(){
       this.autocomplete = document.getElementById('street-address');
       let googleMapsAutocomplete = new google.maps.places.Autocomplete( this.autocomplete );
@@ -517,11 +505,67 @@
     },
 
     /*
+      When the component is created, add a location
+    */
+    created(){
+      this.$store.dispatch( 'loadRestaurantEdit', {
+        id: this.$route.params.id
+      });
+    },
+
+    /*
+      Loads the Vuex data we need such as brew methods
+      and add restaurant status.
+    */
+    computed: {
+      brewMethods(){
+        return this.$store.getters.getBrewMethods;
+      },
+      editRestaurantStatus(){
+        return this.$store.getters.getRestaurantEditStatus;
+      },
+      editRestaurantLoadStatus(){
+        return this.$store.getters.getRestaurantEditLoadStatus;
+      },
+      editRestaurant(){
+        return this.$store.getters.getRestaurantEdit;
+      },
+      deleteRestaurantStatus(){
+        return this.$store.getters.getRestaurantDeletedStatus;
+      }
+    },
+
+    /*
+      Defines what we need to watch on the page.
+    */
+    watch: {
+      'editRestaurantStatus': function(){
+        if( this.editRestaurantStatus == 2 ){
+          this.$router.push({ name: 'restaurant', params: { id: this.$route.params.id }});
+        }
+      },
+      'editRestaurantLoadStatus': function(){
+        if( this.editRestaurantLoadStatus == 2 ){
+          this.populateForm();
+        }
+      },
+      'deleteRestaurantStatus': function(){
+        if( this.deleteRestaurantStatus == 2 ){
+          this.$router.push({ name: 'restaurants' });
+
+          EventBus.$emit('show-success', {
+            notification: 'Restaurant deleted successfully!'
+          });
+        }
+      }
+    },
+
+    /*
       Defines the methods used by the page
     */
     methods: {
       /*
-        Sets the type of the company as either roaster or cafe.
+        Sets the type of the company as either roaster or restaurant.
       */
       setCompanyType( type ){
         this.companyType = type;
@@ -555,11 +599,39 @@
       }, 300),
 
       /*
-        Submits a new cafe
+        Method populates the form with the data we need.
       */
-      submitNewCafe(){
-        if( this.validateNewCafe() ){
-          this.$store.dispatch( 'addCafe', {
+      populateForm(){
+        this.companyName    = this.editRestaurant.company.name;
+        this.companyID      = this.editRestaurant.company.id;
+        this.newCompany     = false;
+        this.companyType    = this.editRestaurant.company.roaster == 1 ? 'roaster' : 'restaurant';
+        this.website        = this.editRestaurant.company.website;
+
+        this.locationName   = this.editRestaurant.location_name;
+        this.address        = this.editRestaurant.address;
+        this.city           = this.editRestaurant.city;
+        this.state          = this.editRestaurant.state;
+        this.zip            = this.editRestaurant.zip;
+        this.lat            = this.editRestaurant.latitude;
+        this.lng            = this.editRestaurant.longitude;
+
+        for( let i = 0; i < this.editRestaurant.brew_methods.length; i++ ){
+          this.brewMethodsSelected.push( this.editRestaurant.brew_methods[i].id );
+        }
+
+        this.addressSearch = this.address;
+
+        this.showAutocomplete = false;
+      },
+
+      /*
+        Submits edits for a restaurant
+      */
+      submitEditRestaurant(){
+        if( this.validateEditRestaurant() ){
+          this.$store.dispatch( 'editRestaurant', {
+            id: this.editRestaurant.id,
             company_name: this.companyName,
             company_id: this.companyID,
             company_type: this.companyType,
@@ -594,20 +666,19 @@
         this.companyID = company.id;
         this.newCompany = false;
         this.companyResults = [];
-        this.website = company.website;
       },
 
       /*
-        Validates a new cafe
+        Validates restaurant edits
       */
-      validateNewCafe(){
-        let validNewCafeForm = true;
+      validateEditRestaurant(){
+        let validNewRestaurantForm = true;
 
         /*
           Ensure a name has been entered
         */
         if( this.companyName.trim() == '' ){
-          validNewCafeForm = false;
+          validNewRestaurantForm = false;
           this.validations.companyName.is_valid = false;
           this.validations.companyName.text = 'Please enter a name for the company.';
         }else{
@@ -616,27 +687,24 @@
         }
 
         /*
-          If a website has been entered, ensure the URL is valid. We only check if the
-          company is new.
+          If a website has been entered, ensure the URL is valid
         */
-        if( this.newCompany ){
-          if( this.website.trim != '' && !this.website.match(/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/ ) ){
-            validNewCafeForm = false;
-            this.validations.website.is_valid = false;
-            this.validations.website.text = 'Please enter a valid URL for the website.';
-          }else{
-            this.validations.website.is_valid = true;
-            this.validations.website.text = '';
-          }
+        if( this.website.trim != '' && !this.website.match(/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/ ) ){
+          validNewRestaurantForm = false;
+          this.validations.website.is_valid = false;
+          this.validations.website.text = 'Please enter a valid URL for the website.';
+        }else{
+          this.validations.website.is_valid = true;
+          this.validations.website.text = '';
         }
 
         /*
           Ensure an address has been entered
         */
         if( this.address.trim() == '' ){
-          validNewCafeForm = false;
+          validNewRestaurantForm = false;
           this.validations.address.is_valid = false;
-          this.validations.address.text = 'Please enter an address for the new cafe.';
+          this.validations.address.text = 'Please enter an address for the new restaurant.';
         }else{
           this.validations.address.is_valid = true;
           this.validations.address.text = '';
@@ -646,9 +714,9 @@
           Ensure a city has been entered
         */
         if( this.city.trim() == '' ){
-          validNewCafeForm = false;
+          validNewRestaurantForm = false;
           this.validations.city.is_valid = false;
-          this.validations.city.text = 'Please enter a city for the new cafe.';
+          this.validations.city.text = 'Please enter a city for the new restaurant.';
         }else{
           this.validations.city.is_valid = true;
           this.validations.city.text = '';
@@ -658,9 +726,9 @@
           Ensure a state has been entered
         */
         if( this.state.trim() == '' ){
-          validNewCafeForm = false;
+          validNewRestaurantForm = false;
           this.validations.state.is_valid = false;
-          this.validations.state.text = 'Please enter a state for the new cafe.';
+          this.validations.state.text = 'Please enter a state for the new restaurant.';
         }else{
           this.validations.state.is_valid = true;
           this.validations.state.text = '';
@@ -670,15 +738,26 @@
           Ensure a zip has been entered
         */
         if( this.zip.trim() == '' || !this.zip.match(/(^\d{5}$)/) ){
-          validNewCafeForm = false;
+          validNewRestaurantForm = false;
           this.validations.zip.is_valid = false;
-          this.validations.zip.text = 'Please enter a valid zip code for the new cafe.';
+          this.validations.zip.text = 'Please enter a valid zip code for the new restaurant.';
         }else{
           this.validations.zip.is_valid = true;
           this.validations.zip.text = '';
         }
 
-        return validNewCafeForm;
+        return validNewRestaurantForm;
+      },
+
+      /*
+        Deletes a restaurant
+      */
+      deleteRestaurant(){
+        if( confirm( 'Are you sure you want to delete this restaurant?' ) ){
+          this.$store.dispatch( 'deleteRestaurant', {
+            restaurant_id: this.editRestaurant.id
+          } );
+        }
       },
 
       /*

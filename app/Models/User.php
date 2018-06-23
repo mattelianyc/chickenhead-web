@@ -29,10 +29,10 @@ class User extends Authenticatable
     ];
 
     public function likes(){
-      return $this->belongsToMany( 'App\Models\Cafe', 'users_cafes_likes', 'user_id', 'cafe_id');
+      return $this->belongsToMany( 'App\Models\Restaurant', 'users_restaurants_likes', 'user_id', 'restaurant_id');
     }
 
-    public function cafePhotos(){
-      return $this->hasMany( 'App\Models\CafePhoto', 'id', 'cafe_id' );
+    public function restaurantPhotos(){
+      return $this->hasMany( 'App\Models\RestaurantPhoto', 'id', 'restaurant_id' );
     }
 }

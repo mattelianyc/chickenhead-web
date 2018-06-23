@@ -10,8 +10,8 @@ class Tag extends Model
       'name'
   ];
 
-  public function cafes(){
-    return $this->belongsToMany( 'App\Models\Cafe', 'cafes_users_tags', 'tag_id', 'user_id');
+  public function restaurants(){
+    return $this->belongsToMany( 'App\Models\Restaurant', 'restaurants_users_tags', 'tag_id', 'user_id');
   }
 }
 ?>

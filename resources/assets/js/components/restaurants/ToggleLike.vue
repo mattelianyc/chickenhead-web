@@ -27,23 +27,23 @@
 </style>
 <template>
   <span class="toggle-like" v-show="userLoadStatus == 2 && user != ''">
-    <span class="like like-toggle" v-on:click="likeCafe( cafe.id )" v-if="!liked && cafeLoadStatus == 2 && cafeLikeActionStatus != 1 && cafeUnlikeActionStatus != 1">
+    <span class="like like-toggle" v-on:click="likeRestaurant( restaurant.id )" v-if="!liked && restaurantLoadStatus == 2 && restaurantLikeActionStatus != 1 && restaurantUnlikeActionStatus != 1">
       <span class="image-container">
         <img src="/img/unliked.svg"/>
       </span> Like?
     </span>
-    <span class="un-like like-toggle" v-on:click="unlikeCafe( cafe.id )" v-if="liked && cafeLoadStatus == 2 && cafeLikeActionStatus != 1 && cafeUnlikeActionStatus != 1">
+    <span class="un-like like-toggle" v-on:click="unlikeRestaurant( restaurant.id )" v-if="liked && restaurantLoadStatus == 2 && restaurantLikeActionStatus != 1 && restaurantUnlikeActionStatus != 1">
       <span class="image-container">
         <img src="/img/liked.svg"/>
       </span> Liked
     </span>
-    <loader v-show="cafeLikeActionStatus == 1 || cafeUnlikeActionStatus == 1 || cafeLoadStatus != 2"
+    <loader v-show="restaurantLikeActionStatus == 1 || restaurantUnlikeActionStatus == 1 || restaurantLoadStatus != 2"
             :width="23"
             :height="23"
             :display="'inline-block'">
     </loader>
     <span class="like-count">
-      {{ cafe.likes_count }} likes
+      {{ restaurant.likes_count }} likes
     </span>
   </span>
 </template>
@@ -71,51 +71,51 @@
       },
 
       /*
-        Gets the cafe load status from the Vuex state.
+        Gets the restaurant load status from the Vuex state.
       */
-      cafeLoadStatus(){
-        return this.$store.getters.getCafeLoadStatus;
+      restaurantLoadStatus(){
+        return this.$store.getters.getRestaurantLoadStatus;
       },
 
       /*
-        Gets the cafe from the Vuex state.
+        Gets the restaurant from the Vuex state.
       */
-      cafe(){
-        return this.$store.getters.getCafe;
+      restaurant(){
+        return this.$store.getters.getRestaurant;
       },
 
       /*
-        Determines if the cafe is liked or not.
+        Determines if the restaurant is liked or not.
       */
       liked(){
-        return this.$store.getters.getCafeLikedStatus;
+        return this.$store.getters.getRestaurantLikedStatus;
       },
 
       /*
-        Determines if the cafe is still processing the like action.
+        Determines if the restaurant is still processing the like action.
       */
-      cafeLikeActionStatus(){
-        return this.$store.getters.getCafeLikeActionStatus;
+      restaurantLikeActionStatus(){
+        return this.$store.getters.getRestaurantLikeActionStatus;
       },
 
       /*
-        Determines if the cafe is still processing the un-like action.
+        Determines if the restaurant is still processing the un-like action.
       */
-      cafeUnlikeActionStatus(){
-        return this.$store.getters.getCafeUnlikeActionStatus;
+      restaurantUnlikeActionStatus(){
+        return this.$store.getters.getRestaurantUnlikeActionStatus;
       }
     },
 
     methods: {
-      likeCafe( cafeID ){
-        this.$store.dispatch( 'likeCafe', {
-          id: this.cafe.id
+      likeRestaurant( restaurantID ){
+        this.$store.dispatch( 'likeRestaurant', {
+          id: this.restaurant.id
         });
       },
 
-      unlikeCafe( cafeID ){
-        this.$store.dispatch( 'unlikeCafe', {
-          id: this.cafe.id
+      unlikeRestaurant( restaurantID ){
+        this.$store.dispatch( 'unlikeRestaurant', {
+          id: this.restaurant.id
         });
       }
     }

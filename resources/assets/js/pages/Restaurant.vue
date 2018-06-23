@@ -1,7 +1,7 @@
 <style lang="scss">
   @import '~@/abstracts/_variables.scss';
 
-  div#cafe-page{
+  div#restaurant-page{
     position: absolute;
     right: 30px;
     top: 125px;
@@ -18,7 +18,7 @@
       margin-top: 10px;
     }
 
-    h2.cafe-title{
+    h2.restaurant-title{
       color: #342C0C;
       font-size: 36px;
       line-height: 44px;
@@ -38,7 +38,7 @@
       }
     }
 
-    label.cafe-label{
+    label.restaurant-label{
       font-family: "Lato", sans-serif;
       text-transform: uppercase;
       font-weight: bold;
@@ -65,7 +65,7 @@
         background-color: $secondary-color;
       }
 
-      &.cafe{
+      &.restaurant{
         background-color: #3D281E;
 
         img{
@@ -130,13 +130,13 @@
       }
     }
 
-    a.cafe-website{
+    a.restaurant-website{
       font-family: "Lato", sans-serif;
       color: #543729;
       font-size: 18px;
     }
 
-    a.suggest-cafe-edit{
+    a.suggest-restaurant-edit{
       font-family: "Lato", sans-serif;
       color: #054E7A;
       font-size: 14px;
@@ -148,7 +148,7 @@
 
   /* Small only */
   @media screen and (max-width: 39.9375em) {
-    div#cafe-page{
+    div#restaurant-page{
       position: fixed;
       right: 0px;
       left: 0px;
@@ -170,61 +170,63 @@
 </style>
 
 <template>
-  <div id="cafe-page" v-if="cafeLoadStatus == 2 || ( cafeLoadStatus != 2 && ( cafeLikeActionStatus == 1 || cafeLikeActionStatus == 2 || cafeUnlikeActionStatus == 1 || cafeUnlikeActionStatus == 2 ) )">
-    <router-link :to="{ name: 'cafes' }">
+  <div id="restaurant-page" v-if="restaurantLoadStatus == 2 || ( restaurantLoadStatus != 2 && ( restaurantLikeActionStatus == 1 || restaurantLikeActionStatus == 2 || restaurantUnlikeActionStatus == 1 || restaurantUnlikeActionStatus == 2 ) )">
+    <router-link :to="{ name: 'restaurants' }">
       <img class="close-icon" src="/img/close-icon.svg"/>
     </router-link>
-    <h2 class="cafe-title">{{ cafe.company.name }}</h2>
+    <h2 class="restaurant-title">{{ restaurant.name }}</h2>
     <div class="grid-x">
       <div class="large-12 medium-12 small-12 cell">
         <toggle-like></toggle-like>
       </div>
     </div>
-    <div class="grid-x" v-if="cafe.company.cafes_count > 1">
+    <div class="grid-x" v-if="restaurant.count == 1">
       <div class="large-12 medium-12 small-12 cell">
         <span class="location-number">
           <span class="location-image-container">
             <img src="/img/location.svg"/>
-          </span> {{ cafe.company.cafes_count }} other locations
+          </span> 
         </span>
       </div>
     </div>
     <div class="grid-x">
       <div class="large-12 medium-12 small-12 cell">
-        <label class="cafe-label">Location Type</label>
-        <div class="location-type roaster" v-if="cafe.company.roaster == 1">
+        <!-- <label class="restaurant-label">Location Type</label> -->
+        <!-- <div class="location-type roaster" v-if="restaurant.company.roaster == 1">
           <img src="/img/roaster-logo.svg"/> Roaster
         </div>
-        <div class="location-type cafe" v-if="cafe.company.roaster == 0">
-          <img src="/img/cafe-logo.svg"/> Cafe
-        </div>
+        <div class="location-type restaurant" v-if="restaurant.company.roaster == 0">
+          <img src="/img/restaurant-logo.svg"/> restaurant
+        </div> -->
       </div>
     </div>
     <div class="grid-x">
       <div class="large-12 medium-12 small-12 cell">
-        <label class="cafe-label">Brew Methods</label>
-        <div class="brew-method" v-for="method in cafe.brew_methods">
+        <!-- <label class="restaurant-label">Brew Methods</label>
+        <div class="brew-method" v-for="method in restaurant.brew_methods">
           <div class="brew-method-container">
             <img v-bind:src="method.icon+'.svg'" class="brew-method-icon"/> <span class="brew-method-name">{{ method.method }}</span>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="grid-x">
       <div class="large-12 medium-12 small-12 cell">
-        <label class="cafe-label">Location And Information</label>
+        <label class="restaurant-label">Location And Information</label>
         <div class="address-container">
-          <span class="address">{{ cafe.address }}</span>
-          <span class="city-state">{{ cafe.city }}, {{ cafe.state }}</span>
-          <span class="zip">{{ cafe.zip }}</span>
+          <span class="address">{{ restaurant.address }}</span>
+          <span class="city-state">{{ restaurant.city }}, {{ restaurant.state }}</span>
+          <span class="zip">{{ restaurant.zip }}</span>
+          <span class="latitude">{{ restaurant.latitude }}</span>
+          <span class="longitude">{{ restaurant.longitude }}</span>
         </div>
 
-        <a class="cafe-website" target="_blank" v-bind:href="cafe.company.website">{{ cafe.company.website }}</a>
+        <a class="restaurant-website" target="_blank" v-bind:href="restaurant.website">{{ restaurant.website }}</a>
         <br>
-        <router-link :to="{ name: 'editcafe', params: { id: cafe.id } }" v-show="userLoadStatus == 2 && user != ''" class="suggest-cafe-edit">
+        <router-link :to="{ name: 'editrestaurant', params: { id: restaurant.id } }" v-show="userLoadStatus == 2 && user != ''" class="suggest-restaurant-edit">
           Suggest an edit
         </router-link>
-        <a class="suggest-cafe-edit" v-if="userLoadStatus == 2 && user == ''" v-on:click="loginToEdit()">
+        <a class="suggest-restaurant-edit" v-if="userLoadStatus == 2 && user == ''" v-on:click="loginToEdit()">
           Sign in to make an edit
         </a>
       </div>
@@ -236,11 +238,11 @@
   import { EventBus } from '../event-bus.js';
 
   /*
-    Import the loader and cafe map for use in the component.
+    Import the loader and restaurant map for use in the component.
   */
   import Loader from '../components/global/Loader.vue';
-  import IndividualCafeMap from '../components/cafes/IndividualCafeMap.vue';
-  import ToggleLike from '../components/cafes/ToggleLike.vue';
+  import IndividualRestaurantMap from '../components/restaurants/IndividualRestaurantMap.vue';
+  import ToggleLike from '../components/restaurants/ToggleLike.vue';
 
   export default {
     /*
@@ -248,16 +250,16 @@
     */
     components: {
       Loader,
-      IndividualCafeMap,
+      IndividualRestaurantMap,
       ToggleLike
     },
 
     /*
-      When created, load the cafe based on the ID in the
+      When created, load the restaurant based on the ID in the
       route parameter.
     */
     created(){
-      this.$store.dispatch( 'loadCafe', {
+      this.$store.dispatch( 'loadRestaurant', {
         id: this.$route.params.id
       });
     },
@@ -265,48 +267,48 @@
     watch: {
       '$route.params.id': function(){
         this.$store.dispatch( 'clearLikeAndUnlikeStatus' );
-        this.$store.dispatch( 'loadCafe', {
+        this.$store.dispatch( 'loadRestaurant', {
           id: this.$route.params.id
         });
 			},
 
-      'cafeLoadStatus': function(){
-        if( this.cafeLoadStatus == 2 ){
-          EventBus.$emit('location-selected', { lat: parseFloat( this.cafe.latitude ), lng: parseFloat( this.cafe.longitude ) });
+      'restaurantLoadStatus': function(){
+        if( this.restaurantLoadStatus == 2 ){
+          EventBus.$emit('location-selected', { lat: parseFloat( this.restaurant.latitude ), lng: parseFloat( this.restaurant.longitude ) });
         }
 
-        if( this.cafeLoadStatus == 3 ){
-          EventBus.$emit('show-error', { notification: 'Cafe Not Found!'} );
-          this.$router.push({ name: 'cafes' });
+        if( this.restaurantLoadStatus == 3 ){
+          EventBus.$emit('show-error', { notification: 'Restaurant Not Found!'} );
+          this.$router.push({ name: 'restaurants' });
         }
       }
     },
 
 
     /*
-      Defines the computed variables on the cafe.
+      Defines the computed variables on the restaurant.
     */
     computed: {
       /*
-        Grabs the cafe load status from the Vuex state.
+        Grabs the restaurant load status from the Vuex state.
       */
-      cafeLoadStatus(){
-        return this.$store.getters.getCafeLoadStatus;
+      restaurantLoadStatus(){
+        return this.$store.getters.getRestaurantLoadStatus;
       },
 
-      cafeLikeActionStatus(){
-        return this.$store.getters.getCafeLikeActionStatus;
+      restaurantLikeActionStatus(){
+        return this.$store.getters.getRestaurantLikeActionStatus;
       },
 
-      cafeUnlikeActionStatus(){
-        return this.$store.getters.getCafeUnlikeActionStatus;
+      restaurantUnlikeActionStatus(){
+        return this.$store.getters.getRestaurantUnlikeActionStatus;
       },
 
       /*
-        Grabs the cafe from the Vuex state.
+        Grabs the restaurant from the Vuex state.
       */
-      cafe(){
-        return this.$store.getters.getCafe;
+      restaurant(){
+        return this.$store.getters.getRestaurant;
       },
 
       /*

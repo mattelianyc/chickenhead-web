@@ -6,7 +6,7 @@ var google_maps_js_api = 'AIzaSyBB-yLlqyCE6s_MA30UotaCHttwUw5nKNY';
 
 switch( process.env.NODE_ENV ){
   case 'development':
-    api_url = 'https://roast.dev/api/v1';
+    api_url = 'http://localhost:8000/api/v1';
   break;
   case 'production':
     api_url = 'https://roastandbrew.coffee/api/v1';

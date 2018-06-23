@@ -14,7 +14,7 @@ class CompaniesController extends Controller{
     $term = Request::get('search');
 
     $companies = Company::where('name', 'LIKE', '%'.$term.'%')
-                        ->withCount('cafes')
+                        ->withCount('restaurants')
                         ->get();
 
     return response()->json( ['companies' => $companies ] );

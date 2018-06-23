@@ -6,7 +6,7 @@
 | URL:            /
 | Controller:     Web\AppController@getApp
 | Method:         GET
-| Description:    Displays the homepage with the cafes listing. This kicks off
+| Description:    Displays the homepage with the restaurants listing. This kicks off
 |                 the single page application.
 */
 Route::get( '/', 'Web\AppController@getApp' );

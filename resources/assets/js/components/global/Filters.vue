@@ -84,7 +84,7 @@
         border-right: none;
       }
 
-      &.cafes{
+      &.restaurants{
         border-top-right-radius: 3px;
         border-bottom-right-radius: 3px;
       }
@@ -138,7 +138,7 @@
       margin-left: 10px;
     }
 
-    div.cafe-grid-container{
+    div.restaurant-grid-container{
       overflow: auto;
       padding-bottom: 10px;
     }
@@ -178,7 +178,7 @@
         display: block;
       }
 
-      div.cafe-grid-container{
+      div.restaurant-grid-container{
         height: inherit;
       }
 
@@ -223,14 +223,14 @@
 
         <div class="grid-x grid-padding-x">
           <div class="large-12 medium-12 small-12 cell">
-            <div class="location-filter all-locations" v-bind:class="{ 'active': activeLocationFilter == 'all' }" v-on:click="setActiveLocationFilter('all')">
-              All Locations
-            </div><div class="location-filter roasters" v-bind:class="{ 'active': activeLocationFilter == 'roasters' }" v-on:click="setActiveLocationFilter('roasters')">
-              Roasters
-            </div><div class="location-filter cafes" v-bind:class="{ 'active': activeLocationFilter == 'cafes' }" v-on:click="setActiveLocationFilter('cafes')">
-              Cafes
-            </div>
-          </div>
+            <!-- // <div class="location-filter all-locations" v-bind:class="{ 'active': activeLocationFilter == 'all' }" v-on:click="setActiveLocationFilter('all')"> -->
+              <!-- All Locations -->
+            <!-- </div><div class="location-filter roasters" v-bind:class="{ 'active': activeLocationFilter == 'roasters' }" v-on:click="setActiveLocationFilter('roasters')"> </div>-->
+              <!-- Roasters -->
+            <!-- <div class="location-filter restaurants" v-bind:class="{ 'active': activeLocationFilter == 'restaurants' }" v-on:click="setActiveLocationFilter('restaurants')">
+              Restaurants
+            </div> -->
+          <!-- </div> -->
         </div>
       </div>
 
@@ -246,25 +246,16 @@
             <label class="filter-label">Brew Methods</label>
           </div>
         </div>
-
-        <div class="grid-x grid-padding-x">
-          <div class="large-12 medium-12 small-12 cell" >
-            <div class="brew-method" v-on:click="toggleBrewMethodFilter( method.id )" v-for="method in brewMethods" v-if="method.cafes_count > 0" v-bind:class="{'active': brewMethodsFilter.indexOf( method.id ) >= 0 }">
-              <div class="brew-method-container">
-                <img v-bind:src="method.icon+'.svg'" class="brew-method-icon"/> <span class="brew-method-name">{{ method.method }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
-      <div class="grid-x grid-padding-x cafe-grid-container" id="cafe-grid">
-        <cafe-card v-for="cafe in cafes" :key="cafe.id" :cafe="cafe"></cafe-card>
+      <div class="grid-x grid-padding-x restaurant-grid-container" id="restaurant-grid">
+        <restaurant-card v-for="restaurant in restaurants" :key="restaurant.id" :restaurant="restaurant"></restaurant-card>
         <div class="large-12 medium-12 small-12 cell">
           <span class="no-results" v-if="shownCount == 0">No Results</span>
         </div>
       </div>
 
+    </div>
     </div>
   </transition>
 </template>
@@ -275,7 +266,7 @@
   */
   import { EventBus } from '../../event-bus.js';
 
-  import CafeCard from '../../components/cafes/CafeCard.vue';
+  import RestaurantCard from '../../components/restaurants/RestaurantCard.vue';
 
   export default {
     /*
@@ -286,7 +277,6 @@
         textSearch: '',
         activeLocationFilter: 'all',
         onlyLiked: false,
-        brewMethodsFilter: [],
         shownCount: 1
       }
     },
@@ -304,17 +294,13 @@
         this.updateFilterDisplay();
       },
 
-      brewMethodsFilter(){
-        this.updateFilterDisplay();
-      },
-
       showFilters(){
         this.computeHeight();
       }
     },
 
     components: {
-      CafeCard
+      RestaurantCard
     },
 
 
@@ -333,12 +319,8 @@
         return this.$store.getters.getShowFilters;
       },
 
-      brewMethods(){
-        return this.$store.getters.getBrewMethods;
-      },
-
-      cafes(){
-        return this.$store.getters.getCafes;
+      restaurants(){
+        return this.$store.getters.getRestaurants;
       },
 
       user(){
@@ -355,20 +337,11 @@
         this.activeLocationFilter = filter;
       },
 
-      toggleBrewMethodFilter( id ){
-        if( this.brewMethodsFilter.indexOf( id ) >= 0 ){
-          this.brewMethodsFilter.splice( this.brewMethodsFilter.indexOf( id ), 1 );
-        }else{
-          this.brewMethodsFilter.push( id );
-        }
-      },
-
       updateFilterDisplay(){
         EventBus.$emit('filters-updated', {
           text: this.textSearch,
           type: this.activeLocationFilter,
-          liked: this.onlyLiked,
-          brewMethods: this.brewMethodsFilter
+          liked: this.onlyLiked
         });
 
         this.$nextTick(function(){
@@ -377,7 +350,7 @@
       },
 
       computeShown(){
-        this.shownCount = $('.cafe-card-container').filter(function() {
+        this.shownCount = $('.restaurant-card-container').filter(function() {
               return $(this).css('display') !== 'none';
           }).length;
       },
@@ -385,7 +358,7 @@
       computeHeight(){
         let filtersHeight = $('#filters-container').height();
 
-        $('#cafe-grid').css('height', ( filtersHeight - 460 ) + 'px' );
+        $('#restaurant-grid').css('height', ( filtersHeight - 460 ) + 'px' );
       },
 
       toggleShowFilters(){
@@ -396,7 +369,6 @@
         this.textSearch = '';
         this.activeLocationFilter = 'all';
         this.onlyLiked = false;
-        this.brewMethodsFilter = [];
       }
     }
   }

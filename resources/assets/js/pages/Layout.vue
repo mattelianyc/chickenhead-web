@@ -64,9 +64,9 @@
     },
 
     created(){
-      this.$store.dispatch( 'loadCafes' );
+      this.$store.dispatch( 'loadRestaurants' );
       this.$store.dispatch( 'loadUser' );
-      this.$store.dispatch( 'loadBrewMethods' );
+      // this.$store.dispatch( 'loadBrewMethods' );
     },
 
     computed: {
@@ -74,20 +74,20 @@
         return this.$store.getters.getShowFilters;
       },
 
-      addedCafe(){
-        return this.$store.getters.getAddedCafe;
+      addedRestaurant(){
+        return this.$store.getters.getAddedRestaurant;
       },
 
-      addCafeStatus(){
-        return this.$store.getters.getCafeAddStatus;
+      addRestaurantStatus(){
+        return this.$store.getters.getRestaurantAddStatus;
       }
     },
 
     watch: {
-      'addCafeStatus': function(){
-        if( this.addCafeStatus == 2 ){
+      'addRestaurantStatus': function(){
+        if( this.addRestaurantStatus == 2 ){
           EventBus.$emit('show-success', {
-            notification: this.addedCafe.name+' has been added!'
+            notification: this.addedRestaurant.name+' has been added!'
           });
         }
       }

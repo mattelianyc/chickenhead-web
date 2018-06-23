@@ -56,7 +56,7 @@
 <template>
   <transition name="scale-in-center">
     <div id="profile-page">
-      <router-link :to="{ name: 'cafes' }">
+      <router-link :to="{ name: 'restaurants' }">
         <img src="/img/close-modal.svg" id="back"/>
       </router-link>
 
@@ -78,14 +78,14 @@
       <div class="grid-container" v-show="userLoadStatus == 2">
         <div class="grid-x grid-padding-x">
           <div class="large-8 medium-10 small-12 cell centered">
-            <label class="form-label">Favorite Coffee</label>
-            <textarea v-model="favorite_coffee"></textarea>
+            <label class="form-label">Favorite Joint</label>
+            <textarea v-model="favorite_restaurant"></textarea>
           </div>
         </div>
         <div class="grid-x grid-padding-x">
           <div class="large-8 medium-10 small-12 cell centered">
-            <label class="form-label">Flavor Notes</label>
-            <textarea v-model="flavor_notes"></textarea>
+            <label class="form-label">Favorite Dish</label>
+            <textarea v-model="favorite_dish"></textarea>
           </div>
         </div>
         <div class="grid-x grid-padding-x">

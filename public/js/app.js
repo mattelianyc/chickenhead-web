@@ -58612,7 +58612,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\nnav.top-navigation {\n  background-color: #FFFFFF;\n  height: 75px;\n  -webkit-box-shadow: 0 2px 4px 0 rgba(3, 27, 78, 0.1);\n          box-shadow: 0 2px 4px 0 rgba(3, 27, 78, 0.1);\n  z-index: 9999;\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n}\nnav.top-navigation a.filters {\n    cursor: pointer;\n    color: #E8635F;\n    width: 140px;\n    height: 45px;\n    border: 2px solid #E8635F;\n    border-radius: 3px;\n    text-transform: uppercase;\n    display: block;\n    float: left;\n    text-align: center;\n    line-height: 41px;\n    margin-top: 15px;\n    margin-left: 20px;\n    font-family: \"Lato\", sans-serif;\n    font-weight: bold;\n    font-size: 16px;\n}\nnav.top-navigation a.filters img {\n      display: inline-block;\n      vertical-align: middle;\n      margin-right: 10px;\n      height: 13px;\n}\nnav.top-navigation a.filters img.chevron-active {\n      display: none;\n}\nnav.top-navigation a.filters.active {\n      background-color: #E8635F;\n      color: white;\n}\nnav.top-navigation a.filters.active img.chevron {\n        display: none;\n}\nnav.top-navigation a.filters.active img.chevron-active {\n        display: inline-block;\n}\nnav.top-navigation span.clear-filters {\n    font-size: 16px;\n    color: #054E7A;\n    font-family: \"Lato\", sans-serif;\n    cursor: pointer;\n    margin-left: 25px;\n    display: block;\n    float: left;\n    margin-top: 25px;\n}\nnav.top-navigation span.clear-filters img {\n      margin-right: 10px;\n      float: left;\n      margin-top: 6px;\n}\nnav.top-navigation img.logo {\n    margin: auto;\n    margin-top: 7.5px;\n    margin-bottom: 12.5px;\n    display: block;\n    max-height: 60px;\n}\nnav.top-navigation .logo-brand-text {\n    font-family: 'Gloria Hallelujah', cursive;\n    color: #ff7d00;\n    padding-top: 2px;\n}\nnav.top-navigation img.hamburger {\n    float: right;\n    margin-right: 18px;\n    margin-top: 30px;\n    cursor: pointer;\n}\nnav.top-navigation img.avatar {\n    float: right;\n    margin-right: 20px;\n    width: 40px;\n    height: 40px;\n    border-radius: 20px;\n    margin-top: 18px;\n}\nnav.top-navigation:after {\n    content: \"\";\n    display: table;\n    clear: both;\n}\nnav.top-navigation span.login {\n    font-family: \"Lato\", sans-serif;\n    font-size: 16px;\n    text-transform: uppercase;\n    color: black;\n    font-weight: bold;\n    float: right;\n    margin-top: 27px;\n    margin-right: 15px;\n    cursor: pointer;\n}\n\n/* Small only */\n@media screen and (max-width: 39.9375em) {\nnav.top-navigation a.filters {\n    line-height: 31px;\n    margin-top: 20px;\n    width: 75px;\n    height: 35px;\n}\nnav.top-navigation a.filters img {\n      display: none;\n}\nnav.top-navigation a.filters.active img.chevron-active {\n      display: none;\n}\nnav.top-navigation span.clear-filters {\n    display: none;\n}\nnav.top-navigation span.login {\n    display: none;\n}\nnav.top-navigation img.hamburger {\n    margin-top: 26px;\n}\n}\n\n/* Medium only */\n/* Large only */\n", ""]);
+exports.push([module.i, "\nnav.top-navigation {\n  background-color: #FFFFFF;\n  height: 75px;\n  -webkit-box-shadow: 0 2px 4px 0 rgba(3, 27, 78, 0.1);\n          box-shadow: 0 2px 4px 0 rgba(3, 27, 78, 0.1);\n  z-index: 9999;\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n}\nnav.top-navigation a.filters {\n    cursor: pointer;\n    color: #E8635F;\n    width: 140px;\n    height: 45px;\n    border: 2px solid #E8635F;\n    border-radius: 3px;\n    text-transform: uppercase;\n    display: block;\n    float: left;\n    text-align: center;\n    line-height: 41px;\n    margin-top: 15px;\n    margin-left: 20px;\n    font-family: \"Lato\", sans-serif;\n    font-weight: bold;\n    font-size: 16px;\n}\nnav.top-navigation a.filters img {\n      display: inline-block;\n      vertical-align: middle;\n      margin-right: 10px;\n      height: 13px;\n}\nnav.top-navigation a.filters img.chevron-active {\n      display: none;\n}\nnav.top-navigation a.filters.active {\n      background-color: #E8635F;\n      color: white;\n}\nnav.top-navigation a.filters.active img.chevron {\n        display: none;\n}\nnav.top-navigation a.filters.active img.chevron-active {\n        display: inline-block;\n}\nnav.top-navigation span.clear-filters {\n    font-size: 16px;\n    color: #054E7A;\n    font-family: \"Lato\", sans-serif;\n    cursor: pointer;\n    margin-left: 25px;\n    display: block;\n    float: left;\n    margin-top: 25px;\n}\nnav.top-navigation span.clear-filters img {\n      margin-right: 10px;\n      float: left;\n      margin-top: 6px;\n}\nnav.top-navigation img.logo {\n    margin: auto;\n    margin-top: 7.5px;\n    margin-bottom: 12.5px;\n    display: block;\n    max-height: 60px;\n}\nnav.top-navigation .logo-brand-text {\n    font-family: 'Gloria Hallelujah', cursive;\n    color: #ff7d00;\n    padding-top: 10px;\n}\nnav.top-navigation .logo-brand-text .logo {\n      margin-left: 10px;\n      position: relative;\n      bottom: 12px;\n}\nnav.top-navigation img.hamburger {\n    float: right;\n    margin-right: 18px;\n    margin-top: 30px;\n    cursor: pointer;\n}\nnav.top-navigation img.avatar {\n    float: right;\n    margin-right: 20px;\n    width: 40px;\n    height: 40px;\n    border-radius: 20px;\n    margin-top: 18px;\n}\nnav.top-navigation:after {\n    content: \"\";\n    display: table;\n    clear: both;\n}\nnav.top-navigation span.login {\n    font-family: \"Lato\", sans-serif;\n    font-size: 16px;\n    text-transform: uppercase;\n    color: black;\n    font-weight: bold;\n    float: right;\n    margin-top: 27px;\n    margin-right: 15px;\n    cursor: pointer;\n}\n\n/* Small only */\n@media screen and (max-width: 39.9375em) {\nnav.top-navigation a.filters {\n    line-height: 31px;\n    margin-top: 20px;\n    width: 75px;\n    height: 35px;\n}\nnav.top-navigation a.filters img {\n      display: none;\n}\nnav.top-navigation a.filters.active img.chevron-active {\n      display: none;\n}\nnav.top-navigation span.clear-filters {\n    display: none;\n}\nnav.top-navigation span.login {\n    display: none;\n}\nnav.top-navigation img.hamburger {\n    margin-top: 26px;\n}\n}\n\n/* Medium only */\n/* Large only */\n", ""]);
 
 // exports
 
@@ -58624,6 +58624,8 @@ exports.push([module.i, "\nnav.top-navigation {\n  background-color: #FFFFFF;\n 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__event_bus_js__ = __webpack_require__(6);
+//
+//
 //
 //
 //
@@ -58938,7 +58940,7 @@ var render = function() {
         [
           _c("router-link", { attrs: { to: { name: "restaurants" } } }, [
             _c("h1", { staticClass: "logo-brand-text" }, [
-              _vm._v("chickenhead")
+              _vm._v(" chickenhead")
             ])
           ])
         ],
@@ -59811,7 +59813,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     computeHeight: function computeHeight() {
       var filtersHeight = $('#filters-container').height();
 
-      $('#restaurant-grid').css('height', filtersHeight - 460 + 'px');
+      // $('#restaurant-grid').css('height', ( filtersHeight - 460 ) + 'px' );
     },
     toggleShowFilters: function toggleShowFilters() {
       this.$store.dispatch('toggleShowFilters', { showFilters: !this.showFilters });
@@ -60333,11 +60335,7 @@ var render = function() {
           _vm._v(" "),
           _c("div", { attrs: { id: "brew-methods-container" } }, [
             _c("div", { staticClass: "grid-x grid-padding-x" }, [
-              _c("div", { staticClass: "large-12 medium-12 small-12 cell" }, [
-                _c("label", { staticClass: "filter-label" }, [
-                  _vm._v("Brew Methods")
-                ])
-              ])
+              _c("div", { staticClass: "large-12 medium-12 small-12 cell" })
             ])
           ]),
           _vm._v(" "),
@@ -61793,7 +61791,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         // if( this.restaurants[i].company.roaster == 1 ){
         //   var image = '/img/roaster-marker.svg';
         // }  else  {
-        var image = '/img/logo.svg';
+        var image = '/img/clucka.svg';
         //}
 
         if (this.restaurants[i].latitude != null) {
@@ -61803,7 +61801,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           (function () {
             icon = {
               url: image, // url
-              scaledSize: new google.maps.Size(45, 45), // scaled size
+              scaledSize: new google.maps.Size(48, 48), // scaled size
               origin: new google.maps.Point(0, 0), // origin
               anchor: new google.maps.Point(0, 0) // anchor
             };

@@ -82,7 +82,12 @@
     .logo-brand-text {
       font-family: 'Gloria Hallelujah', cursive;
       color: rgb(255,125,0);
-      padding-top: 2px;
+      padding-top: 10px;
+      .logo {
+        margin-left: 10px;
+        position: relative;
+        bottom: 12px;
+      }
     }
 
     img.hamburger{
@@ -182,10 +187,7 @@
       </div>
       <div class="large-4 medium-4 small-4 cell text-center">
         <router-link :to="{ name: 'restaurants'}">
-          <!-- <span style="display:inline-flex;"> -->
-          <!-- <img src="/img/logo.png" class="logo" /> -->
-          <h1 class="logo-brand-text">chickenhead</h1>
-          <!-- </span> -->
+          <h1 class="logo-brand-text">&nbsp;chickenhead</h1>
         </router-link>
       </div>
       <div class="large-4 medium-4 small-4 cell">

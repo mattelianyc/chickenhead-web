@@ -73,6 +73,15 @@ div.page {
   min-height: calc(100vh - 152px);
 }
 
+@font-face {
+  font-family: Clucka;
+  src: url(/fonts/clucka.ttf?5a2871a1f1005e42f6f807f4385f42db);
+}
+
+.logo-brand-text {
+  font-family: 'Clucka', cursive !important;
+}
+
 /**
  * Chapter 4: Animations
  */

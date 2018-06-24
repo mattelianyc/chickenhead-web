@@ -16,9 +16,7 @@ use Auth;
 use DB;
 use File;
 
-/*
-	Defines the requests used by the controller.
-*/
+//Defines the requests used by the controller.
 use App\Http\Requests\StoreRestaurantRequest;
 use App\Http\Requests\EditRestaurantRequest;
 
@@ -32,15 +30,15 @@ class RestaurantsController extends Controller
   | Method:         GET
   | Description:    Gets all of the restaurants in the application
   */
-	public function getRestaurants(){
-    $restaurants = Restaurant::with(['tags' => function( $query ){
-										$query->select('tag');
-									}])
-									->withCount('userLike')
-									->where('deleted', '=', 0)
-									->get();
+	public function getRestaurants() {
+    
+    $restaurants = Restaurant::with(['tags' => function( $query ) { $query->select('tag'); } ] )
+			->withCount('userLike')
+				->where('deleted', '=', 0)
+					->get();
 
     return response()->json( $restaurants );
+
   }
 
   /*
@@ -53,17 +51,21 @@ class RestaurantsController extends Controller
   | Parameters:
   |   $id   -> ID of the restaurant we are retrieving
   */
-  public function getRestaurant( $id ){
-    $restaurant = Restaurant::where('id', '=', $id)
-								->withCount('userLike')
-								->with('tags')
-								->withCount('likes')
-								->where('deleted', '=', 0)
+  public function getRestaurant( $id ) {
+
+			$restaurant = Restaurant::where('id', '=', $id)
+				->withCount('userLike')
+					->with('tags')
+						->withCount('likes')
+							->where('deleted', '=', 0)
 								->first();
 
-		if( $restaurant != null ){
+		if( $restaurant != null )
+		{
 			return response()->json( $restaurant );
-		}else{
+		}
+		else
+		{
 			abort(404);
 		}
 
@@ -80,18 +82,15 @@ class RestaurantsController extends Controller
 	|   $id   -> ID of the restaurant we are retrieving
 	*/
 	public function getRestaurantEditData( $restaurantID ){
-		/*
-			Grab the restaurant with the parent of the restaurant
-		*/
+		// Grab the restaurant with the parent of the restaurant
 		$restaurant = Restaurant::where('id', '=', $restaurantID)
 								->withCount('userLike')
 								->where('deleted', '=', 0)
 								->first();
 
-		/*
-			Return the restaurant queried.
-		*/
+		// Return the restaurant queried.
 		return response()->json($restaurant);
+
 	}
 
   /*
@@ -102,55 +101,53 @@ class RestaurantsController extends Controller
   | Method:         POST
   | Description:    Adds a new restaurant to the application
   */
-  public function postNewRestaurant( StoreRestaurantRequest $request ){
+  public function postNewRestaurant( StoreRestaurantRequest $request ) {
+
   	$restaurant;
 		$restaurantID = $request->get('restaurant_id');
 
-		if( $restaurantID != '' ){
+		if( $restaurantID != '' ) 
+		{
 			$restaurant = Restaurant::where('id', '=', $restaurantID)->first();
-		}else{
+		}
+		else
+		{
 			$restaurant = new Restaurant();
 
-			$address 									= $request->get('address');
-			$city 										= $request->get('city');
-			$state 										= $request->get('state');
-			$zip 											= $request->get('zip');
-			
+			$restaurant   =	$request->get('name');
+			$address 			= $request->get('address');
+			$city 				= $request->get('city');
+			$state 				= $request->get('state');
+			$zip 					= $request->get('zip');
 
-			$lat = Request::get('lat') != '' ? Request::get('lat') : 0;
-			$lng = Request::get('lng') != '' ? Request::get('lng') : 0;
-			
+			//get coordinates
+			$lat 					= Request::get('lat') != '' ? Request::get('lat') : 0;
+			$lng 					= Request::get('lng') != '' ? Request::get('lng') : 0;
 			if( $lat == 0 && $lng == 0 ) 
 			{
 				$coordinates = GoogleMaps::geocodeAddress( $address, $city, $state, $zip );
-			
 			}
 			$lat = $coordinates['lat'];
 			$lng = $coordinates['lng'];
 
-			
-			$restaurant->latitude 				= $lat;
-			$restaurant->longitude 				= $lng;
-			
-			$restaurant->deleted 					= 0;
-			$restaurant->added_by					= Auth::user()->id;			
-			
-			$website 			= '';
-			
-			$name 										=	$request->get('name');
 			$restaurant->name 						= $name != null ? $name : '';
 			$restaurant->address 					= $address;
 			$restaurant->city 						= $city;
 			$restaurant->state 						= $state;
 			$restaurant->zip 							= $zip;
+			$restaurant->website					= '';
+			$restaurant->description			= '';
+			$restaurant->latitude 				= $lat;
+			$restaurant->longitude 				= $lng;
+			$restaurant->deleted 					= 0;
+			$restaurant->added_by					= Auth::user()->id;			
 			
 			$restaurant->save();
 		}
 
-		/*
-			Return the added restaurants as JSON
-		*/
+		//Return the added restaurants as JSON
     return response()->json( $restaurant, 201);
+
   }
 
 	/*
@@ -162,20 +159,23 @@ class RestaurantsController extends Controller
 	| Description:    Edits a restaurant
 	*/
 	public function putEditRestaurant( $restaurantID, EditRestaurantRequest $request ){
+		
 		$restaurantID = $request->get('restaurant_id');
-
-		if( $restaurantID != '' ){
+		
+		if( $restaurantID != '' )
+		{
 	    $restaurant = Restaurant::where('id', '=', $restaurantID)->first();
 
 			$restaurant->location_name 		= $request->get('location_name');
 	    $restaurant->website 					= $request->get('website');
 	    // $restaurant->logo 						= '';
 	    $restaurant->description 			= '';
-
+			
 			$restaurant->save();
-	  }else{
-	    $restaurant = new Restaurant();
-
+	  } 
+	  else
+	  {
+	    $restaurant 									= new Restaurant();
 	    $restaurant->location_name		= $request->get('location_name');
 	    $restaurant->website 					= $request->get('website');
 	    // $restaurant->logo 					= '';
@@ -185,39 +185,39 @@ class RestaurantsController extends Controller
 	    $restaurant->save();
 	  }
 
-		$address 			= $request->get('address');
-	  $city 				= $request->get('city');
-	  $state 				= $request->get('state');
-	  $zip 					= $request->get('zip');
-	  $locationName = $request->get('location_name');
+		$address 				= $request->get('address');
+	  $city 					= $request->get('city');
+	  $state 					= $request->get('state');
+	  $zip 						= $request->get('zip');
+	  $locationName 	= $request->get('location_name');
 
 	  $lat = Request::get('lat') != '' ? Request::get('lat') : 0;
 	  $lng = Request::get('lng') != '' ? Request::get('lng') : 0;
 
-	  if( $lat == 0 && $lng == 0 ){
-	    $coordinates = GoogleMaps::geocodeAddress( $address, $city, $state, $zip );
-	    $lat = $coordinates['lat'];
-	    $lng = $coordinates['lng'];
+	  if( $lat == 0 && $lng == 0 )
+	  {
+	    $coordinates 	= GoogleMaps::geocodeAddress( $address, $city, $state, $zip );
+	    $lat 					= $coordinates['lat'];
+	    $lng 					= $coordinates['lng'];
 	  }
 
 		$restaurant = Restaurant::where('id', '=', $restaurantID)->first();
 
-		$restaurant->id 							= $restaurant->id;
-	  $restaurant->location_name 		= $locationName != null ? $locationName : '';
-	  $restaurant->address 					= $address;
-	  $restaurant->city 						= $city;
-	  $restaurant->state 						= $state;
-	  $restaurant->zip 							= $zip;
-	  $restaurant->latitude 				= $lat;
-	  $restaurant->longitude 				= $lng;
-	  $restaurant->added_by 				= Auth::user()->id;
+		$restaurant->id 								= $restaurant->id;
+	  $restaurant->name 							= $locationName != null ? $locationName : '';
+	  $restaurant->address 						= $address;
+	  $restaurant->city 							= $city;
+	  $restaurant->state 							= $state;
+	  $restaurant->zip 								= $zip;
+	  $restaurant->latitude 					= $lat;
+	  $restaurant->longitude 					= $lng;
+	  $restaurant->added_by 					= Auth::user()->id;
 
 	  $restaurant->save();
 
-	  /*
-	    Return the edited restaurants as JSON
-	  */
+	  // Return the edited restaurants as JSON
 	  return response()->json( $restaurant, 200);
+
 	}
 
 	/*
@@ -228,7 +228,7 @@ class RestaurantsController extends Controller
   | Method:         POST
   | Description:    Likes a restaurant for the authenticated user.
   */
-	public function postLikeRestaurant( $restaurantID ){
+	public function postLikeRestaurant( $restaurantID ) {
 		/*
 			Gets the restaurant the user is liking
 		*/
@@ -237,21 +237,21 @@ class RestaurantsController extends Controller
 		/*
 			Checks to see if the user already likes the restaurant
 		*/
-		if( !$restaurant->likes->contains( Auth::user()->id ) ){
+		if( !$restaurant->likes->contains( Auth::user()->id ) )
+		{
 			/*
 				If the user doesn't already like the restaurant, attaches the restaurant to the user's
 				likes
 			*/
 			$restaurant->likes()->attach( Auth::user()->id, [
-				'created_at' 	=> date('Y-m-d H:i:s'),
-				'updated_at'	=> date('Y-m-d H:i:s')
-				] );
+					'created_at' 	=> date('Y-m-d H:i:s'),
+					'updated_at'	=> date('Y-m-d H:i:s') 
+			]);
 		}
 
-		/*
-			Return a response that the restaurant was liked successfully.
-		*/
+		// Return a response that the restaurant was liked successfully.
 		return response()->json( ['restaurant_liked' => true], 201 );
+
 	}
 
 	/*
@@ -262,21 +262,17 @@ class RestaurantsController extends Controller
   | Method:         DELETE
   | Description:    Un-Likes a restaurant for the authenticated user.
   */
-	public function deleteLikeRestaurant( $restaurantID ){
-		/*
-			Gets the restaurant the user is liking
-		*/
+	public function deleteLikeRestaurant( $restaurantID ) {
+
+		//Gets the restaurant the user is liking
 		$restaurant = Restaurant::where('id', '=', $restaurantID)->first();
 
-		/*
-			Detaches the user from the restaurant's likes
-		*/
+		//Detaches the user from the restaurant's likes
 		$restaurant->likes()->detach( Auth::user()->id );
 
-		/*
-			Return a proper response code for successful unliking
-		*/
+		//Return a proper response code for successful unliking
 		return response(null, 204);
+
 	}
 
 	/*
@@ -288,34 +284,23 @@ class RestaurantsController extends Controller
 	| Method:         POST
 	| Description:    Adds tags to a restaurant for a user
 	*/
-	public function postAddTags( $restaurantID ){
-		/*
-			Grabs the tags array from the request
-		*/
+	public function postAddTags( $restaurantID ) {
+
+		//Grabs the tags array from the request
 		$tags = Request::get('tags');
 
-		/*
-			Gets the restaurant
-		*/
+		//Gets the restaurant
 		$restaurant = Restaurant::where('id', '=', $restaurantID)->first();
-
-		/*
-			Tags the restaurant
-		*/
+		
+		//Tags the restaurant
 		Tagger::tagRestaurant( $restaurant, $tags );
 
-		/*
-			Grabs the restaurant with the brew methods, user like and tags
-		*/
-		$restaurant = Restaurant::where('id', '=', $restaurantID)
-								->with('userLike')
-								->with('tags')
-								->first();
+		//Grabs the restaurant with the brew methods, user like and tags
+		$restaurant = Restaurant::where('id', '=', $restaurantID)->with('userLike')->with('tags')->first();
 
-		/*
-			Returns the restaurant response as JSON.
-		*/
+		//Returns the restaurant response as JSON.
 		return response()->json($restaurant, 201);
+
 	}
 
 	/*

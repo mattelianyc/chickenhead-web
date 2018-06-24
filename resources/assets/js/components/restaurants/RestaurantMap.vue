@@ -266,13 +266,13 @@
           // if( this.restaurants[i].company.roaster == 1 ){
           //   var image = '/img/roaster-marker.svg';
           // }  else  {
-          var image = '/img/logo.svg';  
+          var image = '/img/clucka.svg';  
           //}
 
           if( this.restaurants[i].latitude != null ){
             var icon = {
                 url: image, // url
-                scaledSize: new google.maps.Size(45, 45), // scaled size
+                scaledSize: new google.maps.Size(48, 48), // scaled size
                 origin: new google.maps.Point(0,0), // origin
                 anchor: new google.maps.Point(0, 0) // anchor
             };

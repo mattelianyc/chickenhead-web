@@ -243,7 +243,7 @@
       <div id="brew-methods-container">
         <div class="grid-x grid-padding-x">
           <div class="large-12 medium-12 small-12 cell">
-            <label class="filter-label">Brew Methods</label>
+            <!-- <label class="filter-label">Brew Methods</label> -->
           </div>
         </div>
       </div>
@@ -358,7 +358,7 @@
       computeHeight(){
         let filtersHeight = $('#filters-container').height();
 
-        $('#restaurant-grid').css('height', ( filtersHeight - 460 ) + 'px' );
+        // $('#restaurant-grid').css('height', ( filtersHeight - 460 ) + 'px' );
       },
 
       toggleShowFilters(){

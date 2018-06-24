@@ -2,3 +2,10 @@ div.page{
   margin-top: 25px;
   min-height: calc(100vh - 152px);
 }
+@font-face {
+	font-family: Clucka;
+	src: url(../fonts/clucka.ttf);
+}
+.logo-brand-text {
+	font-family: 'Clucka', cursive !important;
+}

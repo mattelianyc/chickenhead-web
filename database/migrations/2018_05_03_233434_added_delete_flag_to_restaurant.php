@@ -14,7 +14,7 @@ class AddedDeleteFlagToRestaurant extends Migration
     public function up()
     {
         Schema::table('restaurants', function( Blueprint $table ){
-          $table->integer('deleted')->default(0)->after('added_by');
+          $table->integer('deleted')->default(0);
         });
     }
 

@@ -14,11 +14,11 @@ class AddedUserProfileFields extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->text('favorite_restaurant')->after('avatar')->nullable();
-            $table->text('favorite_dish')->after('favorite_restaurant')->nullable();
-            $table->boolean('profile_visibility')->default('1')->after('favorite_dish');
-            $table->string('city')->after('profile_visibility')->nullable();
-            $table->string('state')->after('city')->nullable();
+            $table->text('favorite_restaurant')->nullable();
+            $table->text('favorite_dish')->nullable();
+            $table->boolean('profile_visibility')->default('1');
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
         });
     }
 

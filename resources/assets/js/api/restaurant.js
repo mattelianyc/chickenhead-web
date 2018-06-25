@@ -28,7 +28,7 @@ export default {
 	/*
 		POST 	/api/v1/restaurants
 	*/
-	postAddNewRestaurant: function( name, address, city, state, zip, latitude, longitude, added_by ){
+	postAddNewRestaurant: function( name, address, city, state, zip, latitude, longitude, website, description, added_by ){
 		/*
 			Initialize the form data
 		*/
@@ -37,7 +37,6 @@ export default {
 		/*
 			Add the form data we need to submit
 		*/
-		// formData.append('website', website);
 		formData.append('name', name);
 		formData.append('address', address);
 		formData.append('city', city);
@@ -45,6 +44,8 @@ export default {
 		formData.append('zip', zip);
 		formData.append('latitude', latitude);
 		formData.append('longitude', longitude);
+		formData.append('website', website);
+		formData.append('description', description);
 		formData.append('added_by', added_by);
 
 		return axios.post( ROAST_CONFIG.API_URL + '/restaurants',

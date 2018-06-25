@@ -2,7 +2,7 @@
   @import '~@/abstracts/_variables.scss';
 
   nav.top-navigation{
-    background-color: #FFFFFF;
+    background-color: #b46400;
     height: 75px;
     box-shadow: 0 2px 4px 0 rgba(3, 27, 78, 0.1);
     z-index: 9999;
@@ -13,11 +13,11 @@
 
     a.filters{
       cursor: pointer;
-      color: $secondary-color;
+      color: $nav-primary-color;
       width: 140px;
       height: 45px;
-      border: 2px solid $secondary-color;
-      border-radius: 3px;
+      border: 2px solid $nav-primary-color;
+      border-radius: 2px;
       text-transform: uppercase;
       display: block;
       float: left;
@@ -35,13 +35,19 @@
         margin-right: 10px;
         height: 13px;
       }
+      
+      &:hover {
+        background-color: $nav-button-active-color;
+        color: $white;
+      }
 
       img.chevron-active{
         display: none;
       }
 
+
       &.active{
-        background-color: $secondary-color;
+        background-color: $nav-button-active-color;
         color: white;
 
         img.chevron{
@@ -56,7 +62,8 @@
 
     span.clear-filters{
       font-size: 16px;
-      color: $text-secondary-color;
+      font-weight: bolder;
+      color: $white;
       font-family: "Lato", sans-serif;
       cursor: pointer;
       margin-left: 25px;
@@ -80,9 +87,9 @@
     }
 
     .logo-brand-text {
-      font-family: 'Gloria Hallelujah', cursive;
-      color: rgb(255,125,0);
-      padding-top: 10px;
+      font-family: 'Clucka', cursive;
+      font-size: 3.75rem;
+      color: $nav-primary-color;
       .logo {
         margin-left: 10px;
         position: relative;
@@ -176,12 +183,12 @@
     <div class="grid-x">
       <div class="large-4 medium-4 small-4 cell">
         <a class="filters" v-bind:class="{'active': showFilters}" v-on:click="toggleShowFilters()">
-          <img class="chevron" src="/img/chevron-right.svg"/>
+          <!-- <img class="chevron" src="/img/chevron-right.svg"/> -->
           <img class="chevron-active" src="/img/chevron-right-active.svg"/> Filters
         </a>
 
         <span class="clear-filters" v-show="showFilters" v-on:click="clearFilters()">
-          <img src="/img/clear-filters-icon.svg"/> Clear filters
+          CLEAR FILTERS
         </span>
 
       </div>

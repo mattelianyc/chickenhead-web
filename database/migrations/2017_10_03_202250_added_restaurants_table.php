@@ -22,6 +22,8 @@ class AddedRestaurantsTable extends Migration
         $table->string('zip');
         $table->decimal('latitude', 11, 8)->nullable();
         $table->decimal('longitude', 11, 8)->nullable();
+        $table->string('description')->nullable();
+        $table->string('website')->nullable();
         $table->timestamps();
       });
     }

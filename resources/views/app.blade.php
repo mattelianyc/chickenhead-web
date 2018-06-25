@@ -16,7 +16,7 @@
 
 		<link rel="icon" type="image/png" href="/favicon.png">
 
-		<title>Roast</title>
+		<title>chickenhead</title>
 
 		<script type='text/javascript'>
 			 window.Laravel = <?php echo json_encode([

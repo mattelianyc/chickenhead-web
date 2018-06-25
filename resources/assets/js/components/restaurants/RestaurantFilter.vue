@@ -46,15 +46,15 @@
           <label>Search</label>
           <input type="text" v-model="textSearch" placeholder="Search"/>
 
-          <div class="is-roaster-container">
+          <!-- <div class="is-roaster-container">
             <input type="checkbox" v-model="isRoaster"/> <label>Is Roaster?</label>
-          </div>
+          </div> -->
 
-          <div class="brew-methods-container">
+          <!-- <div class="brew-methods-container">
             <div class="filter-brew-method" v-on:click="toggleBrewMethodFilter( method.method )" v-bind:class="{'active' : brewMethods.indexOf( method.method ) > -1 }" v-for="method in restaurantBrewMethods">
               {{ method.method }}
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="large-6 medium-6 small-12 cell">
           <tags-input v-bind:unique="'restaurant-search'"></tags-input>

@@ -31,10 +31,10 @@ class StoreRestaurantRequest extends FormRequest
             'zip'                     => 'required',
             'latitude'                => 'required',
             'longitude'               => 'required',
-            'added_by'               => 'required',
-            // 'website'               => 'required',
-            // 'description'               => 'required',
-            // 'website'                 => 'sometimes|url'
+            'added_by'                => 'required',
+            'website'               => 'required',
+            'description'               => 'required',
+            'website'                 => 'sometimes|url'
         ];
     }
 

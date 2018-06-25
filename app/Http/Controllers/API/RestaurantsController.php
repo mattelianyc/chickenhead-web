@@ -22,8 +22,8 @@ use App\Http\Requests\EditRestaurantRequest;
 
 class RestaurantsController extends Controller
 {
-  /*
-  |-------------------------------------------------------------------------------
+  
+  /*-------------------------------------------------------------------------------
   | Get All Restaurants
   |-------------------------------------------------------------------------------
   | URL:            /api/v1/restaurants
@@ -41,8 +41,8 @@ class RestaurantsController extends Controller
 
   }
 
-  /*
-  |-------------------------------------------------------------------------------
+  
+  /*-------------------------------------------------------------------------------
   | Get An Individual Restaurant
   |-------------------------------------------------------------------------------
   | URL:            /api/v1/restaurants/{id}
@@ -57,8 +57,7 @@ class RestaurantsController extends Controller
 				->withCount('userLike')
 					->with('tags')
 						->withCount('likes')
-							->where('deleted', '=', 0)
-								->first();
+							->where('deleted', '=', 0)->first();
 
 		if( $restaurant != null )
 		{
@@ -71,35 +70,31 @@ class RestaurantsController extends Controller
 
   }
 
-	/*
-	|-------------------------------------------------------------------------------
+	
+	/*-------------------------------------------------------------------------------
 	| Gets Editing Data for an Individual Restaurant
 	|-------------------------------------------------------------------------------
 	| URL:            /api/v1/restaurants/{id}/edit
 	| Method:         GET
-	| Description:    Gets an individual restaurant's edit data
 	| Parameters:
 	|   $id   -> ID of the restaurant we are retrieving
 	*/
-	public function getRestaurantEditData( $restaurantID ){
+	public function getRestaurantEditData( $restaurantID ) {
+
 		// Grab the restaurant with the parent of the restaurant
 		$restaurant = Restaurant::where('id', '=', $restaurantID)
-								->withCount('userLike')
-								->where('deleted', '=', 0)
-								->first();
+										->withCount('userLike')
+											->where('deleted', '=', 0)->first();
 
 		// Return the restaurant queried.
 		return response()->json($restaurant);
 
 	}
-
-  /*
-  |-------------------------------------------------------------------------------
+  /*-------------------------------------------------------------------------------
   | Adds a New Restaurant
   |-------------------------------------------------------------------------------
   | URL:            /api/v1/restaurants
   | Method:         POST
-  | Description:    Adds a new restaurant to the application
   */
   public function postNewRestaurant( StoreRestaurantRequest $request ) {
 
@@ -114,11 +109,13 @@ class RestaurantsController extends Controller
 		{
 			$restaurant = new Restaurant();
 
-			$restaurant   =	$request->get('name');
+			$name   			=	$request->get('name');
 			$address 			= $request->get('address');
 			$city 				= $request->get('city');
 			$state 				= $request->get('state');
 			$zip 					= $request->get('zip');
+
+			dd($zip);
 
 			//get coordinates
 			$lat 					= Request::get('lat') != '' ? Request::get('lat') : 0;
@@ -135,7 +132,7 @@ class RestaurantsController extends Controller
 			$restaurant->city 						= $city;
 			$restaurant->state 						= $state;
 			$restaurant->zip 							= $zip;
-			$restaurant->website					= '';
+			$restaurant->website					= 'http://'+'';
 			$restaurant->description			= '';
 			$restaurant->latitude 				= $lat;
 			$restaurant->longitude 				= $lng;
@@ -150,8 +147,7 @@ class RestaurantsController extends Controller
 
   }
 
-	/*
-	|-------------------------------------------------------------------------------
+	/*-------------------------------------------------------------------------------
 	| Edits a Restaurant
 	|-------------------------------------------------------------------------------
 	| URL:            /api/v1/restaurants/{restaurantID}
@@ -220,8 +216,8 @@ class RestaurantsController extends Controller
 
 	}
 
-	/*
-  |-------------------------------------------------------------------------------
+	
+  /*-------------------------------------------------------------------------------
   | Likes a Restaurant
   |-------------------------------------------------------------------------------
   | URL:            /api/v1/restaurants/{id}/like

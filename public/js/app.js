@@ -57997,7 +57997,7 @@ var restaurants = {
 	/*
  	POST 	/api/v1/restaurants
  */
-	postAddNewRestaurant: function postAddNewRestaurant(name, address, city, state, zip, latitude, longitude, added_by) {
+	postAddNewRestaurant: function postAddNewRestaurant(name, address, city, state, zip, latitude, longitude, website, description, added_by) {
 		/*
   	Initialize the form data
   */
@@ -58006,7 +58006,6 @@ var restaurants = {
 		/*
   	Add the form data we need to submit
   */
-		// formData.append('website', website);
 		formData.append('name', name);
 		formData.append('address', address);
 		formData.append('city', city);
@@ -58014,6 +58013,8 @@ var restaurants = {
 		formData.append('zip', zip);
 		formData.append('latitude', latitude);
 		formData.append('longitude', longitude);
+		formData.append('website', website);
+		formData.append('description', description);
 		formData.append('added_by', added_by);
 
 		return axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* ROAST_CONFIG */].API_URL + '/restaurants', formData, {
@@ -58612,7 +58613,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\nnav.top-navigation {\n  background-color: #FFFFFF;\n  height: 75px;\n  -webkit-box-shadow: 0 2px 4px 0 rgba(3, 27, 78, 0.1);\n          box-shadow: 0 2px 4px 0 rgba(3, 27, 78, 0.1);\n  z-index: 9999;\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n}\nnav.top-navigation a.filters {\n    cursor: pointer;\n    color: #E8635F;\n    width: 140px;\n    height: 45px;\n    border: 2px solid #E8635F;\n    border-radius: 3px;\n    text-transform: uppercase;\n    display: block;\n    float: left;\n    text-align: center;\n    line-height: 41px;\n    margin-top: 15px;\n    margin-left: 20px;\n    font-family: \"Lato\", sans-serif;\n    font-weight: bold;\n    font-size: 16px;\n}\nnav.top-navigation a.filters img {\n      display: inline-block;\n      vertical-align: middle;\n      margin-right: 10px;\n      height: 13px;\n}\nnav.top-navigation a.filters img.chevron-active {\n      display: none;\n}\nnav.top-navigation a.filters.active {\n      background-color: #E8635F;\n      color: white;\n}\nnav.top-navigation a.filters.active img.chevron {\n        display: none;\n}\nnav.top-navigation a.filters.active img.chevron-active {\n        display: inline-block;\n}\nnav.top-navigation span.clear-filters {\n    font-size: 16px;\n    color: #054E7A;\n    font-family: \"Lato\", sans-serif;\n    cursor: pointer;\n    margin-left: 25px;\n    display: block;\n    float: left;\n    margin-top: 25px;\n}\nnav.top-navigation span.clear-filters img {\n      margin-right: 10px;\n      float: left;\n      margin-top: 6px;\n}\nnav.top-navigation img.logo {\n    margin: auto;\n    margin-top: 7.5px;\n    margin-bottom: 12.5px;\n    display: block;\n    max-height: 60px;\n}\nnav.top-navigation .logo-brand-text {\n    font-family: 'Gloria Hallelujah', cursive;\n    color: #ff7d00;\n    padding-top: 10px;\n}\nnav.top-navigation .logo-brand-text .logo {\n      margin-left: 10px;\n      position: relative;\n      bottom: 12px;\n}\nnav.top-navigation img.hamburger {\n    float: right;\n    margin-right: 18px;\n    margin-top: 30px;\n    cursor: pointer;\n}\nnav.top-navigation img.avatar {\n    float: right;\n    margin-right: 20px;\n    width: 40px;\n    height: 40px;\n    border-radius: 20px;\n    margin-top: 18px;\n}\nnav.top-navigation:after {\n    content: \"\";\n    display: table;\n    clear: both;\n}\nnav.top-navigation span.login {\n    font-family: \"Lato\", sans-serif;\n    font-size: 16px;\n    text-transform: uppercase;\n    color: black;\n    font-weight: bold;\n    float: right;\n    margin-top: 27px;\n    margin-right: 15px;\n    cursor: pointer;\n}\n\n/* Small only */\n@media screen and (max-width: 39.9375em) {\nnav.top-navigation a.filters {\n    line-height: 31px;\n    margin-top: 20px;\n    width: 75px;\n    height: 35px;\n}\nnav.top-navigation a.filters img {\n      display: none;\n}\nnav.top-navigation a.filters.active img.chevron-active {\n      display: none;\n}\nnav.top-navigation span.clear-filters {\n    display: none;\n}\nnav.top-navigation span.login {\n    display: none;\n}\nnav.top-navigation img.hamburger {\n    margin-top: 26px;\n}\n}\n\n/* Medium only */\n/* Large only */\n", ""]);
+exports.push([module.i, "\nnav.top-navigation {\n  background-color: #b46400;\n  height: 75px;\n  -webkit-box-shadow: 0 2px 4px 0 rgba(3, 27, 78, 0.1);\n          box-shadow: 0 2px 4px 0 rgba(3, 27, 78, 0.1);\n  z-index: 9999;\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n}\nnav.top-navigation a.filters {\n    cursor: pointer;\n    color: #f5c88a;\n    width: 140px;\n    height: 45px;\n    border: 2px solid #f5c88a;\n    border-radius: 2px;\n    text-transform: uppercase;\n    display: block;\n    float: left;\n    text-align: center;\n    line-height: 41px;\n    margin-top: 15px;\n    margin-left: 20px;\n    font-family: \"Lato\", sans-serif;\n    font-weight: bold;\n    font-size: 16px;\n}\nnav.top-navigation a.filters img {\n      display: inline-block;\n      vertical-align: middle;\n      margin-right: 10px;\n      height: 13px;\n}\nnav.top-navigation a.filters:hover {\n      background-color: #ff2200;\n      color: #FFFFFF;\n}\nnav.top-navigation a.filters img.chevron-active {\n      display: none;\n}\nnav.top-navigation a.filters.active {\n      background-color: #ff2200;\n      color: white;\n}\nnav.top-navigation a.filters.active img.chevron {\n        display: none;\n}\nnav.top-navigation a.filters.active img.chevron-active {\n        display: inline-block;\n}\nnav.top-navigation span.clear-filters {\n    font-size: 16px;\n    font-weight: bolder;\n    color: #FFFFFF;\n    font-family: \"Lato\", sans-serif;\n    cursor: pointer;\n    margin-left: 25px;\n    display: block;\n    float: left;\n    margin-top: 25px;\n}\nnav.top-navigation span.clear-filters img {\n      margin-right: 10px;\n      float: left;\n      margin-top: 6px;\n}\nnav.top-navigation img.logo {\n    margin: auto;\n    margin-top: 7.5px;\n    margin-bottom: 12.5px;\n    display: block;\n    max-height: 60px;\n}\nnav.top-navigation .logo-brand-text {\n    font-family: 'Clucka', cursive;\n    font-size: 3.75rem;\n    color: #f5c88a;\n}\nnav.top-navigation .logo-brand-text .logo {\n      margin-left: 10px;\n      position: relative;\n      bottom: 12px;\n}\nnav.top-navigation img.hamburger {\n    float: right;\n    margin-right: 18px;\n    margin-top: 30px;\n    cursor: pointer;\n}\nnav.top-navigation img.avatar {\n    float: right;\n    margin-right: 20px;\n    width: 40px;\n    height: 40px;\n    border-radius: 20px;\n    margin-top: 18px;\n}\nnav.top-navigation:after {\n    content: \"\";\n    display: table;\n    clear: both;\n}\nnav.top-navigation span.login {\n    font-family: \"Lato\", sans-serif;\n    font-size: 16px;\n    text-transform: uppercase;\n    color: black;\n    font-weight: bold;\n    float: right;\n    margin-top: 27px;\n    margin-right: 15px;\n    cursor: pointer;\n}\n\n/* Small only */\n@media screen and (max-width: 39.9375em) {\nnav.top-navigation a.filters {\n    line-height: 31px;\n    margin-top: 20px;\n    width: 75px;\n    height: 35px;\n}\nnav.top-navigation a.filters img {\n      display: none;\n}\nnav.top-navigation a.filters.active img.chevron-active {\n      display: none;\n}\nnav.top-navigation span.clear-filters {\n    display: none;\n}\nnav.top-navigation span.login {\n    display: none;\n}\nnav.top-navigation img.hamburger {\n    margin-top: 26px;\n}\n}\n\n/* Medium only */\n/* Large only */\n", ""]);
 
 // exports
 
@@ -58624,6 +58625,13 @@ exports.push([module.i, "\nnav.top-navigation {\n  background-color: #FFFFFF;\n 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__event_bus_js__ = __webpack_require__(6);
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -58897,11 +58905,6 @@ var render = function() {
           },
           [
             _c("img", {
-              staticClass: "chevron",
-              attrs: { src: "/img/chevron-right.svg" }
-            }),
-            _vm._v(" "),
-            _c("img", {
               staticClass: "chevron-active",
               attrs: { src: "/img/chevron-right-active.svg" }
             }),
@@ -58927,10 +58930,7 @@ var render = function() {
               }
             }
           },
-          [
-            _c("img", { attrs: { src: "/img/clear-filters-icon.svg" } }),
-            _vm._v(" Clear filters\n      ")
-          ]
+          [_vm._v("\n        CLEAR FILTERS\n      ")]
         )
       ]),
       _vm._v(" "),
@@ -60261,77 +60261,8 @@ var render = function() {
         _vm._v(" "),
         _c("div", { attrs: { id: "location-type-container" } }, [
           _c("div", { staticClass: "grid-x grid-padding-x" }, [
-            _c("div", { staticClass: "large-12 medium-12 small-12 cell" }, [
-              _c("label", { staticClass: "filter-label" }, [
-                _vm._v("Location Types")
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "grid-x grid-padding-x" }, [
             _c("div", { staticClass: "large-12 medium-12 small-12 cell" })
           ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.user != "" && _vm.userLoadStatus == 2,
-                  expression: "user != '' && userLoadStatus == 2"
-                }
-              ],
-              staticClass: "grid-x grid-padding-x",
-              attrs: { id: "only-liked-container" }
-            },
-            [
-              _c("div", { staticClass: "large-12 medium-12 small-12 cell" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.onlyLiked,
-                      expression: "onlyLiked"
-                    }
-                  ],
-                  attrs: { type: "checkbox" },
-                  domProps: {
-                    checked: Array.isArray(_vm.onlyLiked)
-                      ? _vm._i(_vm.onlyLiked, null) > -1
-                      : _vm.onlyLiked
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.onlyLiked,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = null,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.onlyLiked = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.onlyLiked = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.onlyLiked = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("span", { staticClass: "liked-location-label" }, [
-                  _vm._v("Show only locations that I like")
-                ])
-              ])
-            ]
-          ),
           _vm._v(" "),
           _c("div", { attrs: { id: "brew-methods-container" } }, [
             _c("div", { staticClass: "grid-x grid-padding-x" }, [
@@ -62648,8 +62579,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       // newCompany: false,
       // companyType: 'restaurant',
       website: '',
-
-      locationName: '',
+      name: '',
       address: '',
       city: '',
       state: '',
@@ -62797,12 +62727,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     submitNewRestaurant: function submitNewRestaurant() {
       if (this.validateNewRestaurant()) {
         this.$store.dispatch('addRestaurant', {
-          // website: this.website,
+          website: this.website,
           location_name: this.locationName,
           address: this.address,
           city: this.city,
           state: this.state,
-          // zip: this.zip,
+          zip: this.zip,
           lat: this.lat,
           lng: this.lng
         });
@@ -62900,17 +62830,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.validations.state.text = '';
       }
 
-      /*
-        Ensure a zip has been entered
-      */
-      // if( this.zip.trim() == '' || !this.zip.match(/(^\d{5}$)/) ){
-      //   validNewRestaurantForm = false;
-      //   this.validations.zip.is_valid = false;
-      //   this.validations.zip.text = 'Please enter a valid zip code for the new restaurant.';
-      // }else{
-      //   this.validations.zip.is_valid = true;
-      //   this.validations.zip.text = '';
-      // }
+      //Ensure a zip has been entered
+      if (this.zip.trim() == '' || !this.zip.match(/(^\d{5}$)/)) {
+        validNewRestaurantForm = false;
+        this.validations.zip.is_valid = false;
+        this.validations.zip.text = 'Please enter a valid zip code for the new restaurant.';
+      } else {
+        this.validations.zip.is_valid = true;
+        this.validations.zip.text = '';
+      }
 
       return validNewRestaurantForm;
     },
@@ -62938,10 +62866,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         //   is_valid: true,
         //   text: ''
         // },
-        // website: {
-        //   is_valid: true,
-        //   text: ''
-        // },
+        website: {
+          is_valid: true,
+          text: ''
+        },
         address: {
           is_valid: true,
           text: ''
@@ -62953,11 +62881,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         state: {
           is_valid: true,
           text: ''
+        },
+        zip: {
+          is_valid: true,
+          text: ''
         }
-        // zip: {
-        //   is_valid: true,
-        //   text: ''
-        // }
       };
     }
   }
@@ -63039,19 +62967,19 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.locationName,
-                    expression: "locationName"
+                    value: _vm.name,
+                    expression: "name"
                   }
                 ],
                 staticClass: "form-input",
                 attrs: { type: "text" },
-                domProps: { value: _vm.locationName },
+                domProps: { value: _vm.name },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.locationName = $event.target.value
+                    _vm.name = $event.target.value
                   }
                 }
               })
@@ -63137,27 +63065,6 @@ var render = function() {
                       return
                     }
                     _vm.longitude = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.added_by,
-                    expression: "added_by"
-                  }
-                ],
-                attrs: { type: "hidden" },
-                domProps: { value: _vm.added_by },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.added_by = $event.target.value
                   }
                 }
               }),

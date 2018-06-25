@@ -215,11 +215,11 @@
       </div>
 
       <div id="location-type-container">
-        <div class="grid-x grid-padding-x">
+        <!-- <div class="grid-x grid-padding-x">
           <div class="large-12 medium-12 small-12 cell">
             <label class="filter-label">Location Types</label>
           </div>
-        </div>
+        </div> -->
 
         <div class="grid-x grid-padding-x">
           <div class="large-12 medium-12 small-12 cell">
@@ -234,11 +234,11 @@
         </div>
       </div>
 
-      <div class="grid-x grid-padding-x" id="only-liked-container" v-show="user != '' && userLoadStatus == 2">
+      <!-- <div class="grid-x grid-padding-x" id="only-liked-container" v-show="user != '' && userLoadStatus == 2">
         <div class="large-12 medium-12 small-12 cell">
           <input type="checkbox" v-model="onlyLiked"/> <span class="liked-location-label">Show only locations that I like</span>
         </div>
-      </div>
+      </div> -->
 
       <div id="brew-methods-container">
         <div class="grid-x grid-padding-x">

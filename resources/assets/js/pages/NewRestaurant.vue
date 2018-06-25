@@ -280,7 +280,7 @@
         <div class="grid-x grid-padding-x">
           <div class="large-8 medium-9 small-12 cell centered">
             <label class="form-label">Location Name</label>
-            <input type="text" class="form-input" v-model="locationName"/>
+            <input type="text" class="form-input" v-model="name"/>
           </div>
         </div>
 
@@ -291,7 +291,7 @@
             <input type="hidden" v-model="address"/>
             <input type="hidden" v-model="latitude"/>
             <input type="hidden" v-model="longitude"/>
-            <input type="hidden" v-model="added_by"/>
+            <!-- <input type="hidden" v-model="added_by"/> -->
             <div class="validation" v-show="!validations.address.is_valid">{{ validations.address.text }}</div>
           </div>
         </div>
@@ -415,8 +415,7 @@
         // newCompany: false,
         // companyType: 'restaurant',
         website: '',
-
-        locationName: '',
+        name: '',
         address: '',
         city: '',
         state: '',
@@ -495,19 +494,19 @@
           switch( type ){
             case 'street_number':
               addressBuilderStreetNumber = place.address_components[i].short_name;
-            break;
+              break;
             case 'route':
               addressBuilderRoute = place.address_components[i].short_name;
-            break;
+              break;
             case 'locality':
               this.city = place.address_components[i].long_name;
-            break;
+              break;
             case 'administrative_area_level_1':
               this.state = place.address_components[i].short_name;
-            break;
+              break;
             case 'postal_code':
               this.zip = place.address_components[i].short_name;
-            break;
+              break;
           }
         }
 
@@ -562,12 +561,12 @@
       submitNewRestaurant(){
         if( this.validateNewRestaurant() ){
           this.$store.dispatch( 'addRestaurant', {
-            // website: this.website,
+            website: this.website,
             location_name: this.locationName,
             address: this.address,
             city: this.city,
             state: this.state,
-            // zip: this.zip,
+            zip: this.zip,
             lat: this.lat,
             lng: this.lng,
   				});
@@ -664,17 +663,15 @@
           this.validations.state.text = '';
         }
 
-        /*
-          Ensure a zip has been entered
-        */
-        // if( this.zip.trim() == '' || !this.zip.match(/(^\d{5}$)/) ){
-        //   validNewRestaurantForm = false;
-        //   this.validations.zip.is_valid = false;
-        //   this.validations.zip.text = 'Please enter a valid zip code for the new restaurant.';
-        // }else{
-        //   this.validations.zip.is_valid = true;
-        //   this.validations.zip.text = '';
-        // }
+        //Ensure a zip has been entered
+        if( this.zip.trim() == '' || !this.zip.match(/(^\d{5}$)/) ){
+          validNewRestaurantForm = false;
+          this.validations.zip.is_valid = false;
+          this.validations.zip.text = 'Please enter a valid zip code for the new restaurant.';
+        }else{
+          this.validations.zip.is_valid = true;
+          this.validations.zip.text = '';
+        }
 
         return validNewRestaurantForm;
       },
@@ -702,10 +699,10 @@
           //   is_valid: true,
           //   text: ''
           // },
-          // website: {
-          //   is_valid: true,
-          //   text: ''
-          // },
+          website: {
+            is_valid: true,
+            text: ''
+          },
           address: {
             is_valid: true,
             text: ''
@@ -718,10 +715,10 @@
             is_valid: true,
             text: ''
           },
-          // zip: {
-          //   is_valid: true,
-          //   text: ''
-          // }
+          zip: {
+            is_valid: true,
+            text: ''
+          }
         };
       }
     }
